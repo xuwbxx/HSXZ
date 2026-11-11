@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "内容管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+@{
+    var Projects = ViewData["Projects"] as List<DataEntity.DataContext.Base_Project>;
+    var Protocols = ViewData["Protocols"] as List<DataEntity.DataContext.Scan_JC_Protocol>;
+}
+<div class="tab-pane fade" id="scanType">
+    <!--筛选条件-->
+    <ul class="mine-screen row-fluid">
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <a class="screen-a">所属项目：</a>
+            <select id="Select_Project">
+                <option value="0">全部</option>
+                @{
+                    if (Projects != null && Projects.Count > 0)
+                    {
+                        foreach (var item in Projects)
+                        {
+                            <option value="@item.ID">@item.ProjectName</option>
+                        }
+                    }
+                }
+            </select>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <a class="screen-a">协议：</a>
+            <select id="Select_Protocols">
+                <option value="0">全部</option>
+                @{
+                    if (Protocols != null && Protocols.Count > 0)
+                    {
+                        foreach (var item in Protocols)
+                        {
+                            <option value="@item.ID">@item.Protocol</option>
+                        }
+                    }
+                }
+            </select>
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <input type="button" value="查询" onclick="ConstructConfigScanTypeJS.DoScanTypeQuery()" />
+            @*<input type="button" value="重置查询" />*@
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <input type="button" value="新增" onclick="ConstructConfigScanTypeJS.AddScanType()" />
+            @*<input type="button" value="重置查询" />*@
+        </li>
+    </ul>
+    <!--表-->
+    <div id="ScanTypeHtmlTemplate" class="panel panel-primary">
+
+    </div>
+    <!--翻页-->
+    <div class="change-page" style="height:34px;">
+        <div class="box">
+            <div id="Pagination" class="page fl">
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("ScanTypeTemplate")
+@Html.Partial("ScanTypePopUp")
+
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigScanType.js"></script>
+

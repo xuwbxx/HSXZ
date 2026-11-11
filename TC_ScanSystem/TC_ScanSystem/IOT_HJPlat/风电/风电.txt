@@ -1,0 +1,27 @@
+	.mapp{ padding:0;}
+	.mapp>img{width:100%; border:1px solid #666;}
+	.mapp>a{display:block; position:absolute; background:rgba(255,255,255,0.01); border-radius:20px;}
+	.mapp>a:hover{background:rgba(255,255,255,0.01);}
+
+
+
+
+<div class="mapp col-lg-12 col-md-4 col-sm-6 col-xs-12">
+                    <img src="bg-1.png">
+					<a href="https://www.baidu.com/" title="风机塔筒" style="top:30.6%; left:45.5%; width:6.2%; height:48.1%;"></a>
+                    <a href="https://www.baidu.com/" title="风机承台" style="top:81%; left:44.8%; width:8.3%; height:14.4%;"></a>
+              </div>
+
+
+              <div class="mapp col-lg-12 col-md-4 col-sm-6 col-xs-12">
+                    <img src="bg-2.png">
+					<a href="https://www.baidu.com/" title="风机塔筒" style="top:27.9%; left:44%; width:7.2%; height:55%;"></a>
+                    <a href="https://www.baidu.com/" title="风机承台" style="top:84%; left:40.2%; width:12.9%; height:14.4%;"></a>
+              </div>
+
+
+              <div class="mapp col-lg-12 col-md-4 col-sm-6 col-xs-12">
+                    <img src="bg-3.png">
+					<a href="https://www.baidu.com/" title="风机塔筒" style="top:20.7%; left:10.3%; width:68.8%; height:47.8%;"></a>
+                    <a href="https://www.baidu.com/" title="风机承台" style="top:70%; left:31.1%; width:32.2%; height:18.5%;"></a>
+              </div>

@@ -1,0 +1,47 @@
+# Visual Studio 本地状态
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# TFS 源码控制绑定（历史遗留，防止再次混入）
+*.vspscc
+*.vssscc
+
+# 构建输出
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+TestResults/
+*.log
+[Ll]og/
+
+# NuGet（旧式 packages.config 还原目录）
+packages/
+*.nupkg
+
+# 旧版备份
+Backup/
+
+# ReSharper / Rider
+_ReSharper*/
+.idea/
+*.DotSettings.user
+
+# 发布与打包产物
+publish/
+*.publishsettings
+*.azurePubxml
+*.pubxml
+
+# 其他
+*.tmp
+*.bak
+*.cache
+Thumbs.db
+Desktop.ini

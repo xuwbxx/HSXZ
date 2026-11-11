@@ -1,0 +1,253 @@
+﻿<div class="list equipment">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">设备机械</p>
+        <div class="list-more"></div>
+    </div>
+    <div  id="EChartDetail" class="equipment-chart">
+        <!-- <div id="EChartDetail" class="equipment-right"  style="background:url(/Content/Board/img/4.png) no-repeat center center;"></div> -->
+    </div>
+    <div class="equipment-chart2">
+        <ul>
+            <li>
+                <span style="background:#2eee3b;"></span>
+                <span>发动机</span>
+            </li>
+            <li>
+                <span style="background:#ffc000;"></span>
+                <span>叉车</span>
+            </li>
+            <li>
+                <span style="background:#22d2fd;"></span>
+                <span>挖掘机</span>
+            </li>
+            <li>
+                <span style="background:#6e8489;"></span>
+                <span>发电机</span>
+            </li>
+            <li>
+                <span style="background:#0576fe;"></span>
+                <span>钻机</span>
+            </li>
+            <li>
+                <span style="background:#0f23e3;"></span>
+                <span>打桩机</span>
+            </li>
+            <li>
+                <span style="background:#c4ff77;"></span>
+                <span>汽车吊</span>
+            </li>
+            <li>
+                <span style="background:#ff6023;"></span>
+                <span>装载机</span>
+            </li>
+            <li>
+                <span style="background:#ff2347;"></span>
+                <span>履带吊</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var chartArr = new Array();
+
+        //var equipObj =[
+        //    {
+        //        "name": "小型设备", "num": 490,
+        //        "machine":
+        //            [
+        //                { "name": "大货车", "num": 150 },
+        //                { "name": "挖土机", "num": 20 },
+        //                { "name": "压路机", "num": 30 },
+        //                { "name": "升降机", "num": 40 },
+        //                { "name": "铲土机", "num": 50 },
+        //                { "name": "吊运机", "num": 50 },
+        //                { "name": "推土机", "num": 100 },
+        //                { "name": "电梯", "num": 50 }
+        //            ]
+        //    },
+        //    {
+        //        "name": "大型设备", "num": 84,
+        //        "machine":
+        //            [
+        //                { "name": "挖斗机", "num": 27 },
+        //                { "name": "抓铲机", "num": 57 }
+        //            ]
+        //    },
+        //    {
+        //        "name": "特种设备", "num": 34,
+        //        "machine":
+        //            [
+        //                { "name": "塔吊", "num": 14 },
+        //                { "name": "龙门吊", "num": 8 },
+        //                { "name": "桁车", "num": 6 },
+        //                { "name": "盾构机", "num": 6 }
+        //            ]
+        //    }
+        //];
+        var equipObj = [
+            {
+                "name": "小型设备", "num": 2,
+                "machine":
+                    [
+                        { "name": "发动机", "num": 1 },
+                        { "name": "叉车", "num": 1 },
+                    ]
+            },
+            {
+                "name": "大型设备", "num": 35,
+                "machine":
+                    [
+                        { "name": "挖掘机", "num": 13 },
+                        { "name": "发电机", "num": 7 },
+                        { "name": "钻机", "num": 6 },
+                        { "name": "打桩架", "num": 5 },
+                        { "name": "汽车吊", "num": 3 },
+                        // { "name": "装载机", "num": 1 },
+                    ]
+            },
+            {
+                "name": "特种设备", "num": 8,
+                "machine":
+                    [
+                        { "name": "履带吊", "num": 5 },
+                        { "name": "起重机", "num": 3 },
+                    ]
+            }
+        ];
+
+        var objLen = equipObj.length
+
+
+        for (var i = 0; i < chartArr.length; i++) {
+            if (opts[i] && typeof opts[i] === "object") {
+                chartArr[i].setOption(opts[i], true);
+            }
+        }
+
+        var detChart = echarts.init(document.getElementById("EChartDetail"));
+
+        var detOpt = CreateDetailOption(equipObj);
+
+        if (detOpt && typeof detOpt === "object") {
+            detChart.setOption(detOpt, true);
+        }
+
+        function CreateDetailOption(detailObj) {
+
+            var yMax = 200;
+            var yFormatter = '{value} %';
+            var tooltipFormatter = '{b}<br/>{a}:{c}%';
+            var innerRadius = '50%';
+            var outerRadius = '65%';
+            var xCenterPosition = '50%';
+            var yCenterPosition = '50%';
+            //var yCenterPosition = '40%';
+
+            // var color = ['#c23531','#2f4554', '#61a0a8', '#d48265'],
+            var colorList = ['lime', 'deepskyblue', 'lightgreen', 'violet', 'darkorange', 'royalblue','tomato','indigo','darkslategray','slategray'];
+            // var colorList = ['green', 'skyblue', 'orange', 'pink'];
+            var otherColor = '#51668a';
+
+            var itemColors = function(echartColorModel) {
+                return colorList[echartColorModel.dataIndex % colorList.length];
+            };
+
+            var machineData = GetDetailData(detailObj);
+            var legendArr = new Array();
+
+            var markStr = "";
+            machineData.forEach(
+                function(item, index) {
+                    legendArr.push(item.name);
+                    markStr = markStr + "<li><span style = 'background:" + colorList[index] + "'></span><span>" + item.name +"</span></li>";
+                });
+
+            $(".equipment-chart2 ul").each(function(index, dom){
+                $(dom).html(markStr);
+                //$(".equipment-chart2 ul li span").last().addClass("chrome_adjust");
+            });
+
+            var opt = {};
+            opt = {
+                title: {
+                    show: true,
+                    text: "设备统计",
+                    textStyle: {
+                        color: 'white',
+                        fontSize: 16,
+                        fontWeight: 'lighter',
+                    },
+                    left: 'center',
+                    top: 'center',
+                    //top: '35%',
+                    //top: '38%',
+                },
+                tooltip:{
+                    trigger:'item',
+                    formatter:'{b}（{d}%）：<br/>{c}台',
+                },
+                //legend: {
+                //    data: legendArr,
+                //    orient: 'horizontal',
+                //    width: '100%',
+                //    textStyle: {
+                //        color: 'rgba(255,255,255,1)',
+                //        fontSize: 15,
+                //    },
+                //    right: 'center',
+                //    bottom: '0%',
+                //    itemGap: 20,
+                //    // padding:0,
+                //    itemWidth: 22,
+                //    itemHeight: 15,
+                //    align: 'left',
+                //},
+                series:
+                [
+                    {
+                        type: 'pie',
+                        hoverOffset: 3,
+                        radius: [innerRadius, outerRadius],
+                        center: [xCenterPosition, yCenterPosition],
+                        label: {
+                            show: true,
+                            formatter:'{d}%({c})',
+                            position: 'outside',
+                        },
+                        labelLine: {
+                            show: false,
+                            length:15,
+                            length2:0,
+                        },
+                        data: machineData,
+                    }
+                ],
+                color: itemColors
+            }
+
+            return opt;
+        }
+
+        function GetDetailData(equipObj){
+            var ret = new Array();
+            equipObj.forEach(
+                function (ele) {
+                    ele.machine.forEach(
+                        function (item) {
+                            var temp = {};
+                            temp.name = item.name;
+                            temp.value = item.num;
+                            ret.push(temp);
+                        }
+                    )
+                });
+
+            return ret;
+        };
+    })
+</script>

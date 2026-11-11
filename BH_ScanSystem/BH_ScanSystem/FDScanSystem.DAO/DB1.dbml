@@ -1,0 +1,2019 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="test" Class="DB1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=test;Integrated Security=True" SettingsObjectName="FDScanSystem.DAO.Properties.Settings" SettingsPropertyName="testConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChNo1_0" Member="ChNo1_0">
+    <Type Name="ChNo1_0">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_1" Member="ChNo1_1">
+    <Type Name="ChNo1_1">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_10" Member="ChNo1_10">
+    <Type Name="ChNo1_10">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_11" Member="ChNo1_11">
+    <Type Name="ChNo1_11">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_12" Member="ChNo1_12">
+    <Type Name="ChNo1_12">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_13" Member="ChNo1_13">
+    <Type Name="ChNo1_13">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_14" Member="ChNo1_14">
+    <Type Name="ChNo1_14">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_15" Member="ChNo1_15">
+    <Type Name="ChNo1_15">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_16" Member="ChNo1_16">
+    <Type Name="ChNo1_16">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_17" Member="ChNo1_17">
+    <Type Name="ChNo1_17">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_18" Member="ChNo1_18">
+    <Type Name="ChNo1_18">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_19" Member="ChNo1_19">
+    <Type Name="ChNo1_19">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_2" Member="ChNo1_2">
+    <Type Name="ChNo1_2">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_20" Member="ChNo1_20">
+    <Type Name="ChNo1_20">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_21" Member="ChNo1_21">
+    <Type Name="ChNo1_21">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_22" Member="ChNo1_22">
+    <Type Name="ChNo1_22">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_23" Member="ChNo1_23">
+    <Type Name="ChNo1_23">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_24" Member="ChNo1_24">
+    <Type Name="ChNo1_24">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_25" Member="ChNo1_25">
+    <Type Name="ChNo1_25">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_26" Member="ChNo1_26">
+    <Type Name="ChNo1_26">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_27" Member="ChNo1_27">
+    <Type Name="ChNo1_27">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_28" Member="ChNo1_28">
+    <Type Name="ChNo1_28">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_29" Member="ChNo1_29">
+    <Type Name="ChNo1_29">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_3" Member="ChNo1_3">
+    <Type Name="ChNo1_3">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_30" Member="ChNo1_30">
+    <Type Name="ChNo1_30">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_31" Member="ChNo1_31">
+    <Type Name="ChNo1_31">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_32" Member="ChNo1_32">
+    <Type Name="ChNo1_32">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_33" Member="ChNo1_33">
+    <Type Name="ChNo1_33">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_34" Member="ChNo1_34">
+    <Type Name="ChNo1_34">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_35" Member="ChNo1_35">
+    <Type Name="ChNo1_35">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_4" Member="ChNo1_4">
+    <Type Name="ChNo1_4">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_5" Member="ChNo1_5">
+    <Type Name="ChNo1_5">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_6" Member="ChNo1_6">
+    <Type Name="ChNo1_6">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_7" Member="ChNo1_7">
+    <Type Name="ChNo1_7">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_8" Member="ChNo1_8">
+    <Type Name="ChNo1_8">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo1_9" Member="ChNo1_9">
+    <Type Name="ChNo1_9">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_0" Member="ChNo2_0">
+    <Type Name="ChNo2_0">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_1" Member="ChNo2_1">
+    <Type Name="ChNo2_1">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_10" Member="ChNo2_10">
+    <Type Name="ChNo2_10">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_11" Member="ChNo2_11">
+    <Type Name="ChNo2_11">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_12" Member="ChNo2_12">
+    <Type Name="ChNo2_12">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_13" Member="ChNo2_13">
+    <Type Name="ChNo2_13">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_14" Member="ChNo2_14">
+    <Type Name="ChNo2_14">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_15" Member="ChNo2_15">
+    <Type Name="ChNo2_15">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_16" Member="ChNo2_16">
+    <Type Name="ChNo2_16">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_17" Member="ChNo2_17">
+    <Type Name="ChNo2_17">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_18" Member="ChNo2_18">
+    <Type Name="ChNo2_18">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_19" Member="ChNo2_19">
+    <Type Name="ChNo2_19">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_2" Member="ChNo2_2">
+    <Type Name="ChNo2_2">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_20" Member="ChNo2_20">
+    <Type Name="ChNo2_20">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_21" Member="ChNo2_21">
+    <Type Name="ChNo2_21">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_22" Member="ChNo2_22">
+    <Type Name="ChNo2_22">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_23" Member="ChNo2_23">
+    <Type Name="ChNo2_23">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_24" Member="ChNo2_24">
+    <Type Name="ChNo2_24">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_25" Member="ChNo2_25">
+    <Type Name="ChNo2_25">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_26" Member="ChNo2_26">
+    <Type Name="ChNo2_26">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_27" Member="ChNo2_27">
+    <Type Name="ChNo2_27">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_28" Member="ChNo2_28">
+    <Type Name="ChNo2_28">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_29" Member="ChNo2_29">
+    <Type Name="ChNo2_29">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_3" Member="ChNo2_3">
+    <Type Name="ChNo2_3">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_30" Member="ChNo2_30">
+    <Type Name="ChNo2_30">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_31" Member="ChNo2_31">
+    <Type Name="ChNo2_31">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_32" Member="ChNo2_32">
+    <Type Name="ChNo2_32">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_33" Member="ChNo2_33">
+    <Type Name="ChNo2_33">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_34" Member="ChNo2_34">
+    <Type Name="ChNo2_34">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_35" Member="ChNo2_35">
+    <Type Name="ChNo2_35">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_4" Member="ChNo2_4">
+    <Type Name="ChNo2_4">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_5" Member="ChNo2_5">
+    <Type Name="ChNo2_5">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_6" Member="ChNo2_6">
+    <Type Name="ChNo2_6">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_7" Member="ChNo2_7">
+    <Type Name="ChNo2_7">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_8" Member="ChNo2_8">
+    <Type Name="ChNo2_8">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChNo2_9" Member="ChNo2_9">
+    <Type Name="ChNo2_9">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CollectTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wave0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="wave10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="power10" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

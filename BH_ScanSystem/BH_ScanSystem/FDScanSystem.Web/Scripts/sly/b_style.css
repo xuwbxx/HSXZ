@@ -1,0 +1,221 @@
+
+.disabled
+{
+    display: none;
+}
+.active
+{
+    display: block;
+}
+
+.slyWrap
+{
+    width: 960px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.scrollbar
+{
+    margin: 1em 0px;
+    height: 5px;
+}
+.scrollbar .handle
+{
+    width: 100px;
+    height: 100%;
+}
+.slyWrap .controls
+{
+    margin: 10px 0px;
+}
+.controls
+{
+    text-align: center;
+}
+.sly
+{
+    width: 880px;
+    overflow: hidden;
+}
+.sly > ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.sly > ul li
+{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.sly
+{
+    height: 260px;
+    margin-left: 30px;
+}
+.sly ul
+{
+    height: 100%;
+}
+.sly ul li
+{
+    margin: 0px 0px 0px 0px;
+    width: 220px;
+    height: 100%;
+    line-height: 170px;
+    font-size: 50px;
+    float: left;
+}
+
+
+
+
+
+.sly2
+{
+    width: 734px;
+    overflow: hidden;
+}
+.sly2 > ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.sly2 > ul li
+{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.sly2
+{
+    height: 325px;
+}
+.sly2 ul
+{
+    height: 100%;
+}
+.sly2 ul li
+{
+    margin: 0px 1px 0px 0px;
+    width: 734px;
+    height: 100%;
+    line-height: 325px;
+    font-size: 50px;
+    float: left;
+}
+.slyWrap2
+{
+    width: 734px;
+    margin-left: 0px;
+}
+
+
+
+
+
+
+
+.sly3
+{
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+.sly3 > ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.sly3 > ul li
+{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.sly3 ul
+{
+    height: 100%;
+}
+.sly3 ul li
+{
+    margin: 10px 1px 0px 0px;
+    width: 100%;
+    height: 105px;
+    line-height: 105px;
+    font-size: 50px;
+    float: left;
+}
+.slyWrap3
+{
+    width: 155px;
+    height: 240px;
+}
+
+
+
+
+
+
+
+.pages
+{
+    list-style: none;
+    margin: 5px auto;
+    text-align: center;
+    width: 100px;
+   
+}
+.pages li
+{
+    background: rgb(255, 255, 255);
+    margin: 0px 2px;
+    border-radius: 10px;
+    border: 1px solid rgb(170, 170, 170);
+    width: 11px;
+    height: 11px;
+    float: left;
+    text-indent: -999px;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+.pages li:hover
+{
+    background: rgb(238, 238, 238);
+}
+.pages li.active
+{
+    background: rgb(153, 153, 153);
+    border-color: rgb(136, 136, 136);
+    box-shadow: inset 0px 0px 0px 2px #eee;
+}
+.scrollbar
+{
+    background: rgb(128, 128, 128);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(102, 102, 102) rgb(128, 128, 128) rgb(128, 128, 128);
+    border-radius: 4px;
+    line-height: 0;
+}
+.scrollbar .handle
+{
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    line-height: 0;
+    cursor: pointer;
+    box-shadow: 0px 1px 0px #555;
+    -webkit-box-shadow: 0 1px 0 #555;
+    -moz-box-shadow: 0 1px 0 #555;
+    -o-box-shadow: 0 1px 0 #555;
+}

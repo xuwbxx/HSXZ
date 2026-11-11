@@ -1,0 +1,111 @@
+﻿@*详情弹出框*@
+<div id="MenuPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="MenuTitle">新增菜单</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="MenuID" />
+            <input type="hidden" name="MenuType" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            @*<td rowspan="6" class="user-picture">
+                                <div>
+                                    <img src="~/Content/IOT/img/user-pic.png" />
+                                </div>
+                            </td>*@
+                            <td class="field">菜单名称:</td>
+                            <td><input name="txt_MenuNamePop" type="text" value="" /></td>
+                            <td class="field">菜单编码:</td>
+                            <td><input name="txt_FunctionCodePop" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">菜单路径:</td>
+                            <td><input name="txt_PathPop" type="text" value="" /></td>
+                            <td class="field">菜单样式:</td>
+                            <td><input name="txt_ClassPop" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">排序:</td>
+                            <td><input name="txt_OrderPop" type="text" value="" /></td>
+                            <td class="field"></td>
+                            <td></td>
+                        </tr>
+                        @*<tr>
+                            <td class="field">部门：</td>
+                            <td>
+                                <select name="select_DepartPop">
+                                    @{
+                                        var Departs = ViewData["Departs"] as List<DataEntity.DataContext.Base_Depart>;
+                                        if (Departs != null && Departs.Count > 0)
+                                        {
+                                            foreach (var depart in Departs)
+                                            {
+                                                <option value="@depart.ID">@depart.DepartName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td class="field">职位:</td>
+                            <td>
+                                <select name="select_PositionPop">
+                                    @{
+                                        var Positions = ViewData["Positions"] as List<DataEntity.DataContext.Base_Position>;
+                                        if (Positions != null && Positions.Count > 0)
+                                        {
+                                            foreach (var position in Positions)
+                                            {
+                                                <option value="@position.ID">@position.PositionName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>*@
+                        @*<tr>
+                            <td class="field">工区:</td>
+                            <td>
+                                <select name="select_StructorPop">
+                                    @{
+                                        var Structors = ViewData["Structors"] as List<DataEntity.DataContext.Base_Structor>;
+                                        if (Structors != null && Structors.Count > 0)
+                                        {
+                                            foreach (var structor in Structors)
+                                            {
+                                                <option value="@structor.ID">@structor.StructorName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+
+                        </tr>*@
+                        @*<tr>
+                            <td class="field">角色分配:</td>
+                            <td colspan="3" class="multiselection">
+                                <ul name="UL_RolePop">
+                                    @{
+                                        var Roles = ViewData["Roles"] as List<DataEntity.DataContext.Base_Role>;
+                                        if (Roles != null && Roles.Count > 0)
+                                        {
+                                            foreach (var role in Roles)
+                                            {
+                                                <li><input type="checkbox" value="@role.ID" /><a>@role.RoleName</a></li>
+                                            }
+                                        }
+                                    }
+                                </ul>
+                            </td>
+                        </tr>*@
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" @*data-toggle="modal" data-target="#myModal"*@ type="button" value="保存" onclick="MenuJS.Save();" />
+                    <input class="btn-primary" type="button" value="退回" onclick="MenuJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>

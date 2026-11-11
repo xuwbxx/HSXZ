@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "地球图";
+    Layout = "~/Views/Shared/NoLayout.cshtml";
+}
+
+<style>
+    body{
+            /*background:url('img/bg12.png');*/
+            background-size: cover;
+            height: 100%;
+        }
+</style>
+<script src="~/Content/IOT/js/jquery1.12.4.min.js"></script>
+<script type="text/javascript" src="~/Content/Board/EchartGL/echarts.js"></script>
+<script type="text/javascript" src="~/Content/Board/EchartGL/echarts-gl.js"></script>
+<script type="text/javascript" src="~/Content/Board/js/world.js"></script>
+
+<div id="container" style="height:100%;box-sizing: border-box;"></div>
+
+<script>
+
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    $.getJSON('/Content/Board/Json/flight.json', function (data) {
+
+        function getAirportCoord(idx) {
+            return [data.airports[idx][3], data.airports[idx][4]];
+        }
+        var routes = data.routes.map(function (airline) {
+            return [
+                getAirportCoord(airline[1]),
+                getAirportCoord(airline[2])
+            ];
+        });
+
+        myChart.setOption({
+            backgroundColor: '#000',
+            globe: {
+                baseTexture: '/Content/Board/EarthImg/world.topo.bathy.200401.jpg',
+                heightTexture: '/Content/Board/EarthImg/bathymetry_bw_composite_4k.jpg',
+
+                shading: 'lambert',
+
+                light: {
+                    ambient: {
+                        intensity: 0.4
+                    },
+                    main: {
+                        intensity: 0.4
+                    }
+                },
+
+                viewControl: {
+                    autoRotate: false
+                }
+            },
+            series: {
+
+                type: 'lines3D',
+
+                coordinateSystem: 'globe',
+
+                blendMode: 'lighter',
+
+                lineStyle: {
+                    width: 1,
+                    color: 'rgb(50, 50, 150)',
+                    opacity: 0.1
+                },
+
+                data: routes
+            }
+        });
+
+        //myChart.setOption(option);
+    });
+
+</script>
+
+
+
+

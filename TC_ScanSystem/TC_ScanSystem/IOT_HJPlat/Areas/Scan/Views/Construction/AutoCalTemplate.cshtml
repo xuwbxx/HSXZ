@@ -1,0 +1,37 @@
+﻿<script type="text/html" id="AutoCalTemplate">
+    <div class="panel-body">
+        <table class="table table-striped table-blue">
+            <thead>
+                <tr>
+                    <th>监测点</th>
+                    <th>位置</th>
+                    <th>设备名</th>
+                    <th>风电名</th>
+                    @*<th>监测类型</th>*@
+                    <th>监测值1</th>
+                    <th>监测值2</th>
+                    <th>时间</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{if list.length>=0}}
+                {{each list as Value}}
+                <tr>
+                    <td>{{Value.PointName}}</td>
+                    <td>{{Value.PositionName}}</td>
+                    <td>{{Value.DeviceName}}</td>
+                    <td>{{Value.LayerName}}</td>
+                    @*<td>{{Value.ScanTypeName}}</td>*@
+                    <td>{{Value.ScanValue5}}</td>
+                    <td>{{Value.ScanValue6}}</td>
+                    <td>{{Value.CreateTime}}</td>
+
+                </tr>
+                {{/each}}
+                {{/if}}
+
+            </tbody>
+        </table>
+    </div>
+</script>

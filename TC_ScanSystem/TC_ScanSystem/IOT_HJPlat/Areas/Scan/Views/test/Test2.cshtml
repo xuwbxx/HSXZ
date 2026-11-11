@@ -1,0 +1,291 @@
+﻿
+@{
+    ViewBag.Title = "Test2";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<style>
+    .yujing-bg {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+        .yujing-bg > img {
+            width: 100%;
+            border: 1px solid #666;
+            user-select: none;
+        }
+
+        .yujing-bg ul {
+            margin: 0;
+        }
+
+            .yujing-bg ul li {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 0%;
+                top: 0%;
+                display: inline-block;
+                cursor: pointer;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+    .tuli {
+        width: 179px;
+        height: 235px;
+        background: url(../../../../Content/FD/icon-yujing/tuli.png);
+        position: absolute;
+        right: 1px;
+        top: 1px;
+    }
+</style>
+
+
+<div class="content">
+    <div class="col-lg-12">
+        <input type="hidden" value="46" id="select">
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#" data-toggle="tab">监测区域</a>
+            </li>
+
+        </ul>
+
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent" style="min-height: 690px;">
+            <!--车辆进出数据-->
+            <div class="tab-pane fade in active" id="shuju">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测区域：</a>
+                        <select id="select_Area" name="select_Area">
+
+                            <option value="1">海上升压站</option>
+                            <option value="46">单桩风机20号</option>
+                            <option value="47">单桩风机30号</option>
+                            <option value="48">单桩风机69号</option>
+                            <option value="49">4桩导管架风机15号</option>
+                            <option value="50">4桩导管架风机34号</option>
+                            <option value="51">4桩导管架风机50号</option>
+                            <option value="52">4桩导管架风机56号</option>
+                            <option value="53">4桩导管架风机72号</option>
+
+                        </select>
+                    </li>
+                    <li class="col-lg-2 col-md-6 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="LayerJS.SelectChange()">
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测内容：</a>
+                        <select id="select_Type" name="select_Type">
+
+                            <option value="1" data-icon="yingbian-1.png">应变监测</option>
+                            <option value="46" data-icon="yingli-A1.png">钢筋应力计</option>
+                            <option value="47" data-icon="dianji-1.png">参比电极</option>
+                            <option value="48" data-icon="qinjiao-1.png">倾角计</option>
+                            <option value="49" data-icon="jiasudu-1.png">加速度</option>
+                            <option value="50" data-icon="jingli-1.png">静力水准仪</option>
+                            <option value="51" data-icon="yingli-B1.png">钢板应力计</option>
+
+                        </select>
+                    </li>
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <input type="button" value="添加测点" onclick="AddIcon()">
+                        <input type="button" value="显示定位值" class="showposition" onClick="alert( positionleft +'+'+ positiontop)">
+                    </li>
+                </ul>
+                <!--表-->
+                <div class="yujing-bg col-lg-12 col-md-4 col-sm-6 col-xs-12" id="div_Icon">
+                    <img src="~/Content/FD/bg/monitor2.jpg" ondragstart="return false;" />
+                    <div class="tuli"></div>
+                    <ul class="icon-yujing" id="UL_Icon">
+                        
+                    </ul>
+                </div>
+
+                <div style="clear:both;"></div>
+
+            </div>
+
+
+            <!--趋势图-->
+
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    @*<script type="text/javascript" src="./苏州港太仓港区码头全寿命周期健康监测系统_files/Home_Layer.js.下载"></script>*@
+</div>
+
+<script>
+    var positionleft = '';
+    var positiontop = '';
+
+
+
+    //$('.icon-yujing>li').mousedown(function (e) {
+
+    //    var positionDiv = $(this).offset();
+    //    var distenceX = e.pageX - positionDiv.left + 233;
+    //    var distenceY = e.pageY - positionDiv.top + 185;
+    //    var that = this;
+
+    //    $(document).mousemove(function (e) {
+    //        var x = e.pageX - distenceX;
+    //        var y = e.pageY - distenceY;
+
+    //        if (x < 0) {
+    //            x = 0;
+    //        } else if (x > $('.yujing-bg').width() - 30) {
+    //            x = $('.yujing-bg').width() - 30;
+    //        }
+
+    //        if (y < 0) {
+    //            y = 0;
+    //        } else if (y > $('.yujing-bg').height() - 30) {
+    //            y = $('.yujing-bg').height() - 30;
+    //        }
+
+    //        var xLeft = x / $('.yujing-bg').width();
+    //        var xTop = y / $('.yujing-bg').height();
+
+    //        $(that).css({
+    //            'left': 100 * xLeft + '%',
+    //            'top': 100 * xTop + '%'
+    //        });
+
+    //        positionleft = 100 * xLeft + '%';
+    //        positiontop = 100 * xTop + '%';
+    //    });
+    //    $(document).mouseup(function () {
+    //        $(document).off('mousemove');
+    //    });
+
+    //});
+
+    var OriginX = '';
+    var OriginY = '';
+
+    $(document).ready(function () {
+
+        var Origin = $("div#div_Icon").offset();
+        OriginX = Origin.left;
+        OriginY = Origin.top;
+
+    })
+
+    var _move = false;
+
+    var IconEventMouseDown = function (e) {
+
+        _move = true;
+
+        var Icon = e;
+
+        $(document).mousemove(function (dom) {
+
+            if (!_move)
+            {
+                return false;
+            }
+
+            var x = dom.pageX - OriginX - 10;
+            var y = dom.pageY - OriginY - 10;
+
+            var DivWidth = $('.yujing-bg').width();
+            var DivHeight = $('.yujing-bg').height();
+
+            if (x <= 0) {
+                x = 0;
+            }
+            else if (x >= DivWidth)
+            {
+                x = DivWidth;
+            }
+
+            if (y <= 0) {
+                y = 0;
+            }
+            else if (y >= DivHeight)
+            {
+                y = DivHeight;
+            }
+            
+            var xLeft = x / DivWidth;
+            var xTop = y / DivHeight;
+
+            $(Icon).css({
+                'left': 100 * xLeft + '%',
+                'top': 100 * xTop + '%'
+            });
+
+        }).mouseup(function () {
+            _move = false;
+            $(document).off('mousemove');
+        })
+
+        //$(e).mouseup(function () {
+        //    $(e).off('mousemove');
+        //});
+        //return false;
+    }
+
+    var AddIcon = function () {
+        //alert('23345');
+        var SelectType = $("#select_Type option:selected").attr('data-icon');
+        //alert(SelectType);
+
+        $("#UL_Icon").append('<li style="background-image:url(../../../../Content/FD/icon-yujing/' + SelectType + ');" onmousedown="IconEventMouseDown(this)"></li>');
+
+    }
+
+    //初始数据库搜索并加载
+    var DataQuery = function () {
+        $.post('DataQuery', Param)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+
+                    if (data.Success) {
+
+                        $("#UL_Icon").empty();
+
+                        var Ul_Html = '';
+                        $(data.Data).each(function () {
+
+                            //类型，就是下拉框的图片
+                            var SelectType = '';
+
+                            //位置
+                            var X = '0';
+                            var Y = '0';
+
+                            Ul_Html += '<li style="background-image:url(../../../../Content/FD/icon-yujing/' + SelectType + '); left:' + X + '%; top:' + Y + '%" onmousedown="IconEventMouseDown(this)"></li>';
+                        })
+
+                        $("#UL_Icon").html(Ul_Html);
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+                //console.error(arguments);
+            })
+            .always(function (data) {
+                Pagination();
+                CloseMaskLayout();
+            });
+    }
+
+    //弹出框保存
+    var SaveIcon = function (this) {
+        var IconInfo = {};
+        IconInfo.X = $(this).left();
+        IconInfo.Y = $(this).top();
+
+        //$.ajax
+
+    }
+
+</script>

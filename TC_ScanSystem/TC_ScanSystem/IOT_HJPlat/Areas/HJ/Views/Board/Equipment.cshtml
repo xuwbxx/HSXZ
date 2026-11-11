@@ -1,0 +1,426 @@
+﻿<div class="list equipment">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">设备机械</p>
+        <div class="list-more"></div>
+    </div>
+    <div class="equipment-chart">
+        <div class="equipment-left">
+            <ul>
+                <li>
+                    <div></div>
+                    <p>小型<br />677台</p>
+                </li>
+                <li>
+                    <div></div>
+                    <p>大型<br />234台</p>
+                </li>
+                <li>
+                    <div></div>
+                    <p>特种<br />23台</p>
+                </li>
+            </ul>
+            <div>
+                <ul>
+                    <li>
+                        <span>龙门吊</span>
+                        <a style="background:#1eab8f;">8</a>
+                        <span>台</span>
+                    </li>
+                    <li>
+                        <span>盾构机</span>
+                        <a style="background:#ff6261;">6</a>
+                        <span>台</span>
+                    </li>
+                    <li>
+                        <span>塔吊</span>
+                        <a style="background:#0394d8;">24</a>
+                        <span>台</span>
+                    </li>
+                    <li>
+                        <span>吊运机</span>
+                        <a style="background:#dfbd03;">16</a>
+                        <span>台</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <span>电梯</span>
+                        <a style="background:#dfbd03;">36</a>
+                        <span>台</span>
+                    </li>
+                    <li>
+                        <span>升降机</span>
+                        <a style="background:#0394d8;">14</a>
+                        <span>台</span>
+                    </li>
+                    <li>
+                        <span>挖斗机</span>
+                        <a style="background:#1eab8f;">27</a>
+                        <span>台</span>
+                    </li>
+                    <li>
+                        <span>抓铲机</span>
+                        <a style="background:#ff6261;">57</a>
+                        <span>台</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div id="EChartDetail" class="equipment-right"  style="background:url(/Content/Board/img/4.png) no-repeat center center;"></div> -->
+        <div id="EChartDetail" class="equipment-right"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var chartArr = new Array();
+
+        var equipObj =[
+            {
+                "name": "小型设备", "num": 490,
+                "machine":
+                    [
+                        { "name": "大货车", "num": 150 },
+                        { "name": "挖土机", "num": 20 },
+                        { "name": "压路机", "num": 30 },
+                        { "name": "升降机", "num": 40 },
+                        { "name": "铲土机", "num": 50 },
+                        { "name": "吊运机", "num": 50 },
+                        { "name": "推土机", "num": 100 },
+                        { "name": "电梯", "num": 50 }
+                    ]
+            }, 
+            {
+                "name": "大型设备", "num": 84,
+                "machine":
+                    [
+                        { "name": "挖斗机", "num": 27 },
+                        { "name": "抓铲机", "num": 57 }
+                    ]
+            },
+            {
+                "name": "特种设备", "num": 34,
+                "machine":
+                    [
+                        { "name": "塔吊", "num": 14 },
+                        { "name": "龙门吊", "num": 8 },
+                        { "name": "桁车", "num": 6 },
+                        { "name": "盾构机", "num": 6 }
+                    ]
+            }
+        ];
+
+        $(".equipment-left ul li div").each(function(index,dom){
+            var iChart = echarts.init(dom);
+            chartArr.push(iChart);
+            // chartArr.push(echarts.init(dom));
+            // $(dom).html(equipObj[index].name + '<br/>' + equipObj[index].num + '台' );
+        });
+
+        // var showArr = [
+        //     ["龙门吊","盾构机","塔吊","吊运机"],
+        //     ["电梯","升降机","挖斗机","抓铲机"]
+        // ];
+        // var colorArr = [
+        //     ["#1eab8f","#ff6261","#0394d8","#dfbd03"],
+        //     ["#dfbd03","#0394d8","#1eab8f","#ff6261"]
+        // ];
+        
+        // var showData = new Array();
+
+        //在数据源中找到machine列表中存在的num，并且存入目标数组
+        // equipObj.forEach(function(item){
+        //     item.machine.forEach(function(e){
+        //         showArr.forEach(function(dataEle){
+        //             if(dataEle.indexOf(e.name) > -1)
+        //             {
+        //                 var temp = {name:e.name, num:e.num}
+        //                 showData.push(temp);
+        //             }
+        //         })
+        //     });
+        // });
+        // $(".equipment-left div ul").each(function(index, item){
+        //     $(item).children("li").each(function(i,elem){
+        //         var iFst = {};
+        //         var iScnd = {};
+        //         //在数据源中找到machine
+        //         equipObj.find((curr,ind,arr)=>{return curr.machine.find((c,inde,a)=>{
+        //             var ret = (c.name === showArr[index][i]);
+        //             if(ret)
+        //             {
+        //                 iFst = ind;
+        //                 iScnd = inde;
+        //             };
+        //             return ret;
+        //         })});
+        //         // $(elem).html("<span>" +showArr[index][i]+ "</span><a style='background:" + colorArr[index][i] + ";'>"+ equipObj[iFst].machine[iScnd].num + "</a><span>台</span>");
+        //         $(elem).html("<span>" +showArr[index][i]+ "：</span><a style='background:" + colorArr[index][i] + ";'>"+ showData.find((item)=>{return item.name === showArr[index][i]}).num + "</a><span>台</span>");
+        //     })
+        // });
+
+        $(".equipment-left div ul").each(function(index, item){
+            $(item).children("li").each(function(i,elem){
+                var num = {};
+                var name = $(elem).children('span').html();
+                equipObj.filter(function (curr, ind, arr) {
+                    return curr.machine.filter(function(c,inde,a){
+                    var ret = (c.name === name);
+                    if(ret)
+                    {
+                        num = c.num;
+                    };
+                    return ret;
+                })});                
+                $(elem).children('a').html(num);
+            })
+        });
+
+        var opts = CreateSummaryOptions(equipObj);
+
+        for (var i = 0; i < chartArr.length; i++) {
+            if (opts[i] && typeof opts[i] === "object") {
+                chartArr[i].setOption(opts[i], true);
+            }
+        }
+
+        $(".equipment-left ul li p").each(function(index,dom){
+            $(dom).html(equipObj[index].name + '<br/>' + equipObj[index].num + '台' );
+        });
+        
+        var detChart = echarts.init(document.getElementById("EChartDetail"));
+
+        var detOpt = CreateDetailOption(equipObj[0]);
+
+        if (detOpt && typeof detOpt === "object") {
+            detChart.setOption(detOpt, true);
+        }
+
+        function CreateSummaryOptions(equipObj) {
+            var retOpt = new Array();
+
+            var iLen = equipObj.length;
+            var i = 0;
+
+            var yMax = 200;
+            var yFormatter = '{value} %';
+            var tooltipFormatter = '{b}<br/>{a}:{c}%';        
+            var innerRadius = '85%';
+            var outerRadius = '100%';
+            var xCenterPosition = '50%';
+            var yCenterPosition = '50%';
+
+            // var color = ['#c23531','#2f4554', '#61a0a8', '#d48265'],
+            var itemColor = ['#8c5ae7', '#fe8e5f', '#7de3f6', 'green'];
+            var otherColor = '#51668a';
+
+            var total = 0;
+
+            equipObj.forEach(
+                function(iT){
+                    total = total + iT.num;
+                }
+            );
+
+            for (var i = 0; i < iLen; i++) {
+                var opt = {};
+                opt = {
+                    // title: {
+                    //     show: false,
+                    //     text: equipObj[i].name + '\n' + equipObj[i].num + '台',
+                    //     textStyle: {
+                    //         color: 'white',
+                    //         fontSize: 16,
+                    //         fontWeight: 'lighter',
+                    //     },
+                    //     left: 'center',
+                    //     bottom: '-5',
+                    // },
+                    // calculable : true,
+                    // tooltip:{
+                    //     trigger:'item',
+                    //     formatter:'{d}%',
+                    // },
+                    legend: { show: false, },
+                    series:
+                        [
+                            {
+                                name: equipObj[i].name,
+                                type: 'pie',
+                                hoverAnimation:false,
+                                hoverOffset: 3,
+                                radius: [innerRadius, outerRadius],
+                                center: [xCenterPosition, yCenterPosition],
+                                // center: [(Math.round(100*(i*2+1)/(iLen*2))) + '%', yCenterPosition],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'center',
+                                    },
+                                },
+                                labelLine: {
+                                    normal: {
+                                        show: false
+                                    }
+                                },
+                                // itemStyle:{
+                                //     borderWidth:2,
+                                //     borderType:'dashed',
+                                // },
+                                // tooltip: {
+                                //     // showContent:false,
+                                //     trigger: 'item',
+                                //     // show:true,
+                                //     formatter: '{a}:{c}',
+                                // },
+                                data: [
+                                    {
+                                        value: equipObj[i].num,
+                                        // name: ((Math.round((equipObj[i].num / (total)) * 1000)) / 10) + '%',
+                                        name: ((equipObj[i].num / (total)) * 100).toFixed(1) + '%',
+                                        itemStyle: {
+                                            normal: {
+                                                color: itemColor[i]
+                                            },
+                                        }
+                                    },
+                                    {
+                                        value: total - equipObj[i].num,
+                                        itemStyle: {
+                                            color: otherColor
+                                        }
+                                    },
+                                ],
+                            }
+                        ]
+                }
+                retOpt.push(opt);
+            }
+
+            return retOpt;
+        }
+
+        function CreateDetailOption(detailObj) {
+            
+            var yMax = 200;
+            var yFormatter = '{value} %';
+            var tooltipFormatter = '{b}<br/>{a}:{c}%';        
+            var innerRadius = '50%';
+            var outerRadius = '65%';
+            var xCenterPosition = '50%';
+            var yCenterPosition = '50%';
+
+            // var color = ['#c23531','#2f4554', '#61a0a8', '#d48265'],
+            var colorList = ['lime', 'deepskyblue', 'lightgreen', 'violet', 'darkorange', 'royalblue','tomato','indigo','darkslategray','slategray'];
+            // var colorList = ['green', 'skyblue', 'orange', 'pink'];
+            var otherColor = '#51668a';
+            // var total = 0;
+
+            // detailObj.forEach(
+            //     (iT) => {
+            //         total = total + iT.num;
+            //     }
+            // );
+            var itemColors = function(echartColorModel) {
+                // build a color map as your need.
+                // var colorList = [
+                //     '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                //     '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                //     '#D7504B', '#C6E579', '#F4E001', '#F0805A', '#26C0C0', '#C1232B'
+                // ];
+                return colorList[echartColorModel.dataIndex % colorList.length];
+            };
+
+            var machineData = GetDetailData(detailObj.machine);
+
+            var opt = {};
+            opt = {
+                title: {
+                    show: true,
+                    text: detailObj.name,
+                    textStyle: {
+                        color: 'white',
+                        fontSize: 16,
+                        fontWeight: 'lighter',
+                    },
+                    left: 'center', 
+                    top: 'center',
+                },
+                tooltip:{
+                    trigger:'item',
+                    formatter:'{b}（{d}%）：<br/>{c}台',
+                },
+
+                // itemStyle:{
+                //     normal:{
+                //         color:itemColor,
+                //     }
+                // },
+                // legend: { 
+                //     show: true, 
+                //     // x:center,
+                //     textStyle:{
+                //         color:"white",
+                //     },
+                //     bottom:"5%",
+                //     itemGap:10,
+                // },
+                series:
+                [
+                    {
+                        // name: detailObj.name,
+                        type: 'pie',
+                        // hoverAnimation:false,
+                        hoverOffset: 3,
+                        radius: [innerRadius, outerRadius],
+                        center: [xCenterPosition, yCenterPosition],
+                        // itemStyle:{
+                        //     color:itemColor,
+                        // },
+                        // center: [(Math.round(100*(i*2+1)/(iLen*2))) + '%', yCenterPosition],
+                        label: {
+                            show: true,
+                            formatter:'{d}%',
+                            position: 'outside',
+                        },
+                        labelLine: {
+                            show: false,
+                            length:15,
+                            length2:0,
+                        },
+                        // itemStyle:{
+                        //     borderWidth:2,
+                        //     borderType:'dashed',
+                        // },
+                        // tooltip: {
+                        //     // showContent:false,
+                        //     trigger: 'item',
+                        //     // show:true,
+                        //     formatter: '{a}:{c}',
+                        // },
+                        data: machineData,
+                    }
+                ],                
+                color: itemColors
+            }
+
+            return opt;
+        }
+        
+        function GetDetailData(machineObjs){
+            var ret = new Array();
+            machineObjs.forEach(
+                function(item){                
+                    var temp = {};
+                    temp.name = item.name;
+                    temp.value = item.num;
+                    ret.push(temp);
+                }
+            )
+            return ret;
+        };
+    })
+</script>

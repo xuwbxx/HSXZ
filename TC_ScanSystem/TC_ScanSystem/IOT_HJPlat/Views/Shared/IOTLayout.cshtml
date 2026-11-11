@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上海现代农业产业园（横沙新洲）全装配式码头全寿命健康监测系统</title>
+    <link rel="icon" href="~/Content/IOT/img/title-logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="~/Content/IOT/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/IOT/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/IOT/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/IOT/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/IOT/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/IOT/css/jquery.pagination.css" />
+
+    @*<script type="text/javascript" src="~/Scripts/Position/BaiDuApi.js"></script>*@
+
+    <script type="text/javascript" src="~/Content/IOT/js/jquery1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/Content/IOT/js/base.js"></script>
+    <script type="text/javascript" src="~/Content/IOT/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/IOT/js/script.js"></script>
+    <script type="text/javascript" src="~/Content/IOT/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="~/Content/IOT/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.pagination.min.js"></script>
+    <script type="text/javascript" src="~/Content/Board/EchartGL/echarts.js"></script>
+    <script type="text/javascript" src="~/Content/Board/EchartGL/echarts-gl.js"></script>
+    <script type="text/javascript" src="~/Scripts/template.js"></script>
+    <script type="text/javascript" src="~/Scripts/Common/CommonJS.js"></script>
+
+</head>
+<body>
+    @Html.Action("TopMenu", "Menu", new { area = "Main" })
+
+    <div class="container-fluid-full content-main">
+        <div class="row-fluid">
+
+            @Html.Action("LeftMenu", "Menu", new { area = "Main" })
+
+            <div class="content-max">
+                @RenderBody()
+                <div class="pagefoot"><p>版权所有：中交上海三航科学研究院有限公司</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    @*模态框*@
+    <div class="modal fade" id="myModal" style="margin-top:10%;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="ModalTitle" style="text-align:center; line-height:40px;"></h4>
+                </div>
+                <div class="modal-body" id="ModalContent" style="text-align:center;">
+
+                </div>
+                <div class="modal-footer">
+                    <button id="ModalClose" type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button id="ModalSubmit" type="button" class="btn btn-primary">
+                        确认
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask"></div>
+</body>
+</html>

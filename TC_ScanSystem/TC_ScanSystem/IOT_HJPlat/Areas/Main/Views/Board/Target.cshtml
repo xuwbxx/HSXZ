@@ -1,0 +1,197 @@
+﻿<div class="list index">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">指标完成率</p>
+        <div class="list-more"></div>
+    </div>
+    <div class="index-image">
+        <img src="~/Content/Board/img/index-map.png" />
+    </div>
+    <ul class="index-chart">
+        <li>
+            <div>1</div>
+            <p>安全检查完成</p>
+        </li>
+        <li>
+            <div>2</div>
+            <p>质量检查完成</p>
+        </li>
+        <li>
+            <div>3</div>
+            <p>进度计划完成</p>
+        </li>
+        <li>
+            <div>4</div>
+            <p>成本计划完成</p>
+        </li>
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        TargetQuery();
+
+        function TargetQuery() {
+            var param = {};
+            // param.PointID = $("#select_Point").val();
+
+            $(".index").addClass("mainmask");
+
+            $.post('/Main/Board/GetTarget', param)
+                .success(function (data, statusText, jqXRH) {
+                    if (data) {
+                        if (data.Success) {
+                            var obj = data.Data.Item;
+
+                            SetTargetChart(obj);
+                        }
+                    }
+                })
+                .fail(function (jqXHR, statusText, errorMessage) {
+                })
+                .always(function (data) {
+                    // 关闭等待遮罩
+                    //CloseMaskPopUp();
+                    $(".index").removeClass("mainmask");
+                });
+        }
+
+        //var targetObj = [
+        //    { "name": "安全检查", "value": 85 },
+        //    { "name": "质量检查", "value": 75 },
+        //    { "name": "进度计划", "value": 45 },
+        //    { "name": "成本计划", "value": 36 },
+        //];
+
+
+        function SetTargetChart(targetObj) {
+
+            var chartArr = new Array();
+
+            // $(".index-chart li p").each(function(index, dom){
+            //     var iChart = echarts.init($($(".index-chart li div"))[index]);
+            //     chartArr.push(iChart);
+            // });
+            $(".index-chart li div").each(function (index, dom) {
+                var iChart = echarts.init(dom);
+                chartArr.push(iChart);
+                // chartArr.push(echarts.init(dom));
+                // $(dom).html(equipObj[index].name + '<br/>' + equipObj[index].num + '台' );
+            });
+
+            var opts = CreateTargetOptions(targetObj);
+
+            for (var i = 0; i < chartArr.length; i++) {
+                if (opts[i] && typeof opts[i] === "object") {
+                    chartArr[i].setOption(opts[i], true);
+                }
+            };
+
+            $(".index-chart li p").each(function (index, dom) { $(dom).html(targetObj[index].Name + "完成");});
+
+            function CreateTargetOptions(targetObj) {
+                var retOpt = new Array();
+
+                var iLen = targetObj.length;
+
+                var i = 0;
+
+                var yMax = 200;
+                var yFormatter = '{value} %';
+                var tooltipFormatter = '{b}<br/>{a}:{c}%';
+                var innerRadius = '85%';
+                var outerRadius = '100%';
+                var xCenterPosition = '50%';
+                var yCenterPosition = '50%';
+
+                // var color = ['#c23531','#2f4554', '#61a0a8', '#d48265'],
+                var itemColor = ['#8c5ae7', '#fe8e5f', '#7de3f6', 'green'];
+                var otherColor = '#51668a';
+
+                // var total = 0;
+                targetObj.forEach(function (dom, i) {
+
+                    //for (var i = 0; i < iLen; i++) {
+                    var opt = {};
+                    opt = {
+                        // title: {
+                        //     show: true,
+                        //     text: targetObj[i].value + "%",
+                        //     textStyle: {
+                        //         color: 'white',
+                        //         fontSize: 16,
+                        //         fontWeight: 'lighter',
+                        //     },
+                        //     left: 'center',
+                        //     bottom: 'center',
+                        // },
+                        // calculable : true,
+                        // tooltip:{
+                        //     trigger:'item',
+                        //     formatter:'{d}%',
+                        // },
+                        legend: { show: false, },
+                        series:
+                            [
+                                {
+                                    name: dom.Value + "%",
+                                    type: 'pie',
+                                    hoverAnimation: false,
+                                    hoverOffset: 3,
+                                    radius: [innerRadius, outerRadius],
+                                    center: [xCenterPosition, yCenterPosition],
+                                    // center: [(Math.round(100*(i*2+1)/(iLen*2))) + '%', yCenterPosition],
+                                    label: {
+                                        normal: {
+                                            show: true,
+                                            position: 'center',
+                                        },
+                                    },
+                                    labelLine: {
+                                        normal: {
+                                            show: false
+                                        }
+                                    },
+                                    // itemStyle:{
+                                    //     borderWidth:2,
+                                    //     borderType:'dashed',
+                                    // },
+                                    // tooltip: {
+                                    //     // showContent:false,
+                                    //     trigger: 'item',
+                                    //     // show:true,
+                                    //     formatter: '{a}:{c}',
+                                    // },
+                                    data: [
+                                        {
+                                            name: dom.Value + "%",
+                                            value: dom.Value,
+                                            // name: ((Math.round((equipObj[i].num / (total)) * 1000)) / 10) + '%',
+                                            itemStyle: {
+                                                normal: {
+                                                    color: itemColor[i]
+                                                },
+                                            }
+                                        },
+                                        {
+                                            value: 100 - dom.Value,
+                                            itemStyle: {
+                                                color: otherColor
+                                            }
+                                        },
+                                    ],
+                                }
+                            ]
+                    }
+                    retOpt.push(opt);
+                    //}
+                });
+                return retOpt;
+            };
+        }
+    });
+</script>

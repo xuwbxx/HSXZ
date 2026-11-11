@@ -1,0 +1,141 @@
+﻿<div id="LayerSetPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="LayerInfoTitle">测点信息</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="LayerIdx" />
+            <input type="hidden" name="TypeLayer" />
+            <input type="hidden" name="x" />
+            <input type="hidden" name="y" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="field">区域名称:</td>
+                            <td><input name="LayerName" type="text" value="" /></td>
+                            <td class="field">所属项目:</td>
+                            <td>
+                                <select name="LayerSelect">
+                                    <option value="0">全部</option>
+                                    @{
+                                        var Projects = ViewData["Projects"] as List<DataEntity.Base_Project>;
+                                        if (Projects != null && Projects.Count > 0)
+                                        {
+                                            foreach (var item in Projects)
+                                            {
+                                                <option value="@item.ID">@item.ProjectName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field">备注：</td>
+                            <td>
+                                <input name="DescriptionLayer" type="text" value="" />
+                            </td>
+                            <td class="field">监测图分布上传:</td>
+                            <td>
+                                <input type="file" name="uploadify_layer" id="uploadify_layer" />
+                                <input type="hidden" value="" id="fileValues_layer" name="fileValues_layer" />
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td class="field">所属监测类型:</td>
+                            <td>
+                                <select name="TypeSelect">
+                                    @*<option value="0">全部</option>*@
+                                    @{
+                                        var ScanTypes = ViewData["ScanTypes"] as List<DataEntity.MK_ScanType>;
+                                        if (ScanTypes != null && ScanTypes.Count > 0)
+                                        {
+                                            foreach (var item in ScanTypes)
+                                            {
+                                                <option value="@item.ID">@item.TypeName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td class="field">背景图上传:</td>
+                            <td>
+                                <input type="file" name="uploadify_layer2" id="uploadify_layer2" />
+                                <input type="hidden" value="" id="fileValues_layer2" name="fileValues_layer2" />
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" @*data-toggle="modal" data-target="#myModal"*@ type="button" value="保存" onclick="LayerSetJS.ShowModal(this);" />
+                    <input class="btn-primary" type="button" value="退回" onclick="LayerSetJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>
+
+<script type="text/javascript">
+        $(function () {
+            $("#uploadify_layer").uploadify({
+                'swf': '/uploadify/uploadify.swf',
+                'uploader': '/Scan/Construction/UpLoad_Layer',
+                'auto': true,
+                'buttonText': '上传附件',
+                'queueSizeLimit': 3,
+                'removeCompleted':true,
+                'multi': false
+                //'onQueueComplete': function (a, b, c) { mainClientGrid.PerformCallback(jQuery("#fileValues").val()); setTimeout(function () { jQuery("#fileValues").val(""); }, 200) },
+                //'onUploadSuccess': function (file, data, response) {
+                //    data = eval("(" + data + ")")
+                //    // for (var t in file) { alert(file[t]); }
+                //    if (data.id == 1) {
+                //        alert(data.mess);
+
+                //        // jQuery("#logoImg").attr("src", data.mess);
+                //    }
+                //    else {
+                //        if (jQuery("#fileValues").val() == "") {
+                //            jQuery("#fileValues").val(data.mess);
+                //        }
+                //        else {
+                //            jQuery("#fileValues").val(jQuery("#fileValues").val() + "," + data.mess);
+                //        }
+                //    }
+                //}
+
+            });
+        });
+        $(function () {
+            $("#uploadify_layer2").uploadify({
+                'swf': '/uploadify/uploadify.swf',
+                'uploader': '/Scan/Construction/UpLoad_Layer2',
+                'auto': true,
+                'buttonText': '上传附件',
+                'queueSizeLimit': 3,
+                'removeCompleted': true,
+                'multi': false
+                //'onQueueComplete': function (a, b, c) { mainClientGrid.PerformCallback(jQuery("#fileValues").val()); setTimeout(function () { jQuery("#fileValues").val(""); }, 200) },
+                //'onUploadSuccess': function (file, data, response) {
+                //    data = eval("(" + data + ")")
+                //    // for (var t in file) { alert(file[t]); }
+                //    if (data.id == 1) {
+                //        alert(data.mess);
+
+                //        // jQuery("#logoImg").attr("src", data.mess);
+                //    }
+                //    else {
+                //        if (jQuery("#fileValues").val() == "") {
+                //            jQuery("#fileValues").val(data.mess);
+                //        }
+                //        else {
+                //            jQuery("#fileValues").val(jQuery("#fileValues").val() + "," + data.mess);
+                //        }
+                //    }
+                //}
+
+            });
+        });
+</script>

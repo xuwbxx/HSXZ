@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "菜单管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+
+
+
+<div class="content">
+    <div class="content-min col-lg-12">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#account" data-toggle="tab">菜单管理</a>
+            </li>
+            @*<li>
+                    <a href="#qushi" data-toggle="tab">趋势图</a>
+                </li>*@
+        </ul>
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--tab内容-->
+            <div class="tab-content">
+                <div class="tab-pane in active">
+                    <div id="tree"></div>
+
+                    @*<table id="treetable" class="table table-condensed table-hover table-striped fancytree-fade-expander">*@
+                    <table id="treetable" class="table table-striped table-green">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left">ID</th>
+                                <th style="text-align:left; min-width:500px">
+                                    <button id="btnRoot" type="button" class="glyphicon glyphicon-plus-sign" style="background:none; border:none; height:20px; margin-left:10px;" onclick="MenuJS.ShowAddPopup(this)" value=""></button>
+                                    <span style="margin-left:10px; padding:0;">名称</span>
+                                    @*<a class="screen-a">名称</a>*@
+                                </th>
+                                <th style="text-align:left">路径</th>
+                                <th style="text-align:left">排序</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left"></td>
+                                <td style="text-align:left"></td>
+                                <td style="text-align:left"></td>
+                                <td style="text-align:left"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!--表-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    </div>
+    <link href="~/Content/fancytree/skin-bootstrap/ui.fancytree.css" rel="stylesheet" class="skinswitcher" />
+    <script type="text/javascript" src="~/Content/fancytree/jquery-ui-dependencies/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.js"></script>
+    <script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.dnd5.js"></script>
+    <script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.edit.js"></script>
+    <script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.glyph.js"></script>
+    <script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.table.js"></script>
+    <script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.wide.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/Manage/MenuJS.js"></script>
+
+
+    @Html.Partial("MenuPop")

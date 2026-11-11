@@ -1,0 +1,117 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+
+/*页面切换*/
+.rowthree{ display:none;}
+.rowfour{ display:none;}
+.rowone{ display:none;}
+.rowtwo{ display:none;}
+.style-a-a{ background-image:url(../img/bg.png); background-size:100% 100%; -moz-background-size:100% 100%;background-attachment: fixed;}
+
+
+/*风格-change*/
+/*整体布局*/
+/*body{}*/
+.rowfive{font-size:0; padding:2vh 0; height:58vh;}
+.rowfive>div{ float:left; overflow:hidden;}
+.rowone-colone{ height:58vh; width:16%; margin-left:1%;}
+.rowone-coltwo{ height:58vh; width:35%; margin-left:1%;}
+.rowone-colthree{ height:58vh; width:22%; margin-left:1%;}
+.rowone-colfour{ height:58vh; width:22%; margin-left:1%;}
+.rowsix{font-size:0; height:36vh;}
+.rowsix>div{ float:left;}
+.rowtwo-colone{ height:36vh; width:16%; margin-left:1%;}
+.rowtwo-coltwo{ height:36vh; width:35%; margin-left:1%;}
+.rowtwo-colthree{ height:36vh; width:45%; margin-left:1%;}
+.list-more select option{ background:#1a3762; color:#fff;}
+/*方块定位*/
+.index{ height:58vh;}
+.message{ height:17vh; margin-top:2vh;}
+.prewarning{ height:39vh;}
+.speed{ height:30vh;}
+.monitor{ height:26vh; margin-top:2vh;}
+.environment{ height:36vh;}
+.equipment{ height:36vh;}
+.resources{ height:36vh;}
+.people{ height:36vh;}
+.position{ height:36vh;}
+/*指标完成率*/
+.index-image{ height:14vh; margin:2vh 0;}
+.index-image img{ width:12vw; height:16vh; margin-left:1.6vw; float:left;}
+.index-chart{ font-size:0; width:13vw; margin:0 auto; }
+.index-chart li{ display:inline-block; height:10.5vh; width:6.5vw; /*float:left;*/ margin-top:4.5vh;}
+.index-chart li>div{ width:9vh; height:9vh; margin:0 auto; border-radius:4.5vh;}
+.index-chart li p{ font:1.3vh/2.3vh '苹方'; margin-top:1vh; font-weight:300; color:#eee; text-align:center;}
+/*最新预警*/
+.message-table{ margin-top:0.9vh;}
+.message-table li{ float:left; height:3.3vh; width:19vw; margin-left:1.5vw; font:1.3vh/3.3vh '苹方'; font-weight:400; color:#ffe400; border-bottom:0.1vh dashed #367ba2;}
+.message-table li:nth-child(1){border-top:0.1vh dashed #367ba2;}
+.message-table li a{ float:left; color:rgba(255,255,255,0.8);}
+.message-table li span{ float:right;}
+/*头部*/
+.head{ height:5.5vh;}
+.head>div:nth-child(1){ float:left;}
+.head>div:nth-child(1)>a{ display:block; width:5vw; height:5.5vh;}
+.head>div:nth-child(1)>a img{width:4vw; height:2.6vh; margin-top:1.45vh;}
+.head>p:nth-child(2){ display:block; float:left; width:21vw; font:2.1vh/5.5vh '苹方'; font-weight:500; color:#fff; text-align:center; margin-bottom:0;}
+.head>div:nth-child(3){ float:right; width:8vw;}
+.head>div:nth-child(3)>p{font:1.2vh/2.4vh '苹方'; font-weight:300; color:#eee; text-align:right; margin-bottom:0; margin-top:0;}
+.head>div:nth-child(3)>p:nth-child(1){ margin-top:0.3vh;}
+/*统计*/
+.cumulative{ height:8.8vh;}
+.cumulative>ul{ height:6.8vh; margin-top:0.7vh; margin-bottom:0;}
+.cumulative>ul:nth-child(1){ margin-top:0.8vh;}
+.cumulative>ul>li{ float:left; width:32.5%; height:6.8vh; border:none; margin-right:1.25%; background:rgba(255,255,255,0.07); box-shadow: 0px 0px 1vh rgba(255,255,255,0.3) inset;}
+.cumulative>ul>li:nth-child(3){ margin-right:0;}
+.cumulative>ul>li p{font:1.4vh/6.8vh '苹方'; font-weight:500; color:#eee; padding-left:0.5vw; margin-bottom:0.5vh; float:left;}
+.cumulative>ul>li>div{ height:6.8vh; padding-left:0.5vw; vertical-align:bottom; float:right; padding-right:0.5vw;}
+.cumulative>ul>li>div a:nth-child(1){ font:2.3vh/6.8vh '苹方'; font-weight:300; color:#fff; }
+/*地图*/
+.map{ height:43.7vh;}
+
+/*预警统计*/
+/*.prewarning-chart1{ height:19vh; width:86%; margin-left:7%; margin-top:1vh;}
+.prewarning-chart2{ height:12vh; width:86%; margin-left:7%; margin-top:1vh;}*/
+
+.prewarning-chart1{ height:19vh; width:86%; margin-left:7%; margin-top:0.5vh;}
+.prewarning-chart1>div{ height:19vh; float:left; width:64%;}
+.prewarning-chart1>ul{ height:19vh; float:right; width:30%;}
+.prewarning-chart1>ul>li:nth-child(1){ margin-top:7vh;}
+.prewarning-chart1>ul>li{ height:3vh; margin:1vh 0;}
+.prewarning-chart1>ul>li>span:nth-child(1){ display:inline-block; width:1.5vw; height:2vh; margin-top:0.5vh; margin-right:0.2vw; border-radius:0.5vh;}
+.prewarning-chart1>ul>li>span:nth-child(2){font:1.1vh/3vh '苹方'; font-weight:300; color:#feffff;vertical-align:top;}
+.prewarning-chart2{ height:13vh; width:86%; margin-left:7%; margin-top:1vh;}
+
+
+/*工程进度*/
+.speed-chart-title{ height:4vh; width:94%; margin-left:3%;}
+.speed-chart-title p{ font:1.2vh/4vh '苹方'; font-weight:300; color:#eee;}
+.speed-chart-title p:nth-child(1){ float:left;}
+.speed-chart-title p:nth-child(2){ float:right;}
+.speed-chart-title p a{ color:#00d98b; font-weight:bold;}
+.speed-chart{ height:20.7vh; width:94%; margin-left:3%;}
+/*视频监控*/
+.monitor-play{ height:20.7vh; width:94%; margin-left:3%;}
+
+/*环境监控*/
+.environment-chart{ height:30.7vh; width:96%; margin-left:2%;}
+.environment-chart div{ margin:0 auto; text-align:center;}
+.environment-chart div:nth-child(1){}
+.environment-chart div ul{ height:15vh; display:inline-block;}
+.environment-chart div ul li{ height:16vh; width:6.8vw; margin:0 1.5vh; float:left;}
+.environment-chart div ul li div{ height:13vh; /*width:12vh;*/}
+.environment-chart div ul li p{font:2vh/3vh '苹方'; font-weight:300; color:#feffff;}
+
+/*设备机械*/
+.equipment-chart{ height:22.5vh; width:90%; margin-left:5%; }
+.equipment-chart2{ width:90%; margin-left:5%; margin-top:1vh;}
+.equipment-chart2 ul{ width:100%; height:7.2vh;}
+.equipment-chart2 li{ width:33%; display:inline-block; font-size:0; height:2vh; margin:0 0 0.4vh 0;} 
+.equipment-chart2 li span:nth-child(1){ display:inline-block; width:23%; height:1.6vh; border-radius:0.5vh; background:#f60; margin-right:5%;}
+.equipment-chart2 li span:nth-child(2){display:inline-block; height:2vh; font:1vh/1.6vh '苹方'; font-weight:300; color:#feffff; vertical-align:top;}
+
+.chrome_adjust {font-size: 1.2vh;-webkit-transform: scale(0.75);-o-transform: scale(1); /*针对能识别-webkit的opera browser设置*/}
+
+/*人员定位*/
+.position-chart{ height:30.7vh; width:96%; margin-left:2%;}

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03CD37F4-D742-4344-991B-4BBC46117158}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZJFramework10">
+      <HintPath>..\Tool\DllImport\ZJFramework10.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Board\Request\Environment.cs" />
+    <Compile Include="Board\Response\Environment.cs" />
+    <Compile Include="Board\Response\ProgressResponse.cs" />
+    <Compile Include="Board\Response\SummaryResponse.cs" />
+    <Compile Include="Board\Response\TargetResponse.cs" />
+    <Compile Include="Common\BaseRequest.cs" />
+    <Compile Include="Common\CacheKey.cs" />
+    <Compile Include="Common\BaseReturn.cs" />
+    <Compile Include="Common\CommonModel.cs" />
+    <Compile Include="Common\Member.cs" />
+    <Compile Include="Common\TreeView.cs" />
+    <Compile Include="Echarts\BarEchart.cs" />
+    <Compile Include="Echarts\PieEchart.cs" />
+    <Compile Include="Echarts\EchartBase.cs" />
+    <Compile Include="Echarts\LineEchart.cs" />
+    <Compile Include="Enum\AlarmEnvironmentEnum.cs" />
+    <Compile Include="Enum\AlarmEnvironmentTypeEnum.cs" />
+    <Compile Include="Enum\AlarmType.cs" />
+    <Compile Include="Enum\ConstructAutoCommunication.cs" />
+    <Compile Include="HJPlat\Request\Base_LED_SyncInfoRequest.cs" />
+    <Compile Include="HJPlat\Request\CommnicationRequest.cs" />
+    <Compile Include="HJPlat\Request\ConstructAutoRequest.cs" />
+    <Compile Include="HJPlat\Request\ConstructCfgLayerRequest.cs" />
+    <Compile Include="HJPlat\Request\ConstructCfgPointRequest.cs" />
+    <Compile Include="HJPlat\Request\ConstructCfgPositionRequest.cs" />
+    <Compile Include="HJPlat\Request\ConstructCfgProtocolRequest.cs" />
+    <Compile Include="HJPlat\Request\ConstructCfgAcquisitionRequest.cs" />
+    <Compile Include="HJPlat\Request\ConstructCfgScanTypeRequest.cs" />
+    <Compile Include="HJPlat\Request\DeviceRequest.cs" />
+    <Compile Include="HJPlat\Request\InspectionRequest.cs" />
+    <Compile Include="HJPlat\Request\LedRequest.cs" />
+    <Compile Include="HJPlat\Request\MixingStationRequest.cs" />
+    <Compile Include="HJPlat\Request\PersonInAndOutRequest.cs" />
+    <Compile Include="HJPlat\Request\PositionHistoryRequest.cs" />
+    <Compile Include="HJPlat\Request\PositionPersonRequest.cs" />
+    <Compile Include="HJPlat\Request\ProgressRequest.cs" />
+    <Compile Include="HJPlat\Request\RecordMachineQRCodeRequest.cs" />
+    <Compile Include="HJPlat\Request\RecordMachineRequest.cs" />
+    <Compile Include="HJPlat\Request\ReportByInspectionRequest.cs" />
+    <Compile Include="HJPlat\Request\SafetyHatRequest.cs" />
+    <Compile Include="HJPlat\Request\TargetRequest.cs" />
+    <Compile Include="HJPlat\Request\TrainPersonRequest.cs" />
+    <Compile Include="HJPlat\Request\VehicleRequest.cs" />
+    <Compile Include="HJPlat\Response\Base_Cave_CoordinateResponse.cs" />
+    <Compile Include="HJPlat\Response\CommunicationResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructAutoResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructCfgLayerResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructCfgPointResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructCfgPositionResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructCfgProtocolResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructCfgScanTypeResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructCfgViewPositionResponse.cs" />
+    <Compile Include="HJPlat\Response\ConstructCommandResponse.cs" />
+    <Compile Include="HJPlat\Response\CultivateStatisticResponse.cs" />
+    <Compile Include="HJPlat\Response\DeviceResponse.cs" />
+    <Compile Include="HJPlat\Response\DownloadResponse.cs" />
+    <Compile Include="HJPlat\Response\GantryCraneItemInfoResponse.cs" />
+    <Compile Include="HJPlat\Response\GantryCraneStatusResponse.cs" />
+    <Compile Include="HJPlat\Response\InspectResponse.cs" />
+    <Compile Include="HJPlat\Response\LedConfigResponse.cs" />
+    <Compile Include="HJPlat\Response\LedResponse.cs" />
+    <Compile Include="HJPlat\Response\MixingStationResponse.cs" />
+    <Compile Include="HJPlat\Response\PersonInAndOutResponse.cs" />
+    <Compile Include="HJPlat\Response\PersonPositionResponse.cs" />
+    <Compile Include="HJPlat\Response\PositionHistoryResponse.cs" />
+    <Compile Include="HJPlat\Response\ProgressResponse.cs" />
+    <Compile Include="HJPlat\Response\RecordMachineQRCodeResponse.cs" />
+    <Compile Include="HJPlat\Response\RecordMachineResponse.cs" />
+    <Compile Include="HJPlat\Response\RepaireTaskResponse.cs" />
+    <Compile Include="HJPlat\Response\ReportByInspectionResponse.cs" />
+    <Compile Include="HJPlat\Response\ReportByThreatResponse.cs" />
+    <Compile Include="HJPlat\Response\SafetyHatResponse.cs" />
+    <Compile Include="HJPlat\Response\TargetResponse.cs" />
+    <Compile Include="HJPlat\Response\TrainingTotalService.cs" />
+    <Compile Include="HJPlat\Response\TrainPersonResponse.cs" />
+    <Compile Include="HJPlat\Response\VehiclePresentResponse.cs" />
+    <Compile Include="HJPlat\Response\VehicleResponse.cs" />
+    <Compile Include="HJPlat\VideoRequest.cs" />
+    <Compile Include="HJPlat\Request\EnvironmentRequest.cs" />
+    <Compile Include="HJPlat\Request\LoginRequest.cs" />
+    <Compile Include="HJPlat\Response\EnvironmentResponse.cs" />
+    <Compile Include="Manage\Request\AccountRequest.cs" />
+    <Compile Include="Manage\Request\MenuRequest.cs" />
+    <Compile Include="Manage\Request\ProjectRequest.cs" />
+    <Compile Include="Manage\Request\RoleRequest.cs" />
+    <Compile Include="Manage\Response\AccountResponse.cs" />
+    <Compile Include="Manage\Response\MenuResponse.cs" />
+    <Compile Include="Manage\Response\MenuTree.cs" />
+    <Compile Include="Manage\Response\ProjectResponse.cs" />
+    <Compile Include="Manage\Response\RoleResponse.cs" />
+    <Compile Include="Monitor\Request\MonitorDetailRequest.cs" />
+    <Compile Include="Monitor\Request\MonitorAreaRequest.cs" />
+    <Compile Include="Monitor\Request\MonitorPointRequest.cs" />
+    <Compile Include="Monitor\Request\MonitorPositionRequest.cs" />
+    <Compile Include="Monitor\Response\MonitorDetailType.cs" />
+    <Compile Include="Monitor\Response\MonitorLayers.cs" />
+    <Compile Include="Monitor\Response\MonitorArea.cs" />
+    <Compile Include="Monitor\Response\MonitorAreaDetail.cs" />
+    <Compile Include="Monitor\Response\MonitorPointInfo.cs" />
+    <Compile Include="Monitor\Response\MonitorPosition.cs" />
+    <Compile Include="Monitor\Response\MonitorType.cs" />
+    <Compile Include="Monitor\Response\NewIndexLayer.cs" />
+    <Compile Include="Other\IntelligentVisionResponse.cs" />
+    <Compile Include="Other\WeatherResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Training\SafeKitsResponse.cs" />
+    <Compile Include="Video\HikResourceType.cs" />
+    <Compile Include="Video\VideoInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

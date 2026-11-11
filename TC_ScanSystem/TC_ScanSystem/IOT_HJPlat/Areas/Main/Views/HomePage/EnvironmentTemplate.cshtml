@@ -1,0 +1,44 @@
+﻿<script type="text/html" id="EnvironmentTemplate">
+    <p>工程环境监测</p>
+    @*<a href="javascript:void(0);" style="margin-right:100px;" onclick="MainJS.ShowEChart()">查看趋势图</a>*@
+    <a href="/Scan/Environment/Index">查看更多</a>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <!-- <th>所属区域</th> -->
+                    <th>监测点名称</th>
+                    <th>监测时间</th>
+                    <th>温度</th>
+                    <th>湿度</th>
+                    <th>噪声</th>
+                    <th>风速</th>
+                    <th>风向</th>
+                    <th>风力</th>
+                    <th>PM2.5</th>
+                    <th>PM10</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{if list.length>=0}}
+                {{each list as Value}}
+                <tr>
+                    <!-- <td>{{Value.AreaName}}</td> -->
+                    <td>{{Value.PointName}}</td>
+                    <td>{{Value.CreateDate}}</td>
+                    <td>{{Value.Temperature}}</td>
+                    <td>{{Value.Humidity}}</td>
+                    <td>{{Value.Noise}}</td>
+                    <td>{{Value.WindSpeed}}</td>
+                    <td>{{Value.WindDirectionText}}</td>
+                    <td>{{Value.WindForce}}</td>
+                    <td>{{Value.PM25}}</td>
+                    <td>{{Value.PM10}}</td>
+                </tr>
+                {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+</script>

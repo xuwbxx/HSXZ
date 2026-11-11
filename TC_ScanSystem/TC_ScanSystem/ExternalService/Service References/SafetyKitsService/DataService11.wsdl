@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHeader" type="tns:CheckHeader" />
+      <s:complexType name="CheckHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetPersonByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonByIDResult" type="tns:PersonInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PersonName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nation" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Integral" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="Station" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TraID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PersonOrder" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TraPrincipal" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsOut" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BlackList" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FingerId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReadCardId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TelPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BoxID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerDeptID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RegisterDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailabeDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="EntranceDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="LeaveDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="TrainCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TrainHour" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsCard" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsPhoto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Native" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ISPass" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmergencyContacts" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmergencyContactsTel" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaritalStatus" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RegisteredType" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="HealthReport" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SafeDuty" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContractOfLabour" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="BirthDay" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Degrees" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContractNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BloodType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BuildArea" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Passport" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CategoryLevel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PersonScan" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Standby7" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="UploadTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeleteTag" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeleteDate" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityBase" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreateUser" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OperDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperUser" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersons">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPersonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonsResult" type="tns:ArrayOfPersonInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonInfo" nillable="true" type="tns:PersonInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonPicture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonPictureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonPictureResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeparts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDepartsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartsResult" type="tns:ArrayOfDepart" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDepart">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Depart" nillable="true" type="tns:Depart" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Depart">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ParentCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartShortName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DepartOrder" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="State" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartSir" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsEpiboly" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Charge" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AreaCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AreaID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Finished" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemTypeList" type="tns:ArrayOfCodeContent" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageResId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreditCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MessageUploadTime" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Industry" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="FinishState" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsUserToolBox" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Kind" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="TempParentId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCodeContent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CodeContent" nillable="true" type="tns:CodeContent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CodeContent">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CodeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CodeOrder" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="KindID" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetRecords">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordsResult" type="tns:ArrayOfRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Record" nillable="true" type="tns:Record" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Record">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TrainType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TeachType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrainName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrainPlace" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="TrainTime" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrainContent" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrecisName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrainDepart" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrainPartType" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TrainPeriod" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="TotalTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ISFINISH" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VideoID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DemandID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BoxNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="standby3" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby5" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UploadTime" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerDeptName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeleteTag" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeleteDate" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordResult" type="tns:Record" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="queryParams" type="tns:ArrayOfDictionaryEntry" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="resultsPerpage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="order" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDictionaryEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DictionaryEntry" type="tns:DictionaryEntry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DictionaryEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRecordPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordPageResult" type="tns:ArrayOfDictionaryEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPersons">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="ArrayOfRecordPerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RecordPerson" nillable="true" type="tns:RecordPerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RecordPerson">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PersonName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nation" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SchloolLevel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TrainDepart" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Station" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TraPrincipal" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RegisteDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CommendPerson" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FingerId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReadCardId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailabeDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="LeaveDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Answer" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SGrade" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="AllNum" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PassNum" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ISPass" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="RecordID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExamID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BoxNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="standby3" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby5" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UploadTime" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeleteTag" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeleteDate" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetRecordPersonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordPersonsResult" type="tns:ArrayOfRecordPerson" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPersonsByRecordID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPersonsByRecordIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordPersonsByRecordIDResult" type="tns:ArrayOfRecordPerson" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordPersonResult" type="tns:RecordPerson" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordExams">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="ArrayOfRecordExam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RecordExam" nillable="true" type="tns:RecordExam" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RecordExam">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ExamContent" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Answer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExamType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExamImportant" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="heft" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExamID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExamName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ExamOrder" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="standby3" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="standby5" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UploadTime" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetRecordExamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordExamsResult" type="tns:ArrayOfRecordExam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordExamsByRecordID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordExamsByRecordIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordExamsByRecordIDResult" type="tns:ArrayOfRecordExam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonsPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="queryParams" type="tns:ArrayOfDictionaryEntry" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="resultsPerpage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfPersonInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonsPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonsPageResult" type="tns:PersonList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPersonPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="queryParams" type="tns:ArrayOfDictionaryEntry" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="resultsPerpage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RecordPersonList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfRecordPerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRecordPersonPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordPersonPageResult" type="tns:RecordPersonList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordExamPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="queryParams" type="tns:ArrayOfDictionaryEntry" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="resultsPerpage" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RecordExamList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfRecordExam" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRecordExamPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordExamPageResult" type="tns:RecordExamList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCodeContentByKindName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KindName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCodeContentByKindNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCodeContentByKindNameResult" type="tns:ArrayOfCodeContent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataTotalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataTotalInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPersonRecordByIdentiyId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecordID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrainContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DemandID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrainDepart" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrainName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrainType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrainTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrainPeriod" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SGrade" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISPass" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrainPrincipal" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeleteTag" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPersonRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonRecord" nillable="true" type="tns:PersonRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonRecordByIdentiyIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonRecordByIdentiyIdResult" type="tns:ArrayOfPersonRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonByIdentifyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonByIdentifyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonByIdentifyIDResult" type="tns:PersonInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordByPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PersonID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordByPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordByPersonResult" type="tns:ArrayOfRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPersonsByRIDPID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecordID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordPersonsByRIDPIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordPersonsByRIDPIDResult" type="tns:RecordPerson" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordExamByRIDPID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecordID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdentifyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordExamByRIDPIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordExamByRIDPIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordByIdentifyID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecordByIdentifyIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecordByIdentifyIDResult" type="tns:ArrayOfPersonRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonByID" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonByIDCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersons" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonsCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonPictureSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonPicture" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonPictureSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonPictureCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeparts" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartsCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecords" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordsCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordPage" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPageCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordPersons" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsByRecordIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonsByRecordID" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsByRecordIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonsByRecordIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsByRecordIDCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordPerson" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordExams" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordExamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamsCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamsByRecordIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordExamsByRecordID" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamsByRecordIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordExamsByRecordIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamsByRecordIDCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonsPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonsPage" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonsPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonsPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonsPageCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonPage" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonPageCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordExamPage" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordExamPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamPageCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCodeContentByKindNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCodeContentByKindName" />
+  </wsdl:message>
+  <wsdl:message name="GetCodeContentByKindNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCodeContentByKindNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCodeContentByKindNameCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTotalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataTotalInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDataTotalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataTotalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonRecordByIdentiyIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonRecordByIdentiyId" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonRecordByIdentiyIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonRecordByIdentiyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonRecordByIdentiyIdCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonByIdentifyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonByIdentifyID" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonByIdentifyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonByIdentifyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonByIdentifyIDCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordByPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordByPerson" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordByPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordByPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordByPersonCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsByRIDPIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonsByRIDPID" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsByRIDPIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordPersonsByRIDPIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordPersonsByRIDPIDCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamByRIDPIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordExamByRIDPID" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamByRIDPIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordExamByRIDPIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordExamByRIDPIDCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordByIdentifyIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecordByIdentifyID" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordByIdentifyIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecordByIdentifyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecordByIdentifyIDCheckHeader">
+    <wsdl:part name="CheckHeader" element="tns:CheckHeader" />
+  </wsdl:message>
+  <wsdl:portType name="DataServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">测试方法</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据人员ID获取人员信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonByIDSoapIn" />
+      <wsdl:output message="tns:GetPersonByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取人员信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonsSoapIn" />
+      <wsdl:output message="tns:GetPersonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonPicture">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取人员照片</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonPictureSoapIn" />
+      <wsdl:output message="tns:GetPersonPictureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeparts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取单位信息</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartsSoapIn" />
+      <wsdl:output message="tns:GetDepartsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecords">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取培训记录信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordsSoapIn" />
+      <wsdl:output message="tns:GetRecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据ID获取培训记录信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordSoapIn" />
+      <wsdl:output message="tns:GetRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取培训记录信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordPageSoapIn" />
+      <wsdl:output message="tns:GetRecordPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersons">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取人员培训信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordPersonsSoapIn" />
+      <wsdl:output message="tns:GetRecordPersonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonsByRecordID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据培训信息ID获取人员培训信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordPersonsByRecordIDSoapIn" />
+      <wsdl:output message="tns:GetRecordPersonsByRecordIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPerson">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据ID获取人员培训信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordPersonSoapIn" />
+      <wsdl:output message="tns:GetRecordPersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExams">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取试卷信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordExamsSoapIn" />
+      <wsdl:output message="tns:GetRecordExamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamsByRecordID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据培训信息ID获取试卷信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordExamsByRecordIDSoapIn" />
+      <wsdl:output message="tns:GetRecordExamsByRecordIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取人员信息(分页查询)</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonsPageSoapIn" />
+      <wsdl:output message="tns:GetPersonsPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取培训记录人员培训信息(分页查询)</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordPersonPageSoapIn" />
+      <wsdl:output message="tns:GetRecordPersonPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamPage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取培训记录试卷信息(分页查询)</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordExamPageSoapIn" />
+      <wsdl:output message="tns:GetRecordExamPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeContentByKindName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据KindName获取编码信息</wsdl:documentation>
+      <wsdl:input message="tns:GetCodeContentByKindNameSoapIn" />
+      <wsdl:output message="tns:GetCodeContentByKindNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTotalInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据单位Id获取基本统计信息</wsdl:documentation>
+      <wsdl:input message="tns:GetDataTotalInfoSoapIn" />
+      <wsdl:output message="tns:GetDataTotalInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonRecordByIdentiyId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据人员身份证号获取培训项目</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonRecordByIdentiyIdSoapIn" />
+      <wsdl:output message="tns:GetPersonRecordByIdentiyIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByIdentifyID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Test)根据人员身份证获取人员信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonByIdentifyIDSoapIn" />
+      <wsdl:output message="tns:GetPersonByIdentifyIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByPerson">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Test)根据人员获取培训项目</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordByPersonSoapIn" />
+      <wsdl:output message="tns:GetRecordByPersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonsByRIDPID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Test)获取单个培训项目的人员考试详情</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordPersonsByRIDPIDSoapIn" />
+      <wsdl:output message="tns:GetRecordPersonsByRIDPIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamByRIDPID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Test)获取人员考试答题记录</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordExamByRIDPIDSoapIn" />
+      <wsdl:output message="tns:GetRecordExamByRIDPIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByIdentifyID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Test)根据人员身份证号获取培训人员考试信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRecordByIdentifyIDSoapIn" />
+      <wsdl:output message="tns:GetRecordByIdentifyIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataServiceSoap" type="tns:DataServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:HelloWorldCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByID">
+      <soap:operation soapAction="http://tempuri.org/GetPersonByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersonByIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <soap:operation soapAction="http://tempuri.org/GetPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersonsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonPicture">
+      <soap:operation soapAction="http://tempuri.org/GetPersonPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersonPictureCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeparts">
+      <soap:operation soapAction="http://tempuri.org/GetDeparts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDepartsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecords">
+      <soap:operation soapAction="http://tempuri.org/GetRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecord">
+      <soap:operation soapAction="http://tempuri.org/GetRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPage">
+      <soap:operation soapAction="http://tempuri.org/GetRecordPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersons">
+      <soap:operation soapAction="http://tempuri.org/GetRecordPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordPersonsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonsByRecordID">
+      <soap:operation soapAction="http://tempuri.org/GetRecordPersonsByRecordID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordPersonsByRecordIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPerson">
+      <soap:operation soapAction="http://tempuri.org/GetRecordPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordPersonCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExams">
+      <soap:operation soapAction="http://tempuri.org/GetRecordExams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordExamsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamsByRecordID">
+      <soap:operation soapAction="http://tempuri.org/GetRecordExamsByRecordID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordExamsByRecordIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsPage">
+      <soap:operation soapAction="http://tempuri.org/GetPersonsPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersonsPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonPage">
+      <soap:operation soapAction="http://tempuri.org/GetRecordPersonPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordPersonPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamPage">
+      <soap:operation soapAction="http://tempuri.org/GetRecordExamPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordExamPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeContentByKindName">
+      <soap:operation soapAction="http://tempuri.org/GetCodeContentByKindName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCodeContentByKindNameCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTotalInfo">
+      <soap:operation soapAction="http://tempuri.org/GetDataTotalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonRecordByIdentiyId">
+      <soap:operation soapAction="http://tempuri.org/GetPersonRecordByIdentiyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersonRecordByIdentiyIdCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByIdentifyID">
+      <soap:operation soapAction="http://tempuri.org/GetPersonByIdentifyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPersonByIdentifyIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByPerson">
+      <soap:operation soapAction="http://tempuri.org/GetRecordByPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordByPersonCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonsByRIDPID">
+      <soap:operation soapAction="http://tempuri.org/GetRecordPersonsByRIDPID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordPersonsByRIDPIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamByRIDPID">
+      <soap:operation soapAction="http://tempuri.org/GetRecordExamByRIDPID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordExamByRIDPIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByIdentifyID">
+      <soap:operation soapAction="http://tempuri.org/GetRecordByIdentifyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecordByIdentifyIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataServiceSoap12" type="tns:DataServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:HelloWorldCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByID">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersonByIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <soap12:operation soapAction="http://tempuri.org/GetPersons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersonsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonPicture">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonPicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersonPictureCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeparts">
+      <soap12:operation soapAction="http://tempuri.org/GetDeparts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDepartsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecords">
+      <soap12:operation soapAction="http://tempuri.org/GetRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecord">
+      <soap12:operation soapAction="http://tempuri.org/GetRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPage">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersons">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordPersons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordPersonsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonsByRecordID">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordPersonsByRecordID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordPersonsByRecordIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPerson">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordPersonCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExams">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordExams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordExamsCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamsByRecordID">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordExamsByRecordID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordExamsByRecordIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsPage">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonsPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersonsPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonPage">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordPersonPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordPersonPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamPage">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordExamPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordExamPageCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeContentByKindName">
+      <soap12:operation soapAction="http://tempuri.org/GetCodeContentByKindName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCodeContentByKindNameCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTotalInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetDataTotalInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonRecordByIdentiyId">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonRecordByIdentiyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersonRecordByIdentiyIdCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByIdentifyID">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonByIdentifyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPersonByIdentifyIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByPerson">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordByPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordByPersonCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordPersonsByRIDPID">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordPersonsByRIDPID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordPersonsByRIDPIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordExamByRIDPID">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordExamByRIDPID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordExamByRIDPIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordByIdentifyID">
+      <soap12:operation soapAction="http://tempuri.org/GetRecordByIdentifyID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecordByIdentifyIDCheckHeader" part="CheckHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataService">
+    <wsdl:port name="DataServiceSoap" binding="tns:DataServiceSoap">
+      <soap:address location="http://58.213.214.158:50001/STBMS.DataWebService/DataService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataServiceSoap12" binding="tns:DataServiceSoap12">
+      <soap12:address location="http://58.213.214.158:50001/STBMS.DataWebService/DataService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

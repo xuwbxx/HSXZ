@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "设备配置管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+@{
+    var Projects = ViewData["Projects"] as List<DataEntity.Base_Project>;
+    //var Layers = ViewData["Layers"] as List<DataEntity.MK_Layer>;
+    //var ScanTypes = ViewData["ScanTypes"] as List<DataEntity.MK_ScanType>;
+    //var Protocols = ViewData["Protocols"] as List<DataEntity.MK_Protocol>;
+    //var Postions = ViewData["Postions"] as List<DataEntity.MK_Position>;
+    //var Devices = ViewData["Devices"] as List<DataEntity.MK_Device>;
+    //var Config = ViewData["Devices"] as DataEntity.MK_AutoReadConfig;
+    //var Time = Config == null ? null : Config.BeginDate;
+    //var Interval = Config == null ? null : Config.Interval;
+}
+
+<div class="content">
+    <div class="content-min col-lg-12">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#layer">通讯设备管理</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#scanType">设备管理</a>
+            </li>
+        </ul>
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--通讯设备管理-->
+            <div class="tab-pane fade in active" id="layer">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">所属项目：</a>
+                        <select id="SelLayerProj">
+                            <option value="0">全部</option>
+                            @{
+                                if (Projects != null && Projects.Count > 0)
+                                {
+                                    foreach (var item in Projects)
+                                    {
+                                        <option value="@item.ID">@item.ProjectName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="CommunicationJS.DoComQuery()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增" onclick="CommunicationJS.AddCom()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="ComHtmlTemplate" class="panel panel-primary">
+
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="PaginationCom" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--设备-->
+            <div class="tab-pane fade" id="scanType">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">所属项目：</a>
+                        <select id="Select_Project">
+                            <option value="0">全部</option>
+                            @{
+                                
+                                if (Projects != null && Projects.Count > 0)
+                                {
+                                    foreach (var item in Projects)
+                                    {
+                                        <option value="@item.ID">@item.ProjectName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测区域：</a>
+                        <select id="Select_Layer">
+                            <option value="0">全部</option>
+                            @{
+                                var Layers = ViewData["Layers"] as List<DataEntity.MK_Layer>;
+                                if (Layers != null && Layers.Count > 0)
+                                {
+                                    foreach (var item in Layers)
+                                    {
+                                        <option value="@item.ID">@item.LayerName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">通讯设备：</a>
+                        <select id="Select_Communication">
+                            <option value="0">全部</option>
+                            @{
+                                var Communications = ViewData["Communications"] as List<DataEntity.MK_CommunicationDevice>;
+                                if (Communications != null && Communications.Count > 0)
+                                {
+                                    foreach (var item in Communications)
+                                    {
+                                        <option value="@item.ID">@item.CommunicationName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="DeviceJS.DoDeviceQuery()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增" onclick="DeviceJS.AddDevice()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="DeviceHtmlTemplate" class="panel panel-primary">
+
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="PaginationDevice" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+            </div>
+
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+@Html.Partial("ComTemplate")
+@Html.Partial("ComPopUp")
+@Html.Partial("DeviceTemplate")
+@Html.Partial("DevicePopUp")
+<script type="text/javascript" src="~/Scripts/IOT/Communication.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/Device.js"></script>
+@*@Html.Partial("LayerTemplate")
+@Html.Partial("LayerPopUp")
+
+@Html.Partial("PointTemplate")
+@Html.Partial("PointPopUp")
+
+@Html.Partial("PositionTemplate")
+@Html.Partial("PositionPopUp")
+
+@Html.Partial("ProtocolTemplate")
+@Html.Partial("ProtocolPopUp")
+
+@Html.Partial("ScanTypeTemplate")
+@Html.Partial("ScanTypePopUp")
+
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigLayer.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigPoint.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigPosition.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigProtocol.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigScanType.js"></script>*@

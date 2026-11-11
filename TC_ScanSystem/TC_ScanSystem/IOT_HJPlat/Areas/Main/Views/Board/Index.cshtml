@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "横沙码头监测平台";
+    Layout = "~/Views/Shared/BoardLayout.cshtml";
+}
+
+@Html.Action("Nav")
+
+<div class="rowone">
+    <div class="rowone-colone">
+        @Html.Action("Target")
+        @Html.Action("Alarm")
+    </div>
+    <div class="rowone-coltwo" style="vertical-align:top;">
+        @Html.Action("Head")
+        @Html.Action("Cumulative")
+        @Html.Action("Map2")
+    </div>
+    <div class="rowone-colthree">
+        @Html.Action("Prewarning")
+    </div>
+    <div class="rowone-colfour">
+        @Html.Action("Speed")
+        @Html.Action("Monitor")
+    </div>
+</div>
+
+<div class="rowtwo">
+    <div class="rowtwo-colone">
+        @Html.Action("Environment")
+    </div>
+    <div class="rowtwo-coltwo">
+        @Html.Action("Equipment")
+    </div>
+    <div class="rowtwo-colthree">
+        @Html.Action("Resource")
+    </div>
+    <div class="rowtwo-colfour">
+        @Html.Action("People")
+    </div>
+</div>
+
+<script>
+// JavaScript Document
+
+$(document).ready(function(){
+	//
+	$('.more').hover(function(){
+		$('.more').fadeOut(200);
+		$('.nav-ul').fadeIn(500);
+		$('.nav-change').delay(500).css({"background":"rgba(12,37,75,0.6)"});	
+	},function(){});
+	
+	$('.nav-change').hover(function(){},function(){
+		$('.more').fadeIn(200);
+		$('.nav-ul').fadeOut(500);	
+		$('.nav-change').delay(500).css({"background":"rgba(12,37,75,0.0)"});	
+	});
+	
+	$('.nav-ul').children('li').hover(function(){
+		$(this).children('a').children('div').css({"background-color":"#475ad3"});	
+		$(this).children('a').children('p').css({"color":"#848ece","font-weight":"500"});
+	},function(){
+		$(this).children('a').children('div').css({"background-color":"#848ece"});	
+		$(this).children('a').children('p').css({"color":"#fff","font-weight":"300"});
+	});
+	
+	$('.input-style-a-a').click( function(){
+		$('body').removeClass('style-a-a style-a-b style-b-a style-b-b').addClass('style-a-a');
+	});
+	$('.input-style-a-b').click( function(){
+		$('body').removeClass('style-a-a style-a-b style-b-a style-b-b').addClass('style-a-b');
+	});
+	$('.input-style-b-a').click( function(){
+		$('body').removeClass('style-a-a style-a-b style-b-a style-b-b').addClass('style-b-a');
+	});
+	$('.input-style-b-b').click( function(){
+		$('body').removeClass('style-a-a style-a-b style-b-a style-b-b').addClass('style-b-b');
+	});
+});
+</script>

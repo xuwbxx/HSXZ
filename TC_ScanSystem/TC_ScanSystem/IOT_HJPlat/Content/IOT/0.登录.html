@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="sign-html">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>太湖隧道项目</title>
+<link rel="icon" href="img/title-logo.ico" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="css/sign-style.css" />
+<script type="text/javascript" src="js/jquery1.12.4.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<style>
+
+</style>
+</head>
+<body class="sign">
+	<div class="sign-content">
+        <div class="sign-logo-1">
+        	<img src="img/sign-logo-1.png"/>
+        </div>
+        <div class="sign-contentmin">
+        	<div class="sign-logo-2"></div>
+            <div class="sign-in">
+            	<div>
+                	<a>密码登录</a>
+                </div>
+                <input class="input1" type="text" placeholder="请输入用户名"/>
+                <input class="input2" type="password" placeholder="请输入密码"/>
+                <label class="sign-check">
+                    <input type="checkbox" value="记住用户名"/>
+                    <a>记住用户名</a>
+                </label>
+                <input class="input3" type="submit" value="登录"/>
+                <p><a href="#">忘记密码？</a></p>
+            </div>
+            <p>没有账号，请联系管理员</p>
+        </div>
+        <div class="sign-footer">
+        	<p>版权所有：中交上海三航科学研究院有限公司</p>
+            <p><a href="#">联系电话：021—64399960</a></p>
+        </div>
+    </div>
+</body>
+<script>
+$('.sign-contentmin').css({'margin-top':($('.sign').height()-$('.sign-logo-1').height()-$('.sign-contentmin').height()-$('.sign-footer').height()-20)*0.3+'px','margin-bottom':($('.sign').height()-$('.sign-logo-1').height()-$('.sign-contentmin').height()-$('.sign-footer').height()-20)*0.7+'px'})
+ window.onresize = function(){
+	$('.sign-contentmin').css({'margin-top':($('.sign').height()-$('.sign-logo-1').height()-$('.sign-contentmin').height()-$('.sign-footer').height()-20)*0.3+'px','margin-bottom':($('.sign').height()-$('.sign-logo-1').height()-$('.sign-contentmin').height()-$('.sign-footer').height()-20)*0.7+'px'}) 
+}
+</script>
+</html>

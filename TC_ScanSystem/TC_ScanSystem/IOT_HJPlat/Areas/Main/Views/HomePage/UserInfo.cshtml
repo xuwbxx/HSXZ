@@ -1,0 +1,47 @@
+﻿@{
+    var userInfo = Model as Model.Common.Member;
+}
+<div class="list user-information">
+    <p>用户信息</p>
+    <a href="#">@*用户信息修改*@</a>
+    <div>
+        <img src="~/Content/IOT/img/user-pic.png" alt="#" />
+        <ul>
+            <li>
+                <a>用户名：</a>
+                <a>@userInfo.UserName</a>
+            </li>
+            <li>
+                <a>姓名：</a>
+                <a>@userInfo.RealName</a>
+            </li>
+            <li>
+                <a>部门：</a>
+                <a>@userInfo.DepartName</a>
+            </li>
+            <li>
+                <a>职位：</a>
+                <a>@userInfo.PositionName</a>
+            </li>
+            <li>
+                <a>电话：</a>
+                <a>@userInfo.Mobile</a>
+            </li>
+        </ul>
+        @*<div>
+                <p>订阅提醒</p>
+                <div>
+                    <input type="checkbox" />
+                    <a>无线监测</a>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <a>龙门吊报警</a>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <a>检查单统计月报</a>
+                </div>
+            </div>*@
+    </div>
+</div>

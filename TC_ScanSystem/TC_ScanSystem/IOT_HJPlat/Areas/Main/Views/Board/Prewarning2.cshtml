@@ -1,0 +1,458 @@
+﻿<div class="list prewarning">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">预警统计</p>
+        <div class="list-more">
+            <ul>
+                <li class="active">今日</li>
+                <!-- <li>本周</li> -->
+                <li>本月</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="prewarning-chart1" style="background:url(/Content/Board/img/6.png) no-repeat center center;"> -->
+    <div class="prewarning-chart1">
+        <div id="EChartSummary" style="height:100%;"></div>
+        <ul>
+            <li>
+                <span style="background:#ff8687;"></span>
+                <span>一级预警</span>
+            </li>
+            <li>
+                <span style="background:#6181eb;"></span>
+                <span>二级预警</span>
+            </li>
+            <li>
+                <span style="background:#564ac6;"></span>
+                <span>三级预警</span>
+            </li>
+        </ul>
+    </div>
+    <div class="prewarning-chart2">
+        <div id="EChartDetailWarning" style="height:100%; width:100%"></div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //var warningObj = [
+        //    {
+        //        "name": "一级预警", "num": 22,
+        //        "item":
+        //            [
+        //                { "name": "塔吊", "num": 14 },
+        //                { "name": "龙门吊", "num": 8 },
+        //            ]
+        //    },
+        //    {
+        //        "name": "二级预警", "num": 41,
+        //        "item":
+        //            [
+        //                { "name": "龙门吊", "num": 8 },
+        //                { "name": "高大模板", "num": 27 },
+        //                { "name": "深基坑支护", "num": 6 }
+        //            ]
+        //    },
+        //    {
+        //        "name": "三级预警", "num": 97,
+        //        "item":
+        //            [
+        //                { "name": "塔吊", "num": 14 },
+        //                { "name": "龙门吊", "num": 8 },
+        //                { "name": "桁车", "num": 6 },
+        //                { "name": "盾构机", "num": 6 },
+        //                { "name": "深基坑支护", "num": 6 },
+        //                { "name": "地下水位", "num": 57 },
+        //            ]
+        //    }
+        //];
+        var warningObj = [
+            {
+                "name": "一级预警", "num": 0,
+                "item":
+                    [
+                        //{ "name": "塔吊", "num": 14 },
+                        //{ "name": "龙门吊", "num": 8 },
+                    ]
+            },
+            {
+                "name": "二级预警", "num": 0,
+                "item":
+                    [
+                        //{ "name": "龙门吊", "num": 8 },
+                        //{ "name": "高大模板", "num": 27 },
+                        //{ "name": "深基坑支护", "num": 6 }
+                    ]
+            },
+            {
+                "name": "三级预警", "num": 6,
+                "item":
+                    [
+                        { "name": "基坑监测", "num": 3 },
+                        { "name": "高大模板", "num": 2 },
+                        { "name": "降排水", "num": 1 },
+                    ]
+            }
+        ];
+
+        // var chartSummary = echarts.init($(".prewarning-chart1:first"));
+        var chartSummary = echarts.init(document.getElementById('EChartSummary'));
+        var chartDetailWarning = echarts.init(document.getElementById('EChartDetailWarning'));
+        // var chartDetail = echarts.init($(".prewarning-chart2").first());
+
+        // $(".equipment-left div ul").each(function(index, item){
+        //     $(item).children("li").each(function(i,elem){
+        //         var num = {};
+        //         var name = $(elem).children('span').html();
+        //         equipObj.find((curr,ind,arr)=>{return curr.machine.find((c,inde,a)=>{
+        //             var ret = (c.name === name);
+        //             if(ret)
+        //             {
+        //                 num = c.num;
+        //             };
+        //             return ret;
+        //         })});
+        //         $(elem).children('a').html(num);
+        //     })
+        // });
+
+        var optSum = CreateSummaryOption(warningObj);
+        chartSummary.setOption(optSum, true);
+
+        var optDetWarning = CreateDetailOptionWarning(warningObj);
+        chartDetailWarning.setOption(optDetWarning, true);
+
+
+        chartDetailWarning.resize();
+
+        function CreateSummaryOption(warningObj) {
+            var iLen = warningObj.length;
+            var i = 0;
+            // var tooltipFormatter = '{b}<br/>{a}:{c}%';
+            var innerRadius = '65%';
+            var outerRadius = '75%';
+            var xCenterPosition = '50%';
+            var yCenterPosition = '50%';
+            var total = 0;
+            var dataArr = new Array();
+            var legendArr = new Array();
+
+            // var color = ['#c23531','#2f4554', '#61a0a8', '#d48265'],
+            var colorList = ['#8c5ae7', '#fe8e5f', '#7de3f6', 'green'];
+
+            var colors = function(echarColorModel){
+                return colorList[echarColorModel.dataIndex % colorList.length];
+            };
+
+            warningObj.forEach(function(item){
+                    total = total + item.num;
+                    legendArr.push(item.name);
+                    dataArr.push({name:item.name, value:item.num});
+                }
+            );
+
+            var titleName = '预警总数' + '\n' + total + "条";
+
+            var opt = {};
+            opt = {
+                title: {
+                    show: true,
+                    text: titleName,
+                    textStyle: {
+                        color: 'white',
+                        fontSize: 16,
+                        fontWeight: 'lighter',
+                    },
+                    left: 'center',
+                    bottom: 'center',
+                },
+                //legend:{
+                //    // data:['设备','车辆','人员','test'],
+                //    data:legendArr,
+                //    //orient: 'horizontal',
+                //    orient:'vertical',
+                //    width:'100%',
+                //    textStyle:{
+                //        color: 'rgba(255,255,255,1)',
+                //        fontSize:15,
+                //    },
+                //    right:'0%',
+                //    bottom:'center',
+                //    itemGap:20,
+                //    // padding:0,
+                //    itemWidth:22,
+                //    itemHeight:15,
+                //    align:'left',
+                //},
+                // tooltip:{
+                //     trigger:'item',
+                //     formatter:'{d}%',
+                // },
+                // legend: { show: true, },
+                color:colors,
+                series:
+                    [
+                        {
+                            // name: titleName,
+                            type: 'pie',
+                            hoverAnimation:true,
+                            hoverOffset: 10,
+                            radius: [innerRadius, outerRadius],
+                            center: [xCenterPosition, yCenterPosition],
+                            label: {
+                                show: true,
+                                position: 'outside',
+                                formatter:'{d}%',
+                            },
+                            labelLine: {
+                                show: true,
+                            },
+                            data: dataArr,
+                        }
+                    ]
+            }
+            return opt;
+        };
+
+        function CreateDetailOptionWarning(warningObj) {
+            // var iLen = warningObj.length;
+            // var i = 0;
+            // var tooltipFormatter = '{b}<br/>{a}:{c}%';
+            // var innerRadius = '65%';
+            // var outerRadius = '75%';
+            // var xCenterPosition = '50%';
+            // var yCenterPosition = '50%';
+            var total = 0;
+            // var dataArr = new Array();
+            //var xAxisDataArr = ['龙门吊', '塔吊', '盾构机', '深基坑支护', '高大模板', '地下水位',];
+            var xAxisDataArr = ["基坑监测",'高大模板','降排水',];
+            var yAxisDataArr = [];
+            var yAxisDataBg = [];
+
+            //初始化y轴值
+            xAxisDataArr.forEach(function(i){
+                yAxisDataArr.push(0);
+            });
+
+            // var color = ['#c23531','#2f4554', '#61a0a8', '#d48265'];
+            var colorList = ['#8c5ae7', '#fe8e5f', '#7de3f6', 'green'];
+
+            var colors = function(echarColorModel){
+                return colorList[echarColorModel.dataIndex % colorList.length];
+            };
+
+            warningObj.forEach(
+                function(elem){
+                    elem.item.forEach(
+                        function(itemDet){
+                            var tempIndex = xAxisDataArr.indexOf(itemDet.name);
+                            if(tempIndex > -1)
+                            {
+                                yAxisDataArr[tempIndex] = yAxisDataArr[tempIndex] + itemDet.num;
+                            }
+                        }
+                    );
+                    total = total + elem.num;
+                    // legendArr.push(item.name);
+                    // dataArr.push({name:item.name, value:item.num});
+                }
+            );
+
+            yMax = total;
+            //初始化y轴值
+            xAxisDataArr.forEach(function(i){
+                yAxisDataBg.push(yMax);
+            });
+
+            // var colorList = ['lime', 'deepskyblue', 'lightgreen', 'violet', 'darkorange', 'royalblue','tomato','indigo','darkslategray','slategray'];
+            var colorList = ['#FF1493','#D2691E','#FFD700','#00008B','#FF0000','#FFFF00','#00FF00','#00FFFF','#800080','#FF00FF',];
+            var colorList1 = ['#006400','#FF4500','#00FF00','#3CB371','#8A2BE2','#40E0D0','#4B0082','#003C9D','#FFFF00','#CC0000 ',];
+            var colorList2 = ['#32CD32','#FF7F50','#FF7F50','#FFD700','#87CECB','#40E0D0','#EE82EE','#33FFDD','#00FFFF','#FF00FF',];
+            var barWidthValue = 5;
+
+            var hexToRgba = function(hex, alpha) {
+                var rgb = [];
+                if (isNaN(alpha) || alpha > 1 || alpha < 0) {
+                    alpha = 1
+                }
+                hex = hex.substr(1);//去除前缀 # 号
+
+                if (hex.length === 3) { // 处理 "#abc" 成 "#aabbcc"
+                    hex = hex.replace(/(.)/g, '$1$1');
+                }
+
+                hex.replace(/../g, function(color){
+                    rgb.push(parseInt(color, 0x10));//按16进制将字符串转换为数字
+                });
+                rgb.push(alpha);//按16进制将字符串转换为数字
+                return "rgba(" + rgb.join(",") + ")";
+            };
+
+            var colors = function(eChartColorModel){
+                var currColor0 = colorList1[eChartColorModel.dataIndex % colorList1.length];
+                var currColor1 = colorList2[eChartColorModel.dataIndex % colorList2.length];
+                var retColor = {
+                    type: 'linear',
+                    x:0,
+                    y:0,
+                    x2:1,
+                    y2:0,
+                    colorStops:[
+                        // {offset: 0,color:hexToRgb(currColor, 0.8)},
+                        {offset: 0,color:hexToRgba(currColor0, 1.0)},
+                        {offset: 1,color:hexToRgba(currColor1, 1.0)}
+                    ]
+                };
+                return retColor;
+            };
+
+            var colors2 = function(eChartColorModel){
+                var currColor = colorList2[eChartColorModel.dataIndex % colorList2.length];
+                return currColor;
+            }
+
+            var bgBorderColor = function(eChartColorModel){
+                var currColor = colorList[eChartColorModel.dataIndex % colorList.length];
+                return currColor;
+            };
+
+            // var tf = function(fmt){
+            //     fmt.marker = '';
+            // }
+            var optDet = {};
+            var optDet = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    },
+                    // formatter: '{b}<br/>{c1}',
+                    formatter: function(params){
+                        // fmt.marker = '';
+                        var marker = '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:'+ colorList2[params[1].dataIndex] +'"></span>';
+                        var retStr = marker + params[1].name + '警告数：' + params[1].value
+                        return retStr;
+                        // return params[1].marker + params[1].name + '<br/>' + params[1].value;
+                    },
+                },
+                grid: {
+                    left: '5%',
+                    right: '-10%',
+                    bottom: '0%',
+                    top: '8%',
+                    containLabel: true
+                },
+                xAxis: {
+                    max: yMax,
+                    axisLine: {
+                        show: false,
+                    },
+                    axisLabel: {
+                        show:false,
+                    },
+                    splitLine: {
+                        show: false,
+                    },
+                    axisTick:{
+                        show:false,
+                    }
+                },
+                yAxis: [{
+                    type:'category',
+                    data: xAxisDataArr.reverse(),
+                    // intervel:40,
+                    splitNumber:2,
+                    axisLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        show:false,
+                        textStyle: {
+                            color: '#ddd',
+                        }
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                    axisTick:{
+                        show:false,
+                    }
+                }, {
+                    type:'category',
+                    // 辅助 x 轴
+                    show: false,
+                    data: xAxisDataArr,
+                    // intervel:40,
+                    splitNumber:2,
+                }],
+                // color:colors2,
+                series: [
+                    {
+                        // 辅助系列
+                        type           : 'bar',
+                        silent         : true,
+                        // xAxisIndex     : 1,
+                        itemStyle      : {
+                            normal         : {
+                            // barBorderRadius: 20,
+                            color          : '#ddd'
+                                }
+                            },
+                        barWidth: barWidthValue,
+                        barGap: '-100%',
+                        itemStyle:{
+                            color: 'rgba(255,255,255,0)',
+                            borderColor: '#40E0D0',
+                            // borderColor: colors2,
+                            borderWidth:1,
+                            // opacity:1,
+                        },
+                        data: yAxisDataBg,
+                    },
+                    {
+                        type: 'bar',
+                        data: yAxisDataArr.reverse(),
+                        barWidth: barWidthValue,
+                        label:{
+                            show:true,
+                            position:['0%','-300%'],
+                            // formatter:'{b}预警 %（{c}/'+ total +'）',
+                            formatter: function(params) {
+                                var retStr = '';
+                                // retStr = "<p><i style='background-color:" + colorList1[params.dataIndex] + "'></i>"+ params.name+"预警"+ ((params.value*100/total).toFixed(1))+ "%（" + params.value +"/"+ total +'）' + "</p>";
+                                // retStr = "<p style='background-color:" + colorList1[params.dataIndex] + "'>"+ params.name+"预警"+ ((params.value*100/total).toFixed(1))+ "%（" + params.value +"/"+ total +'）' + "</p>";
+                                // retStr = '<span style="color:' + colorList1[params.dataIndex] +';">'+ params.name + '预警'+ ((params.value*100/total).toFixed(1))+ '%（' + params.value +'/'+ total +'）</span>';
+                                retStr = params.name + '预警' + ((params.value*100/total).toFixed(1))+ '%（' + params.value +'/'+ total + '）';
+                                // retStr = '<p style="color:red">test</p>';
+                                // params.marker = "<span style='display:inline-block;background-color:#dfbd03'>" + retStr + "</span>";
+                                // params.color = 'red';
+                                return retStr;
+                            },
+                            //color: colors2,
+                            color: '#FFF',
+                        },
+                        barCategoryGap:'100%',
+                        itemStyle: {
+                            // barBorderRadius: 20,
+                            color: colors,
+                            // new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            //     offset: 0,
+                            //     color: '#99d9ea'
+                            // }, {
+                            //     offset: 1,
+                            //     color: '#3fa7dc'
+                            // }]),
+                            // shadowColor: 'rgba(0, 0, 0, 0.4)',
+                            // shadowBlur: 20
+                        }
+                    }
+                ]
+            };
+            return optDet;
+        };
+    })
+
+</script>

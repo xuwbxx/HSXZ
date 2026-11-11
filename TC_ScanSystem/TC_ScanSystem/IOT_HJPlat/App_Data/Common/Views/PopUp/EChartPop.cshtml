@@ -1,0 +1,31 @@
+﻿@*EChart弹出窗*@
+<div id="EchartPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p id="EChartTitle">趋势图</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <div class="EChartselect">
+            <a>切换皮肤:</a>
+            <select id="ThemeChoose" @*onchange="Scan_EnvironmentJS.ChooseTheme(this)"*@>
+                <option value="macarons">蛋白</option>
+                <option value="shine">明亮</option>
+                <option value="wonderland">仙境</option>
+                <option value="dark">黑暗</option>
+                <option value="vintage">复古</option>
+                <option value="roma">罗马</option>
+            </select>
+        </div>
+        <div id="EchartDiv">
+            <div class="popup-content" id="EChartContent" style="width:95%; margin:0 auto;"></div>
+        </div>
+        
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Content/EChart/js/echarts.min.js"></script>
+
+@*皮肤*@
+<script type="text/javascript" src="~/Content/EChart/Theme/macarons.js"></script>
+<script type="text/javascript" src="~/Content/EChart/Theme/dark.js"></script>
+<script type="text/javascript" src="~/Content/EChart/Theme/shine.js"></script>
+<script type="text/javascript" src="~/Content/EChart/Theme/vintage.js"></script>
+<script type="text/javascript" src="~/Content/EChart/Theme/wonderland.js"></script>

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "用户管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<div class="content">
+    <div class="content-min col-lg-12">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#account" data-toggle="tab">用户账户数据</a>
+            </li>
+            @*<li>
+                <a href="#qushi" data-toggle="tab">趋势图</a>
+            </li>*@
+        </ul>
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--车辆进出实时数据-->
+            <div class="tab-pane fade in active" id="account">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">姓名：</a>
+                        <input type="text" name="txt_RealName" value="" />
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">用户名：</a>
+                        <input type="text" name="txt_UserName" value="" />
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                        <input class="btn btn-primary" type="button" value="查询" onclick="AccountJS.DoQuery()" />
+                        <!--<input type="button" value="重置查询"/>-->
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增用户" onclick="AccountJS.Add()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="AccountHtml">
+                </div>
+
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div id="Pagination">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+
+@Html.Partial("AccountPop")
+@Html.Partial("Template")
+
+<script type="text/javascript" src="~/Scripts/Manage/AccountJS.js"></script>

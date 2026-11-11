@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "视频列表";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+
+
+<div class="row-fluid">
+    <div class="col-lg-12">
+        <!--tab内容-->
+        <div class="tab-content">
+            <!--车辆进出数据-->
+            <div class="tab-pane in active">
+                <!--树形结构-->
+                <div class="row-fluid" style=" padding-bottom:15px;">
+                    <div class="col-lg-2 col-md-3 hidden-md hidden-xs tree-main tree-main-video">
+                        <!--第一个树-->
+                        <div id="treeview-video" class="treeview-video">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12" style="padding-right:0;">
+                        <div id="preview_1" class="video-div" style="height:500px; background:#eee;">
+                            @*这里放视频预览控件，高度可改*@
+                        </div>
+                        <div style="height:40px;">
+                            分屏
+                            <select id="select_FenPin">
+                                <option value="1">1 X 1</option>
+                                <option value="2">2 X 2</option>
+                                <option value="3">3 X 3</option>
+                            </select>
+                            <input class="btn-primary" type="button" onclick="DoFullScreen()" value="全屏播放" style="font:12px/12px '微软雅黑'; color:#fff; font-weight:bold; height:30px; width:80px; background:#5faee3; border-radius:2px; margin:10px 0px 0px 15px; border:none; float:right;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/IOT/VideoScan.js"></script>
+<script type="text/javascript" src="~/Content/IOT/js/bootstrap-treeview.js"></script>
+<script type="text/javascript" src="~/Content/IOT/js/jquery.fullscreen-0.4.1.min.js"></script>
+
+
+@*视频播放*@
+<script type="text/javascript" src="~/Scripts/Video/jquery.sticky.js"></script>
+<script type="text/javascript" src="~/Scripts/Video/layer/layer.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Video/playback.js"></script>
+<script type="text/javascript" src="~/Scripts/Video/preview.js"></script>
+<script type="text/javascript" src="~/Scripts/Video/setting.js"></script>
+<script type="text/javascript" src="~/Scripts/Video/HiKangJS.js"></script>
+
+<script type="text/javascript">
+    var DoFullScreen = function () {
+        //$('.home-table').fullscreen();
+        //return false;
+
+        if ($.fullscreen.isFullScreen()) {
+            $.fullscreen.exit();
+
+            return false;
+        } else {
+            $('#preview_1').fullscreen();
+            //console.log($('#gwy-tbody').children('tr').children('td').height());
+            return false;
+        }
+    }
+</script>
+
+
+

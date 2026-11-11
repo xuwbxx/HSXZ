@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewBag.Title = "历史轨迹";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/IOT/css/bootstrap-select.min.css">
+<script type="text/javascript" src="~/Content/IOT/js/bootstrap-select.min.js"></script>
+
+<div class="content">
+    <div class="content-min col-lg-12">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#track" data-toggle="tab">环境数据</a>
+            </li>
+            <li>
+                <a href="#yuliu" data-toggle="tab">预留</a>
+            </li>
+        </ul>
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--车辆进出实时数据-->
+            <div class="tab-pane fade in active" id="track">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                        <select class="selectpicker" data-live-search="true" id="Select_Person">
+                            <option value="0">请选择人员</option>
+                            @{ 
+                                var Persons = Model as List<DataEntity.DataContext.Safety_PersonInfo>;
+                                foreach (var item in Persons)
+                                {
+                                    <option value="@item.Idx">@item.PersonName</option>
+                                }
+                            }
+                        </select>
+                    </li>
+                    <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <label for="dtp_input1" class="col-md-2 control-label">开始时间：</label>
+                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input1">
+                            <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="dtp_input1" name="stackBegin" value="" /><br />
+                    </div>
+                    <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <label for="dtp_input2" class="col-md-2 control-label">结束时间：</label>
+                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input2">
+                            <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="dtp_input2" name="stackEnd" value="" /><br />
+                    </div>
+                    <li class="col-lg-1 col-md-4 col-sm-6 col-xs-12">
+                        <input class="btn btn-primary" type="button" value="显示轨迹" onclick="HistoryQuery()" />
+                        <!--<input type="button" value="重置查询"/>-->
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="allmap"></div>
+
+            </div>
+            <!--趋势图-->
+            <div class="tab-pane fade" id="yuliu">
+                预留位置
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .mine-screen div.bootstrap-select ul.dropdown-menu li {
+        font-size: inherit;
+        margin-bottom: inherit;
+        margin-top: inherit;
+    }
+
+    .mine-screen div.bootstrap-select ul.dropdown-menu li > a {
+        font: inherit;
+        display: inherit;
+        width: inherit;
+        text-align: inherit;
+        color: white;
+    }
+    /*div.bootstrap-select {
+        width: 150px;
+    }*/
+</style>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+<script>
+
+    var map;
+
+    $(document).ready(function () {
+
+        setTimeout(MapLoad, 1000);
+
+    });
+
+    var MapLoad = function () {
+
+        $("div#allmap").css('height', window.innerHeight - 200);
+        $("div.bootstrap-select").css("width", "150px" );
+        $("ul.dropdown-menu").css("height", "300px");
+
+        MapInit();
+    }
+
+    var MapInit = function () {
+        map = new BMap.Map("allmap");    // 创建Map实例
+        var point = new BMap.Point(118.66872792882400, 32.05649817066350);//中心点
+        map.centerAndZoom(point, 18);  // 初始化地图,设置中心点坐标和地图级别
+        //map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        AddMarker(point);
+        ToolBuild();
+    }
+
+    //设置跳点
+    var AddMarker = function (point) {
+        var marker = new BMap.Marker(point);  // 创建标注
+        map.addOverlay(marker);               // 将标注添加到地图中
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+    }
+
+    //工具栏
+    var ToolBuild = function () {
+
+        var top_left_control = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT });// 左上角，添加比例尺
+        var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+        map.addControl(top_left_control);
+        map.addControl(top_left_navigation);
+        //添加地图类型控件
+        //map.addControl(new BMap.MapTypeControl({
+        //    mapTypes: [
+        //        BMAP_NORMAL_MAP,
+        //        BMAP_HYBRID_MAP
+        //    ]
+        //}));
+    }
+
+    var HistoryQuery = function () {
+        var Param = {};
+        Param.UserID = $("select#Select_Person").val();
+        if (Param.UserID == null || Param.UserID == 0)
+            return;
+
+        OpenMaskLayout();
+
+        $.post('PositionHistoryQuery', Param)
+                .success(function (data, statusText, jqXRH) {
+                    if (data) {
+                        if (data.Success) {
+
+                            DisplayPositionHistory(data.Data);
+                        }
+                    }
+                })
+                .fail(function (jqXHR, statusText, errorMessage) {
+                    //console.error(arguments);
+                })
+                .always(function (data) {
+                    CloseMaskLayout();
+                });
+    }
+
+    //显示轨迹图
+    var DisplayPositionHistory = function (points) {
+        $(points).each(function () {
+            var point = new BMap.Point(XValue, YValue);
+            AddMarker(point);
+        })
+    }
+
+</script>

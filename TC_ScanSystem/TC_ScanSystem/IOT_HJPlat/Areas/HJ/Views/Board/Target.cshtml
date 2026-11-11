@@ -1,0 +1,163 @@
+﻿<div class="list index">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">指标完成率</p>
+        <div class="list-more"></div>
+    </div>
+    <div class="index-image">
+        <img src="~/Content/Board/img/index-map.png" />
+    </div>
+    <ul class="index-chart">
+        <li>
+            <div>1</div>
+            <p>安全检查完成</p>
+        </li>
+        <li>
+            <div>2</div>
+            <p>质量检查完成</p>
+        </li>
+        <li>
+            <div>3</div>
+            <p>进度计划完成</p>
+        </li>
+        <li>
+            <div>4</div>
+            <p>成本计划完成</p>
+        </li>
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var targetObj = [
+            { "name": "安全检查", "value": 85 },
+            { "name": "质量检查", "value": 75 },
+            { "name": "进度计划", "value": 45 },
+            { "name": "成本计划", "value": 36 },
+        ];
+
+        var chartArr = new Array();
+
+        // $(".index-chart li p").each(function(index, dom){
+        //     var iChart = echarts.init($($(".index-chart li div"))[index]);
+        //     chartArr.push(iChart);
+        // });
+        $(".index-chart li div").each(function(index,dom){
+            var iChart = echarts.init(dom);
+            chartArr.push(iChart);
+            // chartArr.push(echarts.init(dom));
+            // $(dom).html(equipObj[index].name + '<br/>' + equipObj[index].num + '台' );
+        });
+
+        var opts = CreateTargetOptions(targetObj);
+
+        for (var i = 0; i < chartArr.length; i++) {
+            if (opts[i] && typeof opts[i] === "object") {
+                chartArr[i].setOption(opts[i], true);
+            }
+        };
+
+        function CreateTargetOptions(targetObj) {
+            var retOpt = new Array();
+
+            var iLen = targetObj.length;
+            var i = 0;
+
+            var yMax = 200;
+            var yFormatter = '{value} %';
+            var tooltipFormatter = '{b}<br/>{a}:{c}%';        
+            var innerRadius = '85%';
+            var outerRadius = '100%';
+            var xCenterPosition = '50%';
+            var yCenterPosition = '50%';
+
+            // var color = ['#c23531','#2f4554', '#61a0a8', '#d48265'],
+            var itemColor = ['#8c5ae7', '#fe8e5f', '#7de3f6', 'green'];
+            var otherColor = '#51668a';
+
+            // var total = 0;
+
+            for (var i = 0; i < iLen; i++) {
+                var opt = {};
+                opt = {
+                    // title: {
+                    //     show: true,
+                    //     text: targetObj[i].value + "%",
+                    //     textStyle: {
+                    //         color: 'white',
+                    //         fontSize: 16,
+                    //         fontWeight: 'lighter',
+                    //     },
+                    //     left: 'center',
+                    //     bottom: 'center',
+                    // },
+                    // calculable : true,
+                    // tooltip:{
+                    //     trigger:'item',
+                    //     formatter:'{d}%',
+                    // },
+                    legend: { show: false, },
+                    series:
+                        [
+                            {
+                                name: targetObj[i].value + "%",
+                                type: 'pie',
+                                hoverAnimation:false,
+                                hoverOffset: 3,
+                                radius: [innerRadius, outerRadius],
+                                center: [xCenterPosition, yCenterPosition],
+                                // center: [(Math.round(100*(i*2+1)/(iLen*2))) + '%', yCenterPosition],
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'center',
+                                    },
+                                },
+                                labelLine: {
+                                    normal: {
+                                        show: false
+                                    }
+                                },
+                                // itemStyle:{
+                                //     borderWidth:2,
+                                //     borderType:'dashed',
+                                // },
+                                // tooltip: {
+                                //     // showContent:false,
+                                //     trigger: 'item',
+                                //     // show:true,
+                                //     formatter: '{a}:{c}',
+                                // },
+                                data: [
+                                    {
+                                        name: targetObj[i].value + "%",
+                                        value: targetObj[i].value,
+                                        // name: ((Math.round((equipObj[i].num / (total)) * 1000)) / 10) + '%',
+                                        itemStyle: {
+                                            normal: {
+                                                color: itemColor[i]
+                                            },
+                                        }
+                                    },
+                                    {
+                                        value: 100 - targetObj[i].value,
+                                        itemStyle: {
+                                            color: otherColor
+                                        }
+                                    },
+                                ],
+                            }
+                        ]
+                }
+                retOpt.push(opt);
+            }
+
+            return retOpt;
+        };
+
+    });
+</script>

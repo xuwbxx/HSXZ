@@ -1,0 +1,26 @@
+﻿@*详情弹出框*@
+<div id="ProtocolPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="ProtocolTitle">协议信息</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="ProtocolID" />
+            <input type="hidden" name="ProtocolType" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="field">协议名称:</td>
+                            <td><input name="ProtocolName" type="text" value="" /></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" @*data-toggle="modal" data-target="#myModal"*@ type="button" value="保存" onclick="ConstructConfigProtocolJS.ShowModal();" />
+                    <input class="btn-primary" type="button" value="退回" onclick="ConstructConfigProtocolJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>

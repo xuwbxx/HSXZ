@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "位置管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+@{
+    var Projects = ViewData["Projects"] as List<DataEntity.DataContext.Base_Project>;
+    var Layers = ViewData["Layers"] as List<DataEntity.DataContext.Scan_JC_Layer>;
+    var ScanTypes = ViewData["ScanTypes"] as List<DataEntity.DataContext.Scan_JC_ScanType>;
+}
+<div class="tab-pane fade" id="position">
+<!--筛选条件-->
+<ul class="mine-screen row-fluid">
+    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <a class="screen-a">所属项目：</a>
+        <select id="Select_Project">
+            <option value="0">全部</option>
+            @{
+                if (Projects != null && Projects.Count > 0)
+                {
+                    foreach (var item in Projects)
+                    {
+                        <option value="@item.ID">@item.ProjectName</option>
+                    }
+                }
+            }
+        </select>
+    </li>
+    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <a class="screen-a">监测区域：</a>
+        <select id="Select_Layer">
+            <option value="0">全部</option>
+            @{
+                if (Layers != null && Layers.Count > 0)
+                {
+                    foreach (var item in Layers)
+                    {
+                        <option value="@item.ID">@item.LayerName</option>
+                    }
+                }
+            }
+        </select>
+    </li>
+    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <a class="screen-a">监测类型：</a>
+        <select id="Select_ScanType">
+            <option value="0">全部</option>
+            @{
+                if (ScanTypes != null && ScanTypes.Count > 0)
+                {
+                    foreach (var item in ScanTypes)
+                    {
+                        <option value="@item.ID">@item.TypeName</option>
+                    }
+                }
+            }
+        </select>
+    </li>
+    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <input type="button" value="查询" onclick="ConstructConfigPositionJS.DoPositionQuery()" />
+        @*<input type="button" value="重置查询" />*@
+    </li>
+    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <input type="button" value="新增" onclick="ConstructConfigPositionJS.AddPosition()" />
+        @*<input type="button" value="重置查询" />*@
+    </li>
+</ul>
+<!--表-->
+<div id="PositionHtmlTemplate" class="panel panel-primary">
+
+</div>
+<!--翻页-->
+<div class="change-page" style="height:34px;">
+    <div class="box">
+        <div id="Pagination" class="page fl">
+        </div>
+    </div>
+</div>
+</div>
+
+
+@Html.Partial("PositionTemplate")
+@Html.Partial("PositionPopUp")
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigPosition.js"></script>
+

@@ -1,0 +1,130 @@
+﻿<div id="PointPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="PointInfoTitle">测点信息</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="PointID" />
+            <input type="hidden" name="PointType" />
+            <input type="hidden" name="x" />
+            <input type="hidden" name="y" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="field">测点名称:</td>
+                            <td><input name="PointName" type="text" value="" /></td>
+                            <td class="field">传感器编号:</td>
+                            <td><input name="pName" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">通道1关键字:</td>
+                            <td><input name="PointMapDataName" type="text" value="" /></td>
+                            <td class="field">通道2关键字:</td>
+                            <td><input name="PointMapDataName2" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">单位1:</td>
+                            <td><input name="PointUnit" type="text" value="" /></td>
+                            <td class="field">单位2:</td>
+                            <td><input name="PointUnit2" type="text" value="" /></td>
+                        </tr>
+                        @*<tr>
+                            <td class="field">监测坐标X:</td>
+                            <td><input name="PointMapX" type="text" value="" /></td>
+                            <td class="field">监测坐标Y:</td>
+                            <td><input name="PointMapY" type="text" value="" /></td>
+                        </tr>*@
+                        <tr>
+                            <td class="field">通道1最大值:</td>
+                            <td><input name="PointMaxNum" type="text" value="" /></td>
+                            <td class="field">通道2最大值:</td>
+                            <td><input name="PointMaxNum2" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">通道1最小值:</td>
+                            <td><input name="PointMinNum" type="text" value="" /></td>
+                            <td class="field">通道2最小值:</td>
+                            <td><input name="PointMinNum2" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">理论标高:</td>
+                            <td><input name="testHeight" type="text" value="" /></td>
+                            <td class="field">实际标高:</td>
+                            <td><input name="PointHeight" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">传感器出厂编号（自编号）:</td>
+                            <td><input name="SensorNumber" type="text" value="" /></td>
+                            <td class="field">监测设备:</td>
+                            <td>
+                                <select name="PointDeviceSelect">
+                                    <option value="0">全部</option>
+                                    @{
+                                        var Devices = ViewData["Devices"] as List<DataEntity.MK_Device>;
+                                        if (Devices != null && Devices.Count > 0)
+                                        {
+                                            foreach (var item in Devices)
+                                            {
+                                                <option value="@item.ID">@item.DeviceName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+
+    @*<td class="field">
+          监测类型
+      </td>
+      <td>
+          <select name="PointSelectScanType">
+              <option value="0">全部</option>
+              @{
+                  var ScanTypes = ViewData["ScanTypes"] as List<DataEntity.MK_ScanType>;
+                  if (ScanTypes != null && ScanTypes.Count > 0)
+                  {
+                      foreach (var item in ScanTypes)
+                      {
+                          <option value="@item.ID">@item.TypeName</option>
+                      }
+                  }
+              }
+          </select>
+      </td>*@
+                            <td class="field">监测位置:</td>
+                            <td>
+                                <select name="PointPositionSelect">
+                                    <option value="0">全部</option>
+                                    @{
+                                        var Postions = ViewData["Postions"] as List<DataEntity.MK_Position>;
+                                        if (Postions != null && Postions.Count > 0)
+                                        {
+                                            foreach (var item in Postions)
+                                            {
+                                                <option value="@item.ID">@item.PositionName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td class="field">传感器类型:</td>
+                            <td>
+                                <select name="PointSensorSelect">
+                                    <option value="0">全部</option>
+                                    <option value="1">FBG-4911光纤光栅式传感器</option>
+                                    <option value="2">振弦式传感器</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" @*data-toggle="modal" data-target="#myModal"*@ type="button" value="保存" onclick="PointSetJS.ShowModal(this);" />
+                    <input class="btn-primary" type="button" value="退回" onclick="PointSetJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>

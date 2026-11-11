@@ -1,0 +1,21 @@
+﻿<script type="text/html" id="VideoListTemplate">
+    <p>施工监控</p>
+    
+    <a href="/Video/Monitor/Index">查看更多</a>
+    {{if list.length==0}}
+    <p>暂无视频</p>
+    {{else}}
+    <ul>
+        {{for i in list}}
+        <li>
+            <a href='javascript:void(0);' data-name="{{list[i].NodeValue}}" data-index={{list[i].IndexCode}} onclick='Video_HikJS.PlayVideo(this)'>
+                <div class="monitor-icon{{i}}"></div><p>{{list[i].NodeValue}}</p>
+            </a>
+        </li>
+        {{i++;}}
+        {{/each}}
+    </ul>
+    {{/if}}
+</script>
+
+

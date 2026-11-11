@@ -1,0 +1,850 @@
+﻿
+@{
+    ViewBag.Title = "监测区域详情";
+    Layout = "~/Views/Shared/MonitorLayout.cshtml";
+}
+@{
+    //var MonitorTypes = Model as List<Model.Monitor.Response.MonitorDetailType>;
+    var MonitorAreas = Model as List<Model.Monitor.Response.MonitorArea>;
+    string img = ViewData["BackGroundPic"].ToString();
+}
+<style>
+    /*.canvas {
+        z-index: -1;
+    }*/
+</style>
+
+<input id="hid_MonitorAreaID" type="hidden" value="@ViewData["MonitorAreaID"].ToString()" />
+<input id="hid_MonitorTypeID" type="hidden" value="@ViewData["MonitorTypeID"].ToString()" />
+<input id="hid_BackGroundPic" type="hidden" value="../../Upload/@img" />
+@*<input id="hid_BackGroundPic" type="hidden" value="../../Upload/@ViewData["BackGroundPic"].ToString()" />*@
+<input id="hid_isClick" type="hidden" value="true" />
+
+<div class="bg">
+    <img src="~/Upload/power.png" />
+    @*<canvas id="container" style="cursor:default;z-index:-1"></canvas>*@
+</div>
+
+@*详情DIV*@
+@*<div class="popup monitarea" style="display:block; z-index:99">*@
+<input type="hidden" id="PointId" />
+    <div class="popup monitarea" style="display:block;">
+        <div class="popuptitle">
+            <p>@ViewData["MonitorTypeName"].ToString()</p>
+            <div class="popclose" onclick="CloseMonitorDetail()">关闭</div>
+            <select id="select_MonitorType" onchange="ChangeMonitorArea()">
+                @{
+                    if (MonitorAreas != null && MonitorAreas.Count > 0)
+                    {
+                        foreach (var item in MonitorAreas)
+                        {
+                            var IsSelect = "";
+                            if (ViewData["MonitorAreaID"].ToString().Equals(item.ID.ToString()))
+                            {
+                                IsSelect = "selected";
+                            }
+                            var val = 0;
+                            //if (item.ID.HasValue)
+                            //{
+                            //    val = item.AreaID.Value;
+                            //}
+                            <option @(IsSelect) value=@(item.ID)> @item.MonitorAreaName </option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <div class="popupcontent">
+            <img src="../../Upload/@(ViewData["MonitorAreaPic"].ToString())" draggable="false" />
+            <ul id="ul_MonitorPosition" class="ul-style1"></ul>
+        </div>
+        <div class="popupselect">
+            @*<select id="select_MonitorPosition" onchange="ChangeMonitorPoint()"></select>*@
+            <input class="monitdateopen" onclick="OpenMonitorPointData()" type="button" value="查看监测数据" />
+        </div>
+        <div class="monitareatable">
+            <table id="table_MonitorPointInfo"></table>
+        </div>
+    </div>
+
+    @*数据列表DIV*@
+    @*<div class="popup popup2 monitdate" style="display:block;">*@
+    <div class="popup popup2 monitdate" hidden="hidden">
+        <div class="popuptitle">
+            <p id="p_MonitorPoint">监测数据(126-1-1-A)</p>
+            <div class="popclose" onclick="CloseMonitorPointData()">关闭</div>
+        </div>
+        <ul class="popupscreen">
+          
+            <li style="width:200px;">
+                @*<select style="float:left; width:120px;" id="select_MonitorPosition" onchange="ChangeMonitorPoint()"></select>*@
+                <span>开始时间：</span>
+                <input type="text" id="Point_date_start" name="datetimepicker" style="width:110px;" value="" placeholder="" class="form-control">
+            </li>
+            <li style="width:200px;">
+                <span>结束时间：</span>
+                <input type="text" id="Point_date_end" name="datetimepicker" style="width:110px;" value="" placeholder="" class="form-control">
+            </li>
+            <li style="width:100px;">
+                <input class="chaxun" style="width:100px;" type="button" value="查询" onclick="PointTimeQuery(0)" />
+            </li>
+        </ul>
+
+        <div class="monitdatetable">
+            <table>
+                <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td id="value1">监测值(MPa)</td>
+                        @*<td id="value2">原始值</td>*@
+                        <td>监测时间</td>
+                    </tr>
+                </thead>
+                <tbody id="table_MonitorPointValue"></tbody>
+            </table>
+
+            <div id="Pagination"></div>
+        </div>
+
+        <div id="div_MonitorEcharts" class="monitdateechart" style="background:#fff;  height:300px;"></div>
+        @*<div class="popupselect">
+                <input type="button" value="查看历史数据" />
+            </div>*@
+    </div>
+
+<div class="typeswitch">
+    <div class="button">
+        <a class="change">
+            <div></div>
+            <p>传感器类型/位置</p>
+        </a>
+    </div>
+    <ul class="changeul">
+        @{
+
+            var MonitorTypes = ViewData["MonitorTypes"] as List<Model.Monitor.Response.MonitorType>;
+            if (MonitorTypes != null && MonitorTypes.Count > 0)
+            {
+                foreach (var item in MonitorTypes)
+                {
+                    <li data-id="@item.ID" data-name="@item.MonitorName" class="@item.IconClass" onclick="TurnBackMonitorType(@item.ID)">
+                        <div></div>
+                        <p>@item.MonitorName</p>
+                    </li>
+                }
+            }
+        }
+
+    </ul>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        ParamInit();
+        MonitorInit();
+        $('#Point_date_start').val(DatTimeTransfer1());
+        $('#Point_date_end').val(DatTimeTransfer2);
+       // init();
+       // InitView(4, -1, 25);
+        MonitorType=$("#hid_MonitorTypeID").val();
+        //animate();
+
+        //$(testData).each(function (index, dom) { CreatePoint(dom) });
+
+        @*var name = @Html.Raw(Json.Encode(ViewData["MonitorAreaName"]));
+        $(testData).each(function (index, dom) {
+            if (name === dom.MonitorAreaName) {
+                dom.method = "ShowMonitorArea";
+                dom.params = null;
+                CreatePoint(dom)
+            }
+        });*@
+    })
+
+    var MonitorType="0";
+    var testData = [
+        { ID: 1, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "126排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "-40", Y: "-70", Z: "-1"},
+        { ID: 2, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "128排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "-20", Y: "-25", Z: "-1" },
+        { ID: 3, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "130排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "4", Y: "25" , Z: "-1"},
+        { ID: 4, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "132排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "14", Y: "40", Z: "-1"},
+        { ID: 5, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "134排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "22", Y: "55", Z: "-1" }
+    ]
+
+    //类型切换
+    var onoff = true;
+    $('.change').click(function () {
+        if (onoff) {
+            $('.changeul').fadeIn();
+            onoff = false;
+        } else {
+            $('.changeul').fadeOut();
+            onoff = true;
+        }
+    })
+
+    var TurnBackMonitorType = function (ID) {
+        if (ID == null || ID == 0) {
+            return;
+        }
+        window.location.href = 'Index?MonitorTypeID=' + ID;
+    }
+
+    var SensorDatas = [];
+
+    var MonitorInit = function () {
+        var MonitorAreaID = $("#hid_MonitorAreaID").val();
+
+        if (MonitorAreaID == null || MonitorAreaID == '' || MonitorAreaID == 0) {
+            return;
+        }
+
+        ChangeMonitorArea(MonitorAreaID)
+
+        //var MonitorAreaName = $("#MonitorAreaName").val();
+
+        //if (MonitorAreaName == null || MonitorAreaName == '' || MonitorAreaName == 0) {
+        //    return;
+        //}
+
+        //ChangeMonitorArea(MonitorAreaName);
+
+    }
+
+    var detChart;
+
+    var PageInit = function () {
+        //截图上的位置
+        $('ul#ul_MonitorPosition').html('');
+        //测点下拉框
+        $('select#select_MonitorPosition').html('');
+        //传感器信息
+        $('table#table_MonitorPointInfo').html('');
+        //测点数据
+        $('#table_MonitorPointValue').html('');
+        //测点名称
+        $('p#p_MonitorPoint').html('监测数据()');
+        //echart
+        if (detChart != null) {
+            detChart.clear();
+        }
+
+        //$('#Point_date_start').val('');
+       // $('#Point_date_end').val('');
+        $('#Pagination').html('');
+    }
+
+
+
+
+    //切换监测区域
+    //var ChangeMonitorArea = function (MonitorAreaID) {
+    //    var Param = {};
+    //    if (MonitorAreaID == null) {
+    //        Param.MonitorAreaID = $('select#select_MonitorArea').val();
+    //    }
+    //    else {
+    //        Param.MonitorAreaID = MonitorAreaID;
+    //    }
+
+    var ChangeMonitorArea = function (MonitorAreaID) {
+        var Param = {};
+        var TypeName = '';
+        Param.MonitorAreaID = $('select#select_MonitorType').val();
+        //if (MonitorAreaID == null) {
+        PageInit
+        //    Param.MonitorAreaID = $('select#select_MonitorType').val();
+        //}
+        //else {
+        //    Param.MonitorAreaID = MonitorAreaID;
+        //}
+        TypeName = $('select#select_MonitorType option:selected').text();
+
+        $(".popuptitle p").html(TypeName);
+
+        $(".popupcontent img").attr('src', $('select#select_MonitorType option:selected').data("img"));
+
+       
+
+        PageInit();
+        Param.BeginTime=$('#Point_date_start').val();
+        Param.EndTime=$('#Point_date_start').val();
+        $.post('getMonitorPosition', Param)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+                        $("#value1").html(data.title1);
+                        $("#value2").html(data.title2);
+                        $(".popupcontent img").attr('src',"../../Upload/"+data.Url);
+                        //$(".popupcontent img").attr('src',"../../Upload/"+data.BackGroundPath);
+                        var html = '';
+                        if(MonitorType==4)
+                        {
+                            $('ul#ul_MonitorPosition').attr('class','ul-style2');
+                        }
+                        else
+                        {
+                            $('ul#ul_MonitorPosition').attr('class','ul-style1');
+                        }
+                        $(data.Data).each(function (index, dom) {
+                            html += '<li data-id="' + dom.ID + '" onclick="ChangeMonitorPoint(' + dom.ID + ')" class="' + dom.IconClass + '" title="' + dom.PointName + '" style="left:' + dom.X + '%; top:' + dom.Y + '%;"></li>';
+                            //if(dom.DataCount>0)
+                            //{
+                            //    html += '<li data-id="' + dom.ID + '" onclick="ChangeMonitorPoint(' + dom.ID + ')" class="' + (dom.IsAlarm ? 'specialred' : '') + '" title="' + dom.PointName + '" style="left:' + dom.X + '%; top:' + dom.Y + '%;"></li>';
+                            //}
+                            //else
+                            //{
+                            //    html += '<li data-id="' + dom.ID + '" onclick="ChangeMonitorPoint(' + dom.ID + ')" class="specialgray" title="' + dom.PointName + '" style="left:' + dom.X + '%; top:' + dom.Y + '%;"></li>';
+                            //}
+
+                        });
+                        //$('ul#ul_MonitorPosition').html('');
+                        $('ul#ul_MonitorPosition').html(html);
+
+                        SensorDatas = [];
+                        //将监测数据保存
+                        $(data.Data).each(function (index1, dom1) {
+                            $(dom1.MonitorPoints).each(function (index2, dom2) {
+                                $(dom2.MonitorValues).each(function (index3, dom3) {
+                                    var SensorData = {};
+                                    SensorData.PointID = dom2.ID;
+                                    SensorData.Value1 = dom3.Value1;
+                                    SensorData.Value2 = dom3.Value2;
+                                    SensorData.CreateTime = dom3.CreateTime;
+                                    SensorData.IsAlarm = dom3.IsAlarm;
+                                    SensorDatas.push(SensorData);
+                                })
+                            })
+
+                        });
+
+                        ChangeMonitorPoint();
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+                //$(".monitdate").hide();
+            })
+            .always(function (data) {
+              //  $(".monitdate").hide();
+            });
+    }
+
+    //切换监测位置
+    var ChangeMonitorPosition = function (MonitorPositionID) {
+        var Param = {};
+        if (MonitorPositionID == null) {
+            Param.MonitorPositionID = $('ul#ul_MonitorPosition li').first().attr('data-id');
+            if (Param.MonitorPositionID == null)
+                return;
+        }
+        else {
+            Param.MonitorPositionID = MonitorPositionID;
+        }
+
+        //测点下拉框
+        $('select#select_MonitorPosition').html('');
+        //传感器信息
+        $('table#table_MonitorPointInfo').html('');
+        //测点数据
+        $('#table_MonitorPointValue').html('');
+        //测点名称
+        $('p#p_MonitorPoint').html('监测数据()');
+        //echart
+        if (detChart != null) {
+            detChart.clear();
+        }
+       // $('#Point_date_start').val('');
+        //$('#Point_date_end').val('');
+        $('#Pagination').html('');
+
+        $.post('getMonitorPoint', Param)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+                        var html = '';
+                        $(data.Data).each(function (index, dom) {
+
+                            html += '<option value="' + dom.ID + '">' + dom.MonitorPointName + '</option>';
+
+                        });
+                        //$('select#select_MonitorPosition').html('');
+                        $('select#select_MonitorPosition').html(html);
+
+                        var FirstMonitorPositionID = $('select#select_MonitorType option').first().val();
+                        if (FirstMonitorPositionID == null || FirstMonitorPositionID == '') {
+                            //$('table#table_MonitorPointInfo').html('');
+                            //$('#table_MonitorPointValue').html('');
+                            //清空echarts
+                            //if (detChart != null)
+                            //{
+                            //    detChart.clear();
+                            //    $('p#p_MonitorPoint').html('监测数据()');
+                            //}
+                        }
+                        else {
+                            ChangeMonitorPoint(FirstMonitorPositionID);
+                        }
+
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+
+            })
+            .always(function (data) {
+            });
+    }
+
+    //切换监测点
+    var ChangeMonitorPoint = function (MonitorPointID) {
+        var Param = {};
+
+        var FirstMonitorTypeID = $('select#select_MonitorType').val();
+        //if (FirstMonitorTypeID == null || FirstMonitorTypeID == '') {
+        //}
+        //else {
+        //    ChangeMonitorPoint(FirstMonitorTypeID);
+        //}
+
+        if (MonitorPointID == null) {
+            Param.MonitorPositionID = $('#select_MonitorType').val();
+            Param.MonitorPointID=0;
+        }
+        else {
+            Param.MonitorPointID = MonitorPointID;
+            $("#PointId").val(MonitorPointID);
+        }
+
+        //传感器信息
+        $('table#table_MonitorPointInfo').html('');
+        //测点数据
+        $('#table_MonitorPointValue').html('');
+        //测点名称
+        $('p#p_MonitorPoint').html('监测数据()');
+        //echart
+        if (detChart != null) {
+            detChart.clear();
+        }
+      //  $('#Point_date_start').val('');
+       // $('#Point_date_end').val('');
+        $('#Pagination').html('');
+
+       // var MonitorPointName = $('select#select_MonitorType option:selected').html();
+      
+
+
+
+        $.post('getMonitorPointDetail', Param)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+                       // if (MonitorPointName != null && MonitorPointName != '') {
+                        //    $('p#p_MonitorPoint').html('监测数据(' + MonitorPointName + ')');
+                      //  }
+                        var dom = data.Data;
+                        var html = '<tbody>';
+                        if (dom != null) {
+                            $('p#p_MonitorPoint').html('监测数据(' + dom.PointName + ')');
+                            if (dom.SensorName != null && dom.SensorName != '') {
+                                html += '<tr><td>传感器编号</td><td>' + dom.SensorName + '</td></tr>';
+                            }
+                            if (dom.SensorType != null && dom.SensorType != '') {
+                                html += '<tr><td>传感器类型</td><td>' + dom.SensorType + '</td></tr>';
+                            }
+                            if (dom.PositionName != null && dom.PositionName != '') {
+                                html += '<tr><td>安装位置</td><td>' + dom.PositionName + '</td></tr>';
+                            }
+                            if (dom.SensorNumber != null && dom.SensorNumber != '') {
+                                html += '<tr><td>出厂编号</td><td>' + dom.SensorNumber + '</td></tr>';
+                            }
+                            if (dom.PileLength != null && dom.PileLength != '') {
+                                html += '<tr><td>监测桩长度</td><td>' + dom.PileLength + '</td></tr>';
+                            }
+                            if (dom.PileDiameter != null && dom.PileDiameter != '') {
+                                html += '<tr><td>监测桩直径</td><td>' + dom.PileDiameter + '</td></tr>';
+                            }
+                            if (dom.PileNumber != null && dom.PileNumber != '') {
+                                html += '<tr><td>监测桩编号</td><td>' + dom.PileNumber + '</td></tr>';
+                            }
+                            if (dom.ActualHeight != null && dom.ActualHeight != '') {
+                                html += '<tr><td>实际标高</td><td>' + dom.ActualHeight + '</td></tr>';
+                            }
+                            if (dom.TheoryHeight != null && dom.TheoryHeight != '') {
+                                html += '<tr><td>理论标高</td><td>' + dom.TheoryHeight + '</td></tr>';
+                            }
+                        }
+                        //$('table#table_MonitorPointInfo').html('');
+                        html += '</tbody>';
+                        $('table#table_MonitorPointInfo').html(html);
+
+
+                        //更新监测数据
+                        ChangeMonitorPointData(Param.MonitorPointID);
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+
+            })
+            .always(function (data) {
+
+            });
+
+    }
+
+    var OpenMonitorPointData = function () {
+        $('div.monitdate').css('display', 'block');
+        PointTimeQuery(0);
+    }
+
+    var CloseMonitorPointData = function () {
+        $('div.monitdate').css('display', 'none');
+    }
+
+    var CloseMonitorDetail = function () {
+        $('div.monitarea').css('display', 'none');
+        $('div.monitdate').css('display', 'none');
+    }
+
+    var ShowMonitorArea = function () {
+        $(".monitarea").show();
+    }
+
+
+    //第一次测点查询
+    var ChangeMonitorPointData = function (MonitorPointID) {
+
+        //测点数据
+        $('#table_MonitorPointValue').html('');
+        //测点名称
+        //$('p#p_MonitorPoint').html('监测数据()');
+        //echart
+        if (detChart != null) {
+            detChart.clear();
+        }
+        //$('#Point_date_start').val(DatTimeTransfer1());
+        //$('#Point_date_end').val(DatTimeTransfer1());
+        $('#Pagination').html('');
+
+        if (MonitorPointID == null || MonitorPointID == 0)
+            return;
+
+        if (SensorDatas == null || SensorDatas.length == 0) {
+            return;
+        }
+
+        var html = '';
+        var count = 1;
+        var EchartsData = [];
+        $(SensorDatas).each(function (index, dom) {
+            if (dom.PointID == MonitorPointID) {
+                var AlarmHtml = '';
+                if (dom.IsAlarm) {
+                    AlarmHtml = 'style="color: red;"';
+                }
+                html += '<tr><td>' + count + '</td><td ' + AlarmHtml + '>' + Number(dom.Value1).toFixed(5) + '</td><td>' + dom.CreateTime + '</td></tr>';
+                count++;
+
+                EchartsData.push(dom);
+            }
+        })
+
+        EchartsInit(EchartsData);
+
+
+        //$('#table_MonitorPointValue').html('');
+        $('#table_MonitorPointValue').html(html);
+    }
+
+
+    var EchartsInit = function (list,PointName) {
+
+        var MonitorOption = {
+            //title: {
+            //    text: PointName,
+            //    left:'center',
+            //    textStyle: { // 主标题样式
+            //        color: 'white'
+            //    }
+            //},
+            tooltip: {
+                trigger: 'axis'
+            },
+            textStyle: {
+                color: '#93e5ff'
+            },
+            legend: {
+                
+                textStyle: { // 主标题样式
+                    color: '#93e5ff'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                top: '10%',
+                bottom: '3%',
+                containLabel: true
+            },
+            //toolbox: {
+            //    feature: {
+            //        saveAsImage: {}
+            //    }
+            //},
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#07b9f3',
+                        type: 'solid'
+                    }
+                },
+                data: []
+            },
+            yAxis: {
+                name:'MPa',
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: '#07b9f3',
+                        type: 'solid'
+                    }
+                },
+                type: 'value'
+            },
+            backgroundColor: '#000d1e',
+            series: [
+                //{
+                //    name: '邮件营销',
+                //    type: 'line',
+                //    data: [120, 132, 101, 134, 90, 230, 210],
+                //    smooth: true
+                //}
+            ]
+        };
+        //监测值
+        var Series1 = {};
+        Series1.name = PointName;
+        //Series1.ItemSyle = {};
+        //Series1.ItemSyle.color = '#fff';
+        Series1.type = 'line';
+        Series1.data = [];
+        var Series2 = {};
+        Series2.name = '监测值2';
+        Series2.type = 'line';
+        Series2.data = [];
+        $(list).each(function (index, dom) {
+            MonitorOption.xAxis.data.push(DatTimeTransfer(dom.CreateTime));
+            Series1.data.push(Number(dom.Value1).toFixed(3));
+           // Series2.data.push(Number(dom.Value2).toFixed(5));
+        })
+        MonitorOption.series.push(Series1);
+        //MonitorOption.series.push(Series2);
+
+        //detChart = null;
+        detChart = echarts.init(document.getElementById("div_MonitorEcharts"));
+        detChart.setOption(MonitorOption, true);
+    }
+
+    var DatTimeTransfer = function (time) {
+        var date = new Date(time)
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        return formatTen(hour) + ":" + formatTen(minute) + ":" + formatTen(second);
+        //return year + "-" + formatTen(month) + "-" + formatTen(day) + " " + formatTen(hour) + ":" + formatTen(minute) + ":" + formatTen(second);
+    }
+
+    var DatTimeTransfer1 = function () {
+        var date = new Date()
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        //var hour = date.getHours();
+        //var minute = date.getMinutes();
+        //var second = date.getSeconds();
+        //return formatTen(hour) + ":" + formatTen(minute) + ":" + formatTen(second);
+        return year + "-" + formatTen(month) + "-" + formatTen(day);
+    }
+
+    var DatTimeTransfer2 = function () {
+        var date = new Date()
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate()+1;
+        //var hour = date.getHours();
+        //var minute = date.getMinutes();
+        //var second = date.getSeconds();
+        //return formatTen(hour) + ":" + formatTen(minute) + ":" + formatTen(second);
+        return year + "-" + formatTen(month) + "-" + formatTen(day);
+    }
+
+    function formatTen(num) {
+        return num > 9 ? (num + "") : ("0" + num);
+    }
+
+
+
+    //测点动态查询
+    var QueryParam = {};
+
+    var ParamInit = function () {
+
+        QueryParam.PageIndex = 1;
+        QueryParam.PageSize = 10;
+        QueryParam.TotalPage = 0;
+        QueryParam.TotalCount = 0;
+
+    }
+
+    var PointTimeQuery = function (temp) {
+        QueryParam.StartTime = $('#Point_date_start').val();
+        QueryParam.EndTime = $('#Point_date_end').val();
+        QueryParam.MonitorPointID = $('#PointId').val();
+
+        //测点数据
+        //$('#table_MonitorPointValue').html('');
+        //echart
+        if (detChart != null && temp==0) {
+            detChart.clear();
+        }
+
+
+        $.post('getMonitorPointData', QueryParam)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+                        var html = '';
+                        $("#value1").html(data.title1);
+                        $("#value2").html(data.title2);
+                        var count = 1;
+                        $(data.Data).each(function (index, dom) {
+                            var AlarmHtml;
+                            if (dom.IsAlarm) {
+                                AlarmHtml = 'style="color: red;"';
+                            }
+                            html += '<tr><td>' + count + '</td><td ' + AlarmHtml + '>' + Number(dom.Value1).toFixed(3) + '</td><td>' + dom.CreateTime + '</td></tr>';
+                            count++;
+
+                        })
+
+                        //测点数据
+                        $('#table_MonitorPointValue').html(html);
+
+
+                        //分页
+                        QueryParam.TotalPage = data.TotalPage;
+                        QueryParam.TotalCount = data.TotalCount;
+                        QueryParam.PageIndex = data.PageIndex;
+
+                        if(temp==0)
+                        EchartsInit(data.Echart,data.Url);
+                        //Echats
+                        
+
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+
+            })
+            .always(function (data) {
+                Pagination();
+            });
+    }
+
+    var Pagination = function () {
+        $("#Pagination").pagination({
+            currentPage: QueryParam.PageIndex,
+            totalPage: QueryParam.TotalPage,
+            isShow: true,
+            totalCount: QueryParam.TotalCount,
+            count: 7,
+            homePageText: "首页",
+            endPageText: "尾页",
+            prevPageText: "上一页",
+            nextPageText: "下一页",
+            callback: function (current) {
+                QueryParam.PageIndex = current;
+                PointTimeQuery(1);
+            }
+        });
+    }
+
+    //初始化时间选择
+    $('#Point_date_start').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        //minView: "month",//设置只显示到月份
+        //format: 'yyyy-mm-dd',//显示格式
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+
+    $('#Point_date_end').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        //minView: "month",//设置只显示到月份
+       // format: 'yyyy-mm-dd',//显示格式
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+
+    //拖拽
+    $('.popup').children('.popuptitle').children('p').mousedown(function(e) {
+        var positionleft = '';
+        var positiontop = '';
+        var positionDiv = $(this).parent().parent().offset();
+        var distenceX = e.pageX - positionDiv.left; //鼠标距离元素左上角X距离
+        var distenceY = e.pageY - positionDiv.top; //鼠标距离元素左上角Y距离
+        var that = $(this).parent().parent();
+	
+        $(document).mousemove(function(e) {
+            var x = e.pageX - distenceX;
+            var y = e.pageY - distenceY;
+		
+            if (x < 0) {
+                x = 0;
+            } else if (x > $('body').get(0).offsetWidth-$(that).get(0).offsetWidth) {
+                x = $('body').get(0).offsetWidth-$(that).get(0).offsetWidth;
+            }
+
+            if (y < 0) {
+                y = 0;
+            } else if (y > $('.bg').get(0).offsetHeight- $(that).get(0).offsetHeight) {
+                y = $('.bg').get(0).offsetHeight - $(that).get(0).offsetHeight;
+            }
+		
+            var xLeft = x/$('body').get(0).offsetWidth;
+            var xTop = y/$('body').get(0).offsetHeight;
+		
+            $(that).css({
+                'left': 100*xLeft + '%',
+                'top': 100*xTop + '%'
+            });
+		
+            positionleft = 100*xLeft + '%';
+            positiontop = 100*xTop + '%';
+        });
+        $(document).mouseup(function() {
+            $(document).off('mousemove');
+        });
+	
+    });
+
+    </script>
+
+    @*<script type="text/javascript" src="~/Scripts/Monitor/GWYSolid.js"></script>
+    <script type="text/javascript" src="~/Scripts/Monitor/GWYMaker.js"></script>*@

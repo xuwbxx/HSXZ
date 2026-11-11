@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "区域配置";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+@{
+
+    var Layers = ViewData["Layers"] as List<Model.HJPlat.Response.ConstructCfgLayerResponse>;
+    var ScanTypes = ViewData["ScanTypes"] as List<DataEntity.MK_ScanType>;
+    //var ScanTypes = ViewData["ScanTypes"] as List<DataEntity.MK_ScanType>;
+    //var Postions = ViewData["Postions"] as List<DataEntity.MK_Position>;
+    //var Devices = ViewData["Devices"] as List<DataEntity.MK_Device>;
+    //var PositionImg = ViewData["PositionImg"].ToString();
+    //var PointList = ViewData["PointList"] as List<Model.HJPlat.Response.ConstructCfgPointResponse>;
+}
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css" />
+<script type="text/javascript" src="/uploadify/jquery.uploadify.min.js"></script>
+<div class="content">
+    <div class="col-lg-12">
+        <input type="hidden" value="46" id="select">
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#" data-toggle="tab">监测区域配置</a>
+            </li>
+
+        </ul>
+
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent" style="min-height: 690px;">
+            <!--车辆进出数据-->
+            <div class="tab-pane fade in active" id="shuju">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">所属类型：</a>
+                        <select id="SelLayerProj" name="SelLayerProj" onchange="LayerSetJS.SelectChange1()">
+                            <option value="0">全部</option>
+                            @{
+                                if (ScanTypes != null && ScanTypes.Count > 0)
+                                {
+                                    foreach (var item in ScanTypes)
+                                    {
+                                        <option value="@item.ID">@item.TypeName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <input type="button" value="添加区域" onclick="LayerSetJS.AddIcon()">
+                        @*<input type="button" value="显示定位值" class="showposition" onClick="alert( positionleft +'+'+ positiontop)">*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div class="yujing-bg col-lg-12 col-md-4 col-sm-6 col-xs-12" id="div_Icon">
+                    <img src="~/Content/IOT/img/bg.png" ondragstart="return false;" />
+                    @*@{
+                        <img src="~/Upload/@PositionImg" ondragstart="return false;" id="imgback" />
+                    }*@
+                    @*<div class="tuli"></div>*@
+                    <ul class="icon-yujing" id="UL_Icon">
+                        @{
+                            if (Layers != null && Layers.Count > 0)
+                            {
+                                foreach (var item in Layers)
+                                {
+                                    @*<li><a style="top: @item.MapYs; left: @item.MapXs;" title="@item.PointName" href="/Scan/Construction/CalIndex?ID=@item.ID">@item.PointName</a></li>*@
+                                    <li data-id="@item.ID" ondblclick="LayerSetJS.ShowLayerInfo(this)" onmousedown="LayerSetJS.IconEventMouseDown(this)" style="background-image: url('/Content/IOT/img/point1.png'); left: @item.MapXs; top: @item.MapYs;">@*<a title="@item.PointName" href="/Scan/Construction/CalIndex?ID=@item.ID"></a>*@</li>
+                                }
+                            }
+                        }
+                    </ul>
+                </div>
+
+                <div style="clear:both;"></div>
+
+            </div>
+
+
+            <!--趋势图-->
+
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    @*<script type="text/javascript" src="./苏州港太仓港区码头全寿命周期健康监测系统_files/Home_Layer.js.下载"></script>*@
+</div>
+
+@Html.Partial("LayerSetPopUp")
+<script type="text/javascript" src="~/Scripts/IOT/LayerSet.js"></script>

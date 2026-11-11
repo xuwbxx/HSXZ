@@ -1,0 +1,104 @@
+﻿/** leftmenu **/
+
+
+
+
+body{ background:#fff;}
+
+
+
+.ks-flowstep {ZOOM: 1; MARGIN-BOTTOM: 10px; HEIGHT: 23px}
+.ks-flowstep OL {POSITION: relative; BACKGROUND-COLOR: #f0f0f0; ZOOM: 1; OVERFLOW: hidden}
+.ks-flowstep-num3 LI {WIDTH: 33.3%}
+.ks-flowstep-num3 .ks-flowstep-last {WIDTH: 33.3%}
+.ks-flowstep-num4 LI {WIDTH: 24.9%}
+.ks-flowstep-num4 .ks-flowstep-last {WIDTH: 24.9%}
+.ks-flowstep-num5 LI {WIDTH: 19.9%}
+.ks-flowstep-num5 .ks-flowstep-last {WIDTH: 19.9%}
+.ks-flowstep-num6 LI {WIDTH: 16.6%}
+.ks-flowstep-num6 .ks-flowstep-last {WIDTH: 16.6%}
+.ks-flowstep LI {TEXT-ALIGN: center; LINE-HEIGHT: 23px; BACKGROUND: url(img/flowstep.png) #f0f0f0 no-repeat 0px 0px; FLOAT: left; HEIGHT: 23px; FONT-SIZE: 14px; OVERFLOW: hidden;}
+.ks-flowstep SPAN {DISPLAY: block; BACKGROUND: url(flowstep.png) no-repeat 0px 0px}
+.ks-flowstep .ks-flowstep-first {BACKGROUND-POSITION: 0px -69px}
+.ks-flowstep .ks-flowstep-last {POSITION: absolute; BACKGROUND-POSITION: 100% -92px; RIGHT: 0px; _right: -1px; _width: 100%}
+.ks-flowstep-current .ks-flowstep-last {BACKGROUND-COLOR: transparent; BACKGROUND-POSITION: 100% -115px}
+.ks-flowstep-done SPAN {BACKGROUND-COLOR: #dcdcdc; BACKGROUND-POSITION: 0px -46px; COLOR: #ccc}
+.ks-flowstep .ks-flowstep-current {BACKGROUND-COLOR: #ccc; BACKGROUND-POSITION: 0px -46px; COLOR: #fff}
+.ks-flowstep-current SPAN {BACKGROUND-COLOR: #ccc; BACKGROUND-POSITION: 0px -46px; COLOR: #fff}
+.ks-flowstep .ks-flowstep-current-next {BACKGROUND-POSITION: 0px -23px}
+.ks-flowstep-current-next SPAN {BACKGROUND-POSITION: 1000px 1000px}
+
+
+
+
+.a_t{background:#e9f1fa; border-bottom:1px #256fa6 solid; border-top:2px #256fa6 solid; padding:10px 15px;}
+.a_t li{float:left; padding:0 5px;}
+.a_t ul{overflow:hidden;}
+
+
+
+/*-----------按钮------------*/
+.a_btndiv {padding:10px 5px;}
+.a_btndiv1{background:#ddd; border:1px #ddd solid;}
+.a_btn-submit{border:1px #369 solid; border:1px #ddd solid; background:#256fa6; color:#fff; padding:0.3em 5%; font-size:1.2em;}
+
+
+/*li里面的按钮*/
+.hc_button-group > button{background:#eee; border:1px #ccc solid; color:#fff; vertical-align:middle; color:#333;}
+.hc_button-group button.ks_btn-submit{background:#abc9df; border:1px #69c solid; color:#fff;}
+
+.hc_button-group1 > input{background:#eee; border:1px #ccc solid; color:#fff; vertical-align:middle; color:#333;}
+.hc_button-group1 input.ks_btn-submit1{background:#3399ff;padding-left:10px;padding:3px 15px; border:1px #69c solid; color:#fff;}
+
+/*h_listtable*/
+.h_listtable{margin-top:10px;}
+.h_listtable .h_table th{padding:8px 5px;}
+
+
+
+
+.a_title{margin:1% 2% 0;}
+.a_title h1{background:url(../images/titleicon.gif) no-repeat 0 center; font-size:1.3em; padding:0 0 0 20px; font-weight:no rmal;}
+
+
+
+.a_my{overflow:hidden;}
+.a_welcome{float:left; width:30%; padding:2%; height:150px;border-bottom:1px #ddd solid; border-top:2px #ddd solid; background:#f5f5f5; color:#888;}
+.a_welcome h5{font-size:1.6em; line-height:400%; font-weight:normal;}
+.a_welcome p{line-height:200%;}
+
+
+.a_notice{float:right; width:60%; background:#f3f7f6  url(../images/noticebg.gif) no-repeat right bottom; padding:2%; border-bottom:1px #b3cbdd solid; border-top:2px #86cec0 solid; height:150px;}
+.a_notice h5{font-size:1.3em; margin-bottom:2%; background:}
+.a_notice-con p{margin:1% 0; font-size:1.2em; line-height:150%;}
+
+
+
+.a_items{margin-top:1em; border-bottom:1px #7c9cb5 solid; border-top:2px #7c9cb5 solid; background:#eff4f7; overflow:hidden;}
+.a_items h5{font-size:1.3em; padding:1% 0 2% 2%;}
+.a_items dl{float:left; width:22%; margin:0 0 0 3%;}
+.a_items dt img{width:80%; height:150px;}
+.a_items dd{padding:1em;}
+
+
+
+
+.a_4 input.a_input-select{width:160px;}
+.a_m{overflow:hidden; padding:1% 0; margin-top:1em; border-bottom:1px #eee solid; border-top:1px #eee solid;}
+.a_ml{float:left; width:35%;}
+.a_ml li input.a_input-date{width:23%;}
+.a_ml li .a_date-space{width:1%;}
+.a_ml li {margin:5px;}
+.a_ml li span{padding:5px 10px 5px 0; line-height:150%; color:#999;}
+.a_mr{float:left; width:60%; overflow:hidden; padding:1%;}
+.a_mr li{float:left; width:22%; margin-left:3%;}
+.a_mr li:first-child{margin-left:0;}
+.a_mr li a{background:#e9f0f6; display:block; height:52px; border:1px #eee solid; text-align:center; font-size:100%; padding-top:6px; color:#666;}
+.a_mb{border-top:1px #eee solid; clear:both; padding:1% 0;}
+.a_mb span{padding:5px 20px 5px 5px; line-height:150%; color:#999;}
+.a_mb textarea{width:70%; height:60px;}
+.a_mb button{width:10%; height:66px; vertical-align:middle; margin-left:-5px; border:1px #ccc solid;}
+
+
+
+

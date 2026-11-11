@@ -1,0 +1,177 @@
+﻿<div class="list resources">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">进场资源</p>
+        <div class="list-more">
+            <ul>
+                <li>今日</li>
+                <li>本周</li>
+                <li class="active">本月</li>
+            </ul>
+        </div>
+    </div>
+    <div id="EChartResource" class="resources-chart">
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dom = document.getElementById("EChartResource");
+        var myChart = echarts.init(dom);
+
+        //后台数据
+        // var seriesName = ['设备','车辆','人员'];
+        // var seriesData = [
+        //     ['410', '410', '410'],
+        //     ['410', '500', '700'],
+        //     ['300', '500', '700'],
+        //     ['380', '620', '820'],
+        //     ['280', '500', '850']
+        // ];
+        // var xArr = ['工点一', '工点二', '工点三', '工点四', '工点五', ];
+        // var yArr = ['0', '200', '400', '600', '800', '1000'];
+        //后台数据结束
+
+        var yMax = 1000;
+        var yFormatter = null;
+        var tooltipFormatter = '{b}<br/>{a0}:{c0}';
+        //var app = {};
+        option = null;
+        // Schema:
+        // date,AQIindex,PM2.5,PM10,CO,NO2,SO2
+        option = {
+            title: {
+                text: '单位：台/辆/人',
+                textStyle:{
+                    color: 'rgba(255,255,255,1)',
+                    fontSize:15,
+                    fontWeight:'lighter',
+                },
+                left:'2%',
+                // top:'10%',
+                align:'left',
+            },
+            // backgroundColor: '',
+            // tooltip: {
+                // trigger: 'axis',
+                // formatter: tooltipFormatter,
+                // axisPointer: {
+                //     type: 'cross',
+                //     label: {
+                //         backgroundColor: '#6a7985',
+                //     }
+                // }
+            // },
+
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend:{
+                // data:['设备','车辆','人员','test'],
+                data:['设备','车辆','人员',],
+                textStyle:{
+                    color: 'rgba(255,255,255,1)',
+                    // fontSize:'10',
+                },
+                right:'5%',
+                itemWidth:15,
+                itemHeight:8,
+                align:'left',
+            },
+            // legend: {
+            //     data: ['完成计划']
+            // },
+            // toolbox: {
+            //     feature: {
+            //         saveAsImage: {}
+            //     }
+            // },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                top: '15%',
+                containLabel: true
+            },
+            dataset:{
+                source:[
+                    // ['product','设备','车辆','人员','test'],
+                    // ['工点一','410', '410', '410','900'],
+                    // ['工点二','410', '500', '700','900'],
+                    // ['工点三','300', '500', '700','900'],
+                    // ['工点四','380', '620', '820','900'],
+                    // ['工点五','280', '500', '850','900']
+                    ['product','设备','车辆','人员',],
+                    ['横江大道', '45', '238', '0',],
+                    //['工点一','410', '410', '410',],
+                    //['工点二','410', '500', '700',],
+                    //['工点三','300', '500', '700',],
+                    //['工点四','380', '620', '820',],
+                    //['工点五','280', '500', '850',]
+                ]
+            },
+            xAxis: [{
+                type: 'category',
+                // splitLine: {
+                //     show: true,
+                //     lineStyle: {
+                //         color: 'rgba(255,255,255,0.3)',
+                //     }
+                // },
+                axisLine: {
+                    show: false,
+                },
+                // axisTick:{show:'false',},
+                axisLabel: {
+                    color: 'rgba(255,255,255,1)',
+                    // fontSize:15,
+                },
+                axisTick:{
+                    show:false,
+                },
+                // boundaryGap: false,
+                // data: xArr,
+            }],
+            yAxis: [{
+                // max: yMax,
+                type: 'value',
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        type:'dotted',
+                        color: 'rgba(255,255,255,0.3)',
+                    }
+                },
+                axisLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    formatter: yFormatter,
+                    color: 'rgba(255,255,255,1)',
+                    // fontSize:10,
+                },
+                axisTick:{
+                    show:false,
+                },
+                // data: yArr,
+            }],
+            series: [
+                {type:'bar',barWidth:8,barGap:'40%',itemStyle:{barBorderRadius:[5,5,0,0]},color: {type: 'linear',x: 0,y: 0,x2: 0,y2: 1,colorStops: [{offset: 0,color: 'rgba(252,200,8,0.6)'}, {offset: 1,color: 'rgba(252,200,8,1)'}]}},
+                {type:'bar',barWidth:8,barGap:'40%',itemStyle:{barBorderRadius:[5,5,0,0]},color: {type: 'linear',x: 0,y: 0,x2: 0,y2: 1,colorStops: [{offset: 0,color: 'rgba(135,211,112,0.6)'}, {offset: 1,color: 'rgba(135,211,112,1)'}]}},
+                {type:'bar',barWidth:8,barGap:'40%',itemStyle:{barBorderRadius:[5,5,0,0]},color: {type: 'linear',x: 0,y: 0,x2: 0,y2: 1,colorStops: [{offset: 0,color: 'rgba(37,142,247,0.6)'}, {offset: 1,color: 'rgba(37,142,247,1)'}]}},
+                // {type:'bar',barWidth:8,barGap:'40%',itemStyle:{barBorderRadius:[5,5,0,0]},color: {type: 'linear',x: 0,y: 0,x2: 0,y2: 1,colorStops: [{offset: 0,color: 'rgba(0,217,319,0.6)'}, {offset: 1,color: 'rgba(0,217,319,1)'}]}},
+            ],
+            color:['#fcc808','#87d370','#258ef7'],
+        };
+
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    })
+</script>

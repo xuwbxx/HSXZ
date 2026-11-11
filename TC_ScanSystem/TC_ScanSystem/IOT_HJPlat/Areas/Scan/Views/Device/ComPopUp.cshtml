@@ -1,0 +1,81 @@
+﻿@*详情弹出框*@
+<div id="ComPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="LayerInfoTitle">通讯设备信息</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="CommunicationID" />
+            <input type="hidden" name="TypeCom" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="field">通讯设备名称:</td>
+                            <td><input name="CommunicationName" type="text" value="" /></td>
+                            <td class="field">通讯设备编号:</td>
+                            <td><input name="CommunicationCode" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">IP地址:</td>
+                            <td><input name="IP" type="text" value="" /></td>
+                            <td class="field">端口号:</td>
+                            <td><input name="Port" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">所属项目:</td>
+                            <td>
+                                <select name="ProjectSelect">
+                                    <option value="">请选择</option>
+                                    @{
+                                        var Projects = ViewData["Projects"] as List<DataEntity.Base_Project>;
+                                        if (Projects != null && Projects.Count > 0)
+                                        {
+                                            foreach (var item in Projects)
+                                            {
+                                                <option value="@item.ID">@item.ProjectName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td class="field">通讯类型:</td>
+                            <td>
+                                <select name="CommunicationTypeSelect">
+                                    <option value="">请选择</option>
+                                    <option value="0">TCP</option>
+                                    <option value="1">COM</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field">通讯协议:</td>
+                            <td>
+                                <select name="DataProtocolSelect">
+                                    <option value="">请选择</option>
+                                    <option value="0">MCU</option>
+                                    <option value="1">HUAHENG</option>
+                                    <option value="2">GuangXian</option>
+                                    <option value="3">COMWIN</option>
+                                </select>
+                            </td>
+                            <td class="field">设备类型:</td>
+                            <td>
+                                <select name="DeviceTypeSelect">
+                                    <option value="">请选择</option>
+                                    <option value="0">MCU</option>
+                                    <option value="1">HUAHENG</option>
+                                    <option value="2">GuangXian</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" @*data-toggle="modal" data-target="#myModal"*@ type="button" value="保存" onclick="CommunicationJS.ShowModal();" />
+                    <input class="btn-primary" type="button" value="退回" onclick="CommunicationJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>

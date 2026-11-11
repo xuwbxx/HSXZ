@@ -1,0 +1,35 @@
+﻿
+<div id="PointPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="PointInfoTitle">测点信息</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="PointIdx" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="multiselection">
+                                <ul name="UL_PointPop" id="UL_PointPop">
+                                    @{
+                                        var Point = ViewData["PointList"] as List<DataEntity.MK_Point>;
+                                            if (Point != null && Point.Count > 0)
+                                            {
+                                                foreach (var p in Point)
+                                                {
+                                                    <li><input type="checkbox" value="@p.ID" /><a>@p.PointName</a></li>
+                                                }
+                                            }
+                                    }
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" type="button" value="返回" onclick="ConstructAutoJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>

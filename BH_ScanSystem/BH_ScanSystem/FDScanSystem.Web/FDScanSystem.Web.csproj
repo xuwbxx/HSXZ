@@ -1,0 +1,1073 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4DC3525-9AC2-4A62-BB36-93368C8824BE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FDScanSystem.Web</RootNamespace>
+    <AssemblyName>FDScanSystem.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\FDScanSystem.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\FDScanSystem.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DevExpress 14.1\Components\Bin\Framework\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net">
+      <HintPath>..\FDScanSystem.Helper\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\FDScanSystem.Helper\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="The9.Share.Lib.Misc">
+      <HintPath>..\FDScanSystem.Helper\Lib\The9.Share.Lib.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="ZJFramework10">
+      <HintPath>..\FDScanSystem.Helper\Lib\ZJFramework10.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContractWe.aspx" />
+    <Content Include="DataInfo\ClientStaticDataList.aspx" />
+    <Content Include="DataInfo\DataChart.aspx" />
+    <Content Include="DataInfo\Dialog\DataStaticAdd.aspx" />
+    <Content Include="DataInfo\Dialog\DataStaticEdit.aspx" />
+    <Content Include="DataInfo\DynamicDataAlertQuery.aspx" />
+    <Content Include="DataInfo\DynamicDataAlertQueryDetail.aspx" />
+    <Content Include="DataInfo\DynamicDataQuery.aspx" />
+    <Content Include="DataInfo\DynamicDataQueryDetail.aspx" />
+    <Content Include="DataInfo\DynamicQueryDetail.aspx" />
+    <Content Include="DataInfo\DynamicSimpleList.aspx" />
+    <Content Include="DataInfo\DynamicSimpleQuery.aspx" />
+    <Content Include="DataInfo\FD_LayerImage.aspx" />
+    <Content Include="DataInfo\FileDownload.aspx" />
+    <Content Include="DataInfo\FileUpload_Edit.aspx" />
+    <Content Include="DataInfo\FileUpload_List.aspx" />
+    <Content Include="DataInfo\PointSelect.aspx" />
+    <Content Include="DataInfo\ScanDataValue.aspx" />
+    <Content Include="DataInfo\StaticCalChart.aspx" />
+    <Content Include="DataInfo\StaticCalQuery.aspx" />
+    <Content Include="DataInfo\StaticDataChart.aspx" />
+    <Content Include="DataInfo\StaticDataQuery.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="images\kidmondo_face_sad.gif" />
+    <Content Include="images\kidmondo_face_sad.png" />
+    <Content Include="images\no.png" />
+    <Content Include="images\yes.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Scripts\dialog.js" />
+    <Content Include="Scripts\jquery-1.12.1.js" />
+    <Content Include="Scripts\jquery-1.12.1.min.js" />
+    <Content Include="Setting\Dialog\FD_CommunicationDevice_Edit.aspx" />
+    <Content Include="Setting\Dialog\FD_FJ_Edit.aspx" />
+    <Content Include="Setting\Dialog\FD_Point_Edit.aspx" />
+    <Content Include="Setting\Dialog\FD_ScanLayer_Edit.aspx" />
+    <Content Include="Setting\Dialog\FD_ScanNode_Edit.aspx" />
+    <Content Include="Setting\Dialog\FD_ScanType_Edit.aspx" />
+    <Content Include="Setting\FD_AutoScanConfig_List.aspx" />
+    <Content Include="Setting\FD_Command_List.aspx" />
+    <Content Include="Setting\FD_Connection_List.aspx" />
+    <Content Include="Setting\FD_CommunicationDevice_List.aspx" />
+    <Content Include="Setting\FD_FJ_List.aspx" />
+    <Content Include="Setting\FD_Point_List.aspx" />
+    <Content Include="Setting\FD_ScanLayer_List.aspx" />
+    <Content Include="Setting\FD_ScanNode_List.aspx" />
+    <Content Include="Setting\FD_ScanType_List.aspx" />
+    <Content Include="Sys\Dialog\FD_FunctionAdd.aspx" />
+    <Content Include="Sys\Dialog\FD_Pwd_Edit.aspx" />
+    <Content Include="Sys\Dialog\FD_RoleUser.aspx" />
+    <Content Include="Sys\FD_FunctionList.aspx" />
+    <Content Include="images\a_1.gif" />
+    <Content Include="images\a_2.gif" />
+    <Content Include="images\a_3.gif" />
+    <Content Include="images\a_4.gif" />
+    <Content Include="images\breadcrumbbg.gif" />
+    <Content Include="images\close.jpg" />
+    <Content Include="images\close_on.jpg" />
+    <Content Include="images\colsebutton.png" />
+    <Content Include="images\default_s.gif" />
+    <Content Include="images\default_s2.gif" />
+    <Content Include="images\delete.jpg" />
+    <Content Include="images\delete_on.jpg" />
+    <Content Include="images\dialog\ask.gif" />
+    <Content Include="images\dialog\btn_bg.gif" />
+    <Content Include="images\dialog\close_1.gif" />
+    <Content Include="images\dialog\close_2.gif" />
+    <Content Include="images\dialog\dialg.css" />
+    <Content Include="images\dialog\endleft.gif" />
+    <Content Include="images\dialog\endright.gif" />
+    <Content Include="images\dialog\endxian.gif" />
+    <Content Include="images\dialog\err.gif" />
+    <Content Include="images\dialog\info.gif" />
+    <Content Include="images\dialog\leftxian.gif" />
+    <Content Include="images\dialog\loading.gif" />
+    <Content Include="images\dialog\right.gif" />
+    <Content Include="images\dialog\rightxian.gif" />
+    <Content Include="images\dialog\topxian.gif" />
+    <Content Include="images\error1.gif" />
+    <Content Include="images\error_corner.gif" />
+    <Content Include="images\form-v.gif" />
+    <Content Include="images\hc_extendcon.gif" />
+    <Content Include="images\hc_inputbg-extendfield.gif" />
+    <Content Include="images\icon-blue.png" />
+    <Content Include="images\icon-gray.png" />
+    <Content Include="images\icon-ok.gif" />
+    <Content Include="images\icon-white.png" />
+    <Content Include="images\icon.png" />
+    <Content Include="images\indexbg.gif" />
+    <Content Include="images\lbg.jpg" />
+    <Content Include="images\lbtn.png" />
+    <Content Include="images\lightbox-blank.gif" />
+    <Content Include="images\lightbox-btn-close.gif" />
+    <Content Include="images\lightbox-btn-next.gif" />
+    <Content Include="images\lightbox-btn-next_1.gif" />
+    <Content Include="images\lightbox-btn-prev.gif" />
+    <Content Include="images\lightbox-btn-prev_1.gif" />
+    <Content Include="images\lightbox-ico-loading.gif" />
+    <Content Include="images\load.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo2.png" />
+    <Content Include="images\logo3.png" />
+    <Content Include="images\logo4.png" />
+    <Content Include="images\menu-c.png" />
+    <Content Include="images\menu.png" />
+    <Content Include="images\menubg.gif" />
+    <Content Include="images\noimg.jpg" />
+    <Content Include="images\noticebg.gif" />
+    <Content Include="images\ntbg.gif" />
+    <Content Include="images\reset.jpg" />
+    <Content Include="images\reset_on.jpg" />
+    <Content Include="images\save.jpg" />
+    <Content Include="images\save_on.jpg" />
+    <Content Include="images\search.jpg" />
+    <Content Include="images\search_on.jpg" />
+    <Content Include="images\table_title.gif" />
+    <Content Include="images\tips_corner.gif" />
+    <Content Include="images\titleicon.gif" />
+    <Content Include="images\topbg.gif" />
+    <Content Include="images\topbg.jpg" />
+    <Content Include="Scripts\boxy\boxy.css" />
+    <Content Include="Scripts\boxy\jquery.boxy.js" />
+    <Content Include="Scripts\CheckBox.js" />
+    <Content Include="Scripts\com.js" />
+    <Content Include="Scripts\data\brand.js" />
+    <Content Include="Scripts\data\category.js" />
+    <Content Include="Scripts\datepicker.js" />
+    <Content Include="Scripts\datepicker.packed.js" />
+    <Content Include="Scripts\datepicker.yuic.js" />
+    <Content Include="Scripts\DateTimeMask.js" />
+    <Content Include="Scripts\DevDialog.js" />
+    <Content Include="Scripts\Dialog1.js" />
+    <Content Include="Scripts\dialog\css\basic.css" />
+    <Content Include="Scripts\dialog\css\basic_ie.css" />
+    <Content Include="Scripts\dialog\css\demo.css" />
+    <Content Include="Scripts\dialog\img\basic\x.png" />
+    <Content Include="Scripts\dialog\jquery.simplemodal.js" />
+    <Content Include="Scripts\flashpaper\flexpaper_flash.js" />
+    <Content Include="Scripts\flashpaper\flexpaper_flash_debug.js" />
+    <Content Include="Scripts\FlexPaperViewer.swf" />
+    <Content Include="Scripts\flexpaper_flash.js" />
+    <Content Include="Scripts\flexpaper_flash_debug.js" />
+    <Content Include="Scripts\formValidator-4.0.1.js" />
+    <Content Include="Scripts\formValidator-4.0.1.min.js" />
+    <Content Include="Scripts\formValidatorRegex.js" />
+    <Content Include="Scripts\images\boxy-ne.png" />
+    <Content Include="Scripts\images\boxy-nw.png" />
+    <Content Include="Scripts\images\boxy-se.png" />
+    <Content Include="Scripts\images\boxy-sw.png" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.easing.compatibility.js" />
+    <Content Include="Scripts\jquery.flashSlider-1.0.min.js" />
+    <Content Include="Scripts\jquery.lightbox-0.5.css" />
+    <Content Include="Scripts\jquery.lightbox-0.5.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
+    <Content Include="Scripts\jquery.roller.js" />
+    <Content Include="Scripts\jquery.uled.js" />
+    <Content Include="Scripts\lang\ca.js" />
+    <Content Include="Scripts\lang\cs.js" />
+    <Content Include="Scripts\lang\da.js" />
+    <Content Include="Scripts\lang\de.js" />
+    <Content Include="Scripts\lang\en-us.js" />
+    <Content Include="Scripts\lang\en.js" />
+    <Content Include="Scripts\lang\es.js" />
+    <Content Include="Scripts\lang\fr.js" />
+    <Content Include="Scripts\lang\id.js" />
+    <Content Include="Scripts\lang\kr.js" />
+    <Content Include="Scripts\lang\lv.js" />
+    <Content Include="Scripts\lang\nl.js" />
+    <Content Include="Scripts\lang\no.js" />
+    <Content Include="Scripts\lang\pl.js" />
+    <Content Include="Scripts\lang\pt-br.js" />
+    <Content Include="Scripts\lang\pt.js" />
+    <Content Include="Scripts\lang\se.js" />
+    <Content Include="Scripts\lang\tr.js" />
+    <Content Include="Scripts\lang\zh.js" />
+    <Content Include="Scripts\lang\zh_cn.js" />
+    <Content Include="Scripts\layer\extend\layer.ext.js" />
+    <Content Include="Scripts\layer\jquery.cookie.js" />
+    <Content Include="Scripts\layer\layer.min.js" />
+    <Content Include="Scripts\layer\skin\default\icon_ext.png" />
+    <Content Include="Scripts\layer\skin\default\textbg.png" />
+    <Content Include="Scripts\layer\skin\default\xubox_ico0.png" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading0.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading1.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading2.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_loading3.gif" />
+    <Content Include="Scripts\layer\skin\default\xubox_title0.png" />
+    <Content Include="Scripts\layer\skin\layer.css" />
+    <Content Include="Scripts\layer\skin\layer.ext.css" />
+    <Content Include="Scripts\lrtk.js" />
+    <Content Include="Scripts\MSClass.js" />
+    <Content Include="Scripts\png.js" />
+    <Content Include="Scripts\sly\b_style.css" />
+    <Content Include="Scripts\sly\css.css" />
+    <Content Include="Scripts\sly\jquery.min.js" />
+    <Content Include="Scripts\sly\jquery.sly.js" />
+    <Content Include="Scripts\sly\jquery.sly.min.js" />
+    <Content Include="Scripts\sly\main.js" />
+    <Content Include="Scripts\sly\plugins.js" />
+    <Content Include="Scripts\sly\style.css" />
+    <Content Include="Scripts\tab.js" />
+    <Content Include="Scripts\Utilities.js" />
+    <Content Include="Scripts\Utility.js" />
+    <Content Include="Scripts\validation.js" />
+    <Content Include="Setting\DeviceList.aspx" />
+    <Content Include="Setting\Dialog\CommunicationEdit.aspx" />
+    <Content Include="Setting\Dialog\DeviceEdit.aspx" />
+    <Content Include="Setting\ScanPeriodSetting.aspx" />
+    <Content Include="Setting\ScanPeriodSetting2.aspx" />
+    <Content Include="Styles\components.css" />
+    <Content Include="Styles\frame.css" />
+    <Content Include="Styles\lhgcalendar.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\tables.css" />
+    <Content Include="Styles\user.css" />
+    <Content Include="Sys\Dialog\FD_RoleEdit.aspx" />
+    <Content Include="Sys\FD_RoleList.aspx" />
+    <Content Include="Sys\Dialog\FD_UserEdit.aspx" />
+    <Content Include="Sys\FD_UserList.aspx" />
+    <Content Include="Sys\Dialog\RoleFunction.aspx" />
+    <Content Include="UC\left.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxEditors_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxEditors_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxEditors_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxEditors_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxGridView_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxGridView_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxGridView_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxGridView_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxHtmlEditor_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxHtmlEditor_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxHtmlEditor_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxHtmlEditor_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxPivotGrid_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxPivotGrid_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxPivotGrid_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxPivotGrid_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxScheduler_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxScheduler_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxScheduler_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxScheduler_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxSpellChecker_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxSpellChecker_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxSpellChecker_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxSpellChecker_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxSpreadsheet_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxSpreadsheet_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxSpreadsheet_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxSpreadsheet_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxTreeList_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxTreeList_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_ASPxTreeList_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_ASPxTreeList_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_v14_1.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_v14_1.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_Web_v14_11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_Web_v14_1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_XtraReports_v14_1_Web.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_XtraReports_v14_1_Web.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_XtraReports_v14_1_Web1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_XtraReports_v14_1_Web.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_XtraScheduler_v14_1_Core.zh-Hans1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_XtraScheduler_v14_1_Core.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DevExpress_XtraScheduler_v14_1_Core1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevExpress_XtraScheduler_v14_1_Core.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ContractWe.aspx.cs">
+      <DependentUpon>ContractWe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContractWe.aspx.designer.cs">
+      <DependentUpon>ContractWe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\ClientStaticDataList.aspx.cs">
+      <DependentUpon>ClientStaticDataList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\ClientStaticDataList.aspx.designer.cs">
+      <DependentUpon>ClientStaticDataList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DataChart.aspx.cs">
+      <DependentUpon>DataChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DataChart.aspx.designer.cs">
+      <DependentUpon>DataChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DataProcess\DataTemplateFacade.cs" />
+    <Compile Include="DataInfo\Dialog\DataStaticAdd.aspx.cs">
+      <DependentUpon>DataStaticAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\Dialog\DataStaticAdd.aspx.designer.cs">
+      <DependentUpon>DataStaticAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\Dialog\DataStaticEdit.aspx.cs">
+      <DependentUpon>DataStaticEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\Dialog\DataStaticEdit.aspx.designer.cs">
+      <DependentUpon>DataStaticEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataAlertQuery.aspx.cs">
+      <DependentUpon>DynamicDataAlertQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataAlertQuery.aspx.designer.cs">
+      <DependentUpon>DynamicDataAlertQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataAlertQueryDetail.aspx.cs">
+      <DependentUpon>DynamicDataAlertQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataAlertQueryDetail.aspx.designer.cs">
+      <DependentUpon>DynamicDataAlertQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataQuery.aspx.cs">
+      <DependentUpon>DynamicDataQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataQuery.aspx.designer.cs">
+      <DependentUpon>DynamicDataQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataQueryDetail.aspx.cs">
+      <DependentUpon>DynamicDataQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DynamicDataQueryDetail.aspx.designer.cs">
+      <DependentUpon>DynamicDataQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DynamicQueryDetail.aspx.cs">
+      <DependentUpon>DynamicQueryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DynamicQueryDetail.aspx.designer.cs">
+      <DependentUpon>DynamicQueryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DynamicSimpleList.aspx.cs">
+      <DependentUpon>DynamicSimpleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DynamicSimpleList.aspx.designer.cs">
+      <DependentUpon>DynamicSimpleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\DynamicSimpleQuery.aspx.cs">
+      <DependentUpon>DynamicSimpleQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\DynamicSimpleQuery.aspx.designer.cs">
+      <DependentUpon>DynamicSimpleQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\FD_LayerImage.aspx.cs">
+      <DependentUpon>FD_LayerImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\FD_LayerImage.aspx.designer.cs">
+      <DependentUpon>FD_LayerImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\FileDownload.aspx.cs">
+      <DependentUpon>FileDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\FileDownload.aspx.designer.cs">
+      <DependentUpon>FileDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\FileUpload_Edit.aspx.cs">
+      <DependentUpon>FileUpload_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\FileUpload_Edit.aspx.designer.cs">
+      <DependentUpon>FileUpload_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\FileUpload_List.aspx.cs">
+      <DependentUpon>FileUpload_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\FileUpload_List.aspx.designer.cs">
+      <DependentUpon>FileUpload_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\PointSelect.aspx.cs">
+      <DependentUpon>PointSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\PointSelect.aspx.designer.cs">
+      <DependentUpon>PointSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\ScanDataValue.aspx.cs">
+      <DependentUpon>ScanDataValue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\ScanDataValue.aspx.designer.cs">
+      <DependentUpon>ScanDataValue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\StaticCalChart.aspx.cs">
+      <DependentUpon>StaticCalChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\StaticCalChart.aspx.designer.cs">
+      <DependentUpon>StaticCalChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\StaticCalQuery.aspx.cs">
+      <DependentUpon>StaticCalQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\StaticCalQuery.aspx.designer.cs">
+      <DependentUpon>StaticCalQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\StaticDataChart.aspx.cs">
+      <DependentUpon>StaticDataChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\StaticDataChart.aspx.designer.cs">
+      <DependentUpon>StaticDataChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataInfo\StaticDataQuery.aspx.cs">
+      <DependentUpon>StaticDataQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataInfo\StaticDataQuery.aspx.designer.cs">
+      <DependentUpon>StaticDataQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog.Master.cs">
+      <DependentUpon>Dialog.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog.Master.designer.cs">
+      <DependentUpon>Dialog.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog1.Master.cs">
+      <DependentUpon>Dialog1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog1.Master.designer.cs">
+      <DependentUpon>Dialog1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_CommunicationDevice_Edit.aspx.cs">
+      <DependentUpon>FD_CommunicationDevice_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_CommunicationDevice_Edit.aspx.designer.cs">
+      <DependentUpon>FD_CommunicationDevice_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_FJ_Edit.aspx.cs">
+      <DependentUpon>FD_FJ_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_FJ_Edit.aspx.designer.cs">
+      <DependentUpon>FD_FJ_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_Point_Edit.aspx.cs">
+      <DependentUpon>FD_Point_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_Point_Edit.aspx.designer.cs">
+      <DependentUpon>FD_Point_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_ScanLayer_Edit.aspx.cs">
+      <DependentUpon>FD_ScanLayer_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_ScanLayer_Edit.aspx.designer.cs">
+      <DependentUpon>FD_ScanLayer_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_ScanNode_Edit.aspx.cs">
+      <DependentUpon>FD_ScanNode_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_ScanNode_Edit.aspx.designer.cs">
+      <DependentUpon>FD_ScanNode_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_ScanType_Edit.aspx.cs">
+      <DependentUpon>FD_ScanType_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\FD_ScanType_Edit.aspx.designer.cs">
+      <DependentUpon>FD_ScanType_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_AutoScanConfig_List.aspx.cs">
+      <DependentUpon>FD_AutoScanConfig_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_AutoScanConfig_List.aspx.designer.cs">
+      <DependentUpon>FD_AutoScanConfig_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_Command_List.aspx.cs">
+      <DependentUpon>FD_Command_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_Command_List.aspx.designer.cs">
+      <DependentUpon>FD_Command_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_Connection_List.aspx.cs">
+      <DependentUpon>FD_Connection_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_Connection_List.aspx.designer.cs">
+      <DependentUpon>FD_Connection_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_CommunicationDevice_List.aspx.cs">
+      <DependentUpon>FD_CommunicationDevice_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_CommunicationDevice_List.aspx.designer.cs">
+      <DependentUpon>FD_CommunicationDevice_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_FJ_List.aspx.cs">
+      <DependentUpon>FD_FJ_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_FJ_List.aspx.designer.cs">
+      <DependentUpon>FD_FJ_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_Point_List.aspx.cs">
+      <DependentUpon>FD_Point_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_Point_List.aspx.designer.cs">
+      <DependentUpon>FD_Point_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_ScanLayer_List.aspx.cs">
+      <DependentUpon>FD_ScanLayer_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_ScanLayer_List.aspx.designer.cs">
+      <DependentUpon>FD_ScanLayer_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_ScanNode_List.aspx.cs">
+      <DependentUpon>FD_ScanNode_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_ScanNode_List.aspx.designer.cs">
+      <DependentUpon>FD_ScanNode_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\FD_ScanType_List.aspx.cs">
+      <DependentUpon>FD_ScanType_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\FD_ScanType_List.aspx.designer.cs">
+      <DependentUpon>FD_ScanType_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_FunctionAdd.aspx.cs">
+      <DependentUpon>FD_FunctionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_FunctionAdd.aspx.designer.cs">
+      <DependentUpon>FD_FunctionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_Pwd_Edit.aspx.cs">
+      <DependentUpon>FD_Pwd_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_Pwd_Edit.aspx.designer.cs">
+      <DependentUpon>FD_Pwd_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_RoleUser.aspx.cs">
+      <DependentUpon>FD_RoleUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_RoleUser.aspx.designer.cs">
+      <DependentUpon>FD_RoleUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\FD_FunctionList.aspx.cs">
+      <DependentUpon>FD_FunctionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\FD_FunctionList.aspx.designer.cs">
+      <DependentUpon>FD_FunctionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setting\DeviceList.aspx.cs">
+      <DependentUpon>DeviceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\DeviceList.aspx.designer.cs">
+      <DependentUpon>DeviceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\CommunicationEdit.aspx.cs">
+      <DependentUpon>CommunicationEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\CommunicationEdit.aspx.designer.cs">
+      <DependentUpon>CommunicationEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\Dialog\DeviceEdit.aspx.cs">
+      <DependentUpon>DeviceEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\Dialog\DeviceEdit.aspx.designer.cs">
+      <DependentUpon>DeviceEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\ScanPeriodSetting.aspx.cs">
+      <DependentUpon>ScanPeriodSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\ScanPeriodSetting.aspx.designer.cs">
+      <DependentUpon>ScanPeriodSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\ScanPeriodSetting2.aspx.cs">
+      <DependentUpon>ScanPeriodSetting2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting\ScanPeriodSetting2.aspx.designer.cs">
+      <DependentUpon>ScanPeriodSetting2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_RoleEdit.aspx.cs">
+      <DependentUpon>FD_RoleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_RoleEdit.aspx.designer.cs">
+      <DependentUpon>FD_RoleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\FD_RoleList.aspx.cs">
+      <DependentUpon>FD_RoleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\FD_RoleList.aspx.designer.cs">
+      <DependentUpon>FD_RoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_UserEdit.aspx.cs">
+      <DependentUpon>FD_UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\Dialog\FD_UserEdit.aspx.designer.cs">
+      <DependentUpon>FD_UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\FD_UserList.aspx.cs">
+      <DependentUpon>FD_UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\FD_UserList.aspx.designer.cs">
+      <DependentUpon>FD_UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\Dialog\RoleFunction.aspx.cs">
+      <DependentUpon>RoleFunction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\Dialog\RoleFunction.aspx.designer.cs">
+      <DependentUpon>RoleFunction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\left.ascx.cs">
+      <DependentUpon>left.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\left.ascx.designer.cs">
+      <DependentUpon>left.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TempImages\" />
+    <Folder Include="WebModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FDScanSystem.DAO\FDScanSystem.DAO.csproj">
+      <Project>{C8F5D2EF-AC88-4DF7-AAE2-B61AA7A7C0F2}</Project>
+      <Name>FDScanSystem.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FDScanSystem.Protocol\FDScanSystem.Protocol.csproj">
+      <Project>{2D810572-2DB9-44BB-9A14-3244C663E34D}</Project>
+      <Name>FDScanSystem.Protocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FD_ScanSystem.WebModel\FD_ScanSystem.WebModel.csproj">
+      <Project>{E4DA09DE-1958-48CB-A30E-7449DCCEAB7A}</Project>
+      <Name>FD_ScanSystem.WebModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dialog.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxEditors_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxEditors_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxEditors_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxEditors_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxGridView_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxGridView_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxGridView_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxGridView_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxHtmlEditor_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxHtmlEditor_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxHtmlEditor_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxHtmlEditor_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxPivotGrid_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxPivotGrid_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxPivotGrid_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxPivotGrid_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxScheduler_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxScheduler_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxScheduler_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxScheduler_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxSpellChecker_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxSpellChecker_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxSpellChecker_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxSpellChecker_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxSpreadsheet_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxSpreadsheet_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxSpreadsheet_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxSpreadsheet_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxTreeList_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxTreeList_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_ASPxTreeList_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_ASPxTreeList_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_v14_1.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_v14_11.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_Web_v14_1.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_Web_v14_1.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_XtraReports_v14_1_Web.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_XtraReports_v14_1_Web1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_XtraReports_v14_1_Web.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_XtraReports_v14_1_Web.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_XtraScheduler_v14_1_Core.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_XtraScheduler_v14_1_Core1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\DevExpress_XtraScheduler_v14_1_Core.zh-Hans.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DevExpress_XtraScheduler_v14_1_Core.zh-Hans1.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site1.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dialog1.Master" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49278</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

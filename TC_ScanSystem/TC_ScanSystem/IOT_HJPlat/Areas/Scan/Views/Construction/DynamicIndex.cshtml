@@ -1,0 +1,240 @@
+﻿@{
+    ViewBag.Title = "施工自动化";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/IOT/css/bootstrap-select.min.css" />
+<script type="text/javascript" src="~/Content/IOT/js/bootstrap-select.min.js"></script>
+
+<script type="text/javascript" src="~/Content/Board/EchartGL/echarts.js"></script>
+
+@{
+    var LayerList = ViewData["LayerList"] as List<DataEntity.MK_Layer>;
+    var ScanTypeList = ViewData["ScanTypeList"] as List<DataEntity.MK_ScanType>;
+    var PositionList = ViewData["PositionList"] as List<DataEntity.MK_Position>;
+    var PointList = ViewData["PointList"] as List<DataEntity.MK_Point>;
+   
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        //do something
+        $("select[name='select_AutoLayer'] option[value='" + $("#select_layer").val() + "']").prop('selected', true);
+        $("select[name='select_AutoScanType'] option[value='" + $("#select_type").val() + "']").prop('selected', true);
+        $("select[name='select_AutoPosition'] option[value='" + $("#select_position").val() + "']").prop('selected', true);
+        // $("select[name='select_AutoPoint'] option[value='" + $("#select_point").val() + "']").prop('selected', true);
+
+        $("input[name='entryDateBegin']").val($("#begin").val());
+        $("input[name='entryDateEnd']").val($("#end").val());
+        $("ul[name='UL_PointPop'] input[type='checkbox']").each(function (index, dom) {
+            $(dom).prop('checked', false);
+            for (var i = 0; i < $("#select_point").val().split(',').length; i++) {
+                if ($(dom).val() == $("#select_point").val().split(',')[i]) {
+                    $(dom).prop('checked', true);
+                }
+            }
+        })
+    })
+</script>
+
+<div class="content">
+    <div class="col-lg-12">
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#shuju" data-toggle="tab">光纤监测</a>
+            </li>
+            <li>
+                <a href="#qushi" data-toggle="tab">趋势图</a>
+            </li>
+        </ul>
+
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--车辆进出数据-->
+            <div class="tab-pane fade in active" id="shuju">
+                @{
+                    var ID = Request.QueryString["ID"];
+                    var LayerId = ViewData["LayerId"].ToString();
+                    var TypeId = ViewData["TypeId"].ToString();
+                    var PositionId = ViewData["PositionId"].ToString();
+                    var begin = ViewData["begin"].ToString();
+                    var end = ViewData["end"].ToString();
+                    var PointId = ViewData["Point"].ToString();
+                    <input type="hidden" value="@TypeId" id="select_type" />
+                                    <input type="hidden" value="@LayerId" id="select_layer" />
+                                    <input type="hidden" value="@PositionId" id="select_position" />
+                                    <input type="hidden" value="@ID" id="select_point" />
+                                    <input type="hidden" value="@begin" id="begin" />
+                                    <input type="hidden" value="@end" id="end" />
+                                    <input type="hidden" value="@PointId" id="select_AutoPoint" name="select_AutoPoint" />
+                }
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测区域：</a>
+                        <select id="select_AutoLayer" name="select_AutoLayer" onchange="ConstructAutoJS.SelectChange('layer');">
+                            <option value="0">请选择</option>
+                            @{
+                                if (LayerList != null && LayerList.Count > 0)
+                                {
+                                    foreach (var item in LayerList)
+                                    {
+                                        <option value="@item.ID">@item.LayerName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测类型：</a>
+                        <select id="select_AutoScanType" name="select_AutoScanType" onchange="ConstructAutoJS.SelectChange('scantype');">
+                            <option value="0">请选择</option>
+                            @{
+                                if (ScanTypeList != null && ScanTypeList.Count > 0)
+                                {
+                                    foreach (var item in ScanTypeList)
+                                    {
+                                        <option value="@item.ID">@item.TypeName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测位置：</a>
+                        <select id="select_AutoPosition" name="select_AutoPosition" onchange="ConstructAutoJS.SelectChange('position');">
+                            <option value="0">请选择</option>
+                            @{
+                                if (PositionList != null && PositionList.Count > 0)
+                                {
+                                    foreach (var item in PositionList)
+                                    {
+                                        <option value="@item.ID">@item.PositionName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+
+                    <li style="display:none;" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">设备：</a>
+                        <select id="select_AutoDevice" onchange="ConstructAutoJS.SelectChange('device');">
+                            <option value="0">请选择</option>
+
+                        </select>
+                    </li>
+
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测点&#12288;：</a>
+                        @*<select id="select_AutoPoint" name="select_AutoPoint">
+                            <option value="0">全部</option>
+                            @{
+                                if (PointList != null && PointList.Count > 0)
+                                {
+                                    foreach (var item in PointList)
+                                    {
+                                        <option value="@item.ID">@item.PointName</option>
+                                    }
+                                }
+                            }
+                        </select>*@
+                       
+                        <a style="line-height:32px;" href="javascript:void(0)" onclick="ConstructAutoJS.ShowPointInfo();">选择测点</a>
+                    </li>
+
+                    <li class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        @*<a class="screen-a">起始日期：</a>*@
+                        <label for="dtp_input1" class="col-md-2 control-label">开始时间：</label>
+                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input1">
+                            <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="dtp_input1" name="entryDateBegin" value="" /><br />
+                        @*<input name="entryDateBegin" class="DateTimePicker" placeholder="请选择起始日期" type="text">*@
+                    </li>
+                    <li class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        @*<a class="screen-a">结束日期：</a>*@
+                        <label for="dtp_input2" class="col-md-2 control-label">结束时间：</label>
+                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input2">
+                            <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="dtp_input2" name="entryDateEnd" value="" /><br />
+                        @*<input name="entryDateEnd" class="DateTimePicker" placeholder="请选择结束日期" type="text">*@
+                    </li>
+
+                    <li class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="ConstructAutoJS.DoAutoQuery()" />
+
+                        <input type="button" value="导出数据" onclick="ConstructAutoJS.Export()" />
+                        @*<input type="button" value="趋势图" onclick="ConstructAutoJS.ShowEChart()" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="AutoHtmlTemplate" class="panel panel-primary">
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="Pagination" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--趋势图-->
+            <div class="tab-pane fade" id="qushi">
+                <div class="tab-content1">
+                    <div class="row-fluid;" style="min-height:45vh">
+                        <div class="col-lg-12">
+                            @Html.Partial("~/Areas/Common/Views/Echart/ConstructionEchart.cshtml")
+                            @*<div id="EchartDiv">
+                                <div class="popup-content" id="EChartContent" style="width:100%; height:100%; margin:0 auto;"></div>
+                            </div>*@
+                        </div>
+                    </div>
+                    <div class="row-fluid;" style="min-height:45vh">
+                        <div class="col-lg-12">
+                            @Html.Partial("~/Areas/Common/Views/Echart/ConstructionCalEchart.cshtml")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+
+@Html.Partial("DynamicTemplate")
+@Html.Partial("CalIndexPopUp")
+@*@Html.Partial("~/Areas/Common/Views/PopUp/EChartPop.cshtml")*@
+<script type="text/javascript" src="~/Scripts/IOT/ConstructDynamic.js"></script>
+
+<script type="text/javascript">
+    //初始化时间选择
+    $('.form_datetime').datetimepicker({
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    //$('.form_datetime').datetimepicker("setDate", new Date());
+
+    var nowTime = new Date();
+
+    $('.form_datetime[data-link-field="dtp_input1"]').datetimepicker("setDate", new Date(nowTime.setDate(nowTime.getDate() - 1)));
+    $('.form_datetime[data-link-field="dtp_input2"]').datetimepicker("setDate", new Date());
+
+</script>
+

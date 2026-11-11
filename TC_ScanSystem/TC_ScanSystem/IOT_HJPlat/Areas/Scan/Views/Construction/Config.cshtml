@@ -1,0 +1,356 @@
+﻿
+@{
+    ViewBag.Title = "配置管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+@{
+    var Projects = ViewData["Projects"] as List<DataEntity.Base_Project>;
+    var Layers = ViewData["Layers"] as List<DataEntity.MK_Layer>;
+    var ScanTypes = ViewData["ScanTypes"] as List<DataEntity.MK_ScanType>;
+    var Protocols = ViewData["Protocols"] as List<DataEntity.MK_Protocol>;
+    var Postions = ViewData["Postions"] as List<DataEntity.MK_Position>;
+    var Devices = ViewData["Devices"] as List<DataEntity.MK_Device>;
+    var Config = ViewData["Config"] as DataEntity.MK_AutoReadConfig;
+    var Time = Config == null ? null : Config.BeginDate;
+    var Interval = Config == null ? null : Config.Interval;
+}
+
+
+
+     <link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css" />
+    <script type="text/javascript" src="/uploadify/jquery.uploadify.min.js"></script>
+<div class="content">
+    <div class="content-min col-lg-12">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#layer">区域管理</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#scanType">内容管理</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#position">位置管理</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#protocol">协议管理</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#acquisition">读取参数管理</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#point">测点管理</a>
+            </li>
+        </ul>
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--区域管理-->
+            <div class="tab-pane fade in active" id="layer">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">所属类型：</a>
+                        <select id="SelLayerProj">
+                            <option value="0">全部</option>
+                            @{
+                                if (ScanTypes != null && ScanTypes.Count > 0)
+                                {
+                                    foreach (var item in ScanTypes)
+                                    {
+                                        <option value="@item.ID">@item.TypeName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="ConstructConfigLayerJS.DoLayerQuery()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增" onclick="ConstructConfigLayerJS.AddLayer()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="LayerHtmlTemplate" class="panel panel-primary">
+
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="PaginationLayer" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--内容-->
+            <div class="tab-pane fade" id="scanType">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">所属项目：</a>
+                        <select id="SelectScanTypeProj">
+                            <option value="0">全部</option>
+                            @{
+                                if (Projects != null && Projects.Count > 0)
+                                {
+                                    foreach (var item in Projects)
+                                    {
+                                        <option value="@item.ID">@item.ProjectName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">协议：</a>
+                        <select id="SelectScanTypeProtocols">
+                            <option value="0">全部</option>
+                            @{
+                                if (Protocols != null && Protocols.Count > 0)
+                                {
+                                    foreach (var item in Protocols)
+                                    {
+                                        <option value="@item.ID">@item.Protocol</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="ConstructConfigScanTypeJS.DoScanTypeQuery()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增" onclick="ConstructConfigScanTypeJS.AddScanType()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="ScanTypeHtmlTemplate" class="panel panel-primary">
+
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="PaginationScanType" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--位置-->
+            <div class="tab-pane fade" id="position">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">所属类型：</a>
+                        <select id="SelProjPosition" onchange="ConstructConfigPositionJS.SelectChange();">
+                            <option value="0">全部</option>
+                            @{
+                                if (ScanTypes != null && ScanTypes.Count > 0)
+                                {
+                                    foreach (var item in ScanTypes)
+                                    {
+                                        <option value="@item.ID">@item.TypeName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">区域选择：</a>
+                        <select id="SelLayerPosition">
+                            <option value="0">全部</option>
+                            @{
+                                if (Layers != null && Layers.Count > 0)
+                                {
+                                    foreach (var item in Layers)
+                                    {
+                                        <option value="@item.ID">@item.LayerName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                  
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="ConstructConfigPositionJS.DoPositionQuery()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增" onclick="ConstructConfigPositionJS.AddPosition()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="PositionHtmlTemplate" class="panel panel-primary">
+
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="PaginationPosition" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--协议-->
+            <div class="tab-pane fade" id="protocol">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">协议：</a>
+                        <input placeholder="请输入协议名" id="ProtocolName" type="text" value="" />
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="ConstructConfigProtocolJS.DoProtocolQuery()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增" onclick="ConstructConfigProtocolJS.AddProtocol()" />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="ProtocolHtmlTemplate" class="panel panel-primary">
+
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="ProtocolPagination" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--读取参数-->
+            <div class="tab-pane fade" id="acquisition">
+                <ul class="mine-screen row-fluid">
+                    @*<li class="col-lg-6 col-md-2 col-sm-6 col-xs-12">
+                        <a class="screen-a">起始时间：</a>
+                        <input name="AcquisitionBeginDate" class="DateTimePicker" placeholder="请选择起始时间" type="text" value="@(Time == null ? "" : Convert.ToDateTime(Time).ToString("yyyy-MM-dd HH:mm:ss"))">
+                        <div class="input-group date form_datetime col-lg-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input1">
+                            <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="AcquisitionBeginDate" name="AcquisitionBeginDate" value="" /><br />
+                    </li>*@
+                    <li class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <label for="dtp_input1" class="col-md-2 control-label">开始时间：</label>
+                        <div class="input-group date form_datetime col-lg-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input11">
+                            <input class="form-control" size="16" type="text" value="@(Time == null ? "" : Convert.ToDateTime(Time).ToString("yyyy-MM-dd HH:mm:ss"))" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="dtp_input11" name="AcquisitionBeginDate" value="@(Time == null ? "" : Convert.ToDateTime(Time).ToString("yyyy-MM-dd HH:mm:ss"))" /><br />
+                    </li>
+                        @*<a class="screen-a">起始时间：</a>
+                        <input name="AcquisitionBeginDate" class="DateTimePicker" placeholder="请选择起始时间" type="text" value="@(Time == null ? "" : Convert.ToDateTime(Time).ToString("yyyy-MM-dd HH:mm:ss"))">*@
+                    </li>
+                    <li class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <a class="screen-a col-md-2 control-label" style="width:auto">时间间隔（分钟）：</a>
+                        <input placeholder="请输入时间间隔" id="AcquisitionInterval" name="AcquisitionInterval" type="text" value="@(Interval == null ? 0 : Convert.ToInt32(Interval))" />
+                    </li>
+                    <li class="form-group col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="保存" onclick="ConstructConfigAcquisitionJS.ShowModal()" />
+                    </li>
+                </ul>
+            </div>
+            <!--测点-->
+            <div class="tab-pane fade" id="point">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">测点位置：</a>
+                        <select id="PointSelectPosition">
+                            <option value="0">全部</option>
+                            @{
+                                if (Postions != null && Postions.Count > 0)
+                                {
+                                    foreach (var item in Postions)
+                                    {
+                                        <option value="@item.ID">@item.PositionName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">设备名称：</a>
+                        <select id="PointSelectDevice">
+                            <option value="0">全部</option>
+                            @{
+                                if (Devices != null && Devices.Count > 0)
+                                {
+                                    foreach (var item in Devices)
+                                    {
+                                        <option value="@item.ID">@item.DeviceName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测类型：</a>
+                        <select id="SelScanTypePoint">
+                            <option value="0">全部</option>
+                            @{
+                                if (ScanTypes != null && ScanTypes.Count > 0)
+                                {
+                                    foreach (var item in ScanTypes)
+                                    {
+                                        <option value="@item.ID">@item.TypeName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="ConstructConfigPointJS.DoPointQuery()" />
+                        <input type="button" value="新增" onclick="ConstructConfigPointJS.AddPoint()"  />
+                        @*<input type="button" value="重置查询" />*@
+                    </li>                       
+                        @*<input type="button" value="重置查询" />*@
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="PointHtmlTemplate" class="panel panel-primary">
+
+                </div>
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div class="box">
+                        <div id="PointPagination" class="page fl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+
+@Html.Partial("LayerTemplate")
+@Html.Partial("LayerPopUp")
+
+@Html.Partial("PointTemplate")
+@Html.Partial("PointPopUp")
+
+@Html.Partial("PositionTemplate")
+@Html.Partial("PositionPopUp")
+
+@Html.Partial("ProtocolTemplate")
+@Html.Partial("ProtocolPopUp")
+
+@Html.Partial("ScanTypeTemplate")
+@Html.Partial("ScanTypePopUp")
+
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigLayer.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigPoint.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigPosition.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigProtocol.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigScanType.js"></script>
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigAcquisition.js"></script>

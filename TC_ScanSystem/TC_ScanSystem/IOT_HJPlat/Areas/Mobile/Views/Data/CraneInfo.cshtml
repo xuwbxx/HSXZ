@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    var info = Model as Model.HJPlat.Response.GantryCraneItemInfoResponse;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Mobile/css/style.css" />
+    <title>龙门吊详情</title>
+</head>
+<body>
+    <div>
+        <div class="content">
+            <div class="content_zero">
+                <div class="con_zero_right">
+                    <!--第零部分右边-->
+                    <ul id="ul-change">
+                        <li>
+                            <a>设备名称：</a>
+                            <a>@info.Name</a>
+                        </li>
+                        <li>
+                            <a>采集时间：</a>
+                            <a>@info.StatusInfo.CreateTime</a>
+                        </li>
+                        <li>
+                            <a>大车位置：</a>
+                            <a>@info.StatusInfo.Cart.position @info.StatusInfo.Cart.unit (@info.StatusInfo.Cart.action)</a>
+                        </li>
+                        <li>
+                            <a>大车左限位状态：</a>
+                            <a>@info.StatusInfo.Cart.LeftLimitStatus</a>
+                        </li>
+                        <li>
+                            <a>大车右限位状态：</a>
+                            <a>@info.StatusInfo.Cart.RightLimitStatus</a>
+                        </li>
+                        <li>
+                            <a>小车前限位状态：</a>
+                            <a>@info.StatusInfo.Dolly.FrontLimitStatus</a>
+                        </li>
+                        <li>
+                            <a>小车后限位状态：</a>
+                            <a>@info.StatusInfo.Dolly.BackLimitStatus</a>
+                        </li>
+                        <li>
+                            <a>夹轨器状态：</a>
+                            <a>@info.StatusInfo.Clamp.action</a>
+                        </li>
+                        <li>
+                            <a>门限位状态：</a>
+                            <a>@info.StatusInfo.Door.action</a>
+                        </li>
+                        <li>
+                            <a>支腿限位状态：</a>
+                            <a>@info.StatusInfo.Leg.action</a>
+                        </li>
+                        <li>
+                            <a>吊钩位置：</a>
+                            <a>@info.StatusInfo.Hook.position @info.StatusInfo.Hook.unit (@info.StatusInfo.Hook.action)</a>
+                        </li>
+                        <li>
+                            <a>吊钩速度：</a>
+                            <a>@info.StatusInfo.Hook.speed @info.StatusInfo.Hook.speedunit</a>
+                        </li>
+                        <li>
+                            <a>累计工作时间：</a>
+                            <a>@info.StatusInfo.Duration.time @info.StatusInfo.Duration.unit</a>
+                        </li>
+                        <li>
+                            <a>载重：</a>
+                            <a>@info.StatusInfo.Weight.weight @info.StatusInfo.Weight.unit</a>
+                        </li>
+                        <li>
+                            <a>倾斜：</a>
+                            <a>@info.StatusInfo.Tilt.direction@info.StatusInfo.Tilt.Tilt @info.StatusInfo.Tilt.unit</a>
+                        </li>
+                        <li>
+                            <a>风速：</a>
+                            <a>@info.StatusInfo.Wind.speed @info.StatusInfo.Wind.unit</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

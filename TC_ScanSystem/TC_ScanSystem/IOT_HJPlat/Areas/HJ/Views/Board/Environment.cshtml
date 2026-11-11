@@ -1,0 +1,253 @@
+﻿<div class="list environment">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">环境监控</p>
+        <div class="list-more">
+            <select id="select_Point">
+                <option>切换区域</option>
+                <option>工点1</option>
+                <option>工点2</option>
+                @*@{
+            var list = Model as List<DataEntity.ORM.SQCP_CSMonitor_EnvSpot>;
+            foreach (var item in list)
+            {
+                <option value="@item.Id">@item.PointName</option>
+            }
+        }*@
+            </select>
+        </div>
+    </div>
+    @*<div class="environment-chart" style="background:url(/Content/Board/img/1.png) no-repeat center center;"></div>*@
+    <div id="container" class="environment-chart">
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        EnvironmentEchartQuery();         
+
+        function EnvironmentEchartQuery() {
+
+            var param = {};
+            // param.PointID = $("#select_Point").val();
+
+            $.post('/Main/Board/GetEnvirMonitorData', param)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+
+                        // var dom = document.getElementById("container");
+                        // var myChart = echarts.init(dom);
+
+                        // var option = data.Data;
+
+                        // if (option && typeof option === "object") {
+                        //     myChart.setOption(option, true);
+                        // }
+                        // var sel = document.getElementById("select_Point");
+                        // sel.val(data.Data[0].name)
+                        // $("select_Point").val(data.Data[0].Name)
+                        $("#select_Point").html("<option>" + data.Data[0].Name +"</option>")
+                        SetEnvirOption(data.Data);
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+            })
+            .always(function (data) {
+                // 关闭等待遮罩
+                //CloseMaskPopUp();
+            });
+
+            function SetEnvirOption(obj) {
+
+                // var obj = 
+                // [
+                //     {
+                //         "name":"工点一",
+                //         "item":
+                //         [
+                //             {"name": "温度", "value": 8.7},
+                //             {"name": "湿度", "value": 99.9},
+                //             {"name": "PM2.5", "value": 87},
+                //             {"name": "PM10", "value": 108},
+                //             {"name": "噪音", "value": 30},
+                //             {"name": "风速", "value": 3.3},
+                //             {"name": "风力", "value": 2}
+                //         ],
+                //     },
+                // ];
+
+
+                var hexToRgba = function(hex, alpha) {
+                    var rgb = [];
+                    if (isNaN(alpha) || alpha > 1 || alpha < 0) {
+                        alpha = 1
+                    }
+                    hex = hex.substr(1);//去除前缀 # 号
+
+                    if (hex.length === 3) { // 处理 "#abc" 成 "#aabbcc"
+                        hex = hex.replace(/(.)/g, '$1$1');
+                    }
+
+                    hex.replace(/../g, function(color){
+                        rgb.push(parseInt(color, 0x10));//按16进制将字符串转换为数字
+                    });
+                    rgb.push(alpha);//按16进制将字符串转换为数字
+                    return "rgba(" + rgb.join(",") + ")";
+                };
+
+                function generateColorList(colorArea, alphaMin, alphaMax, number) {
+                    var retLst = [];
+                    var colorDiff = (alphaMax - alphaMin)/(number - 1);
+                    for(var i = 0; i < number; i++)
+                    {
+                        retLst.push(hexToRgba(colorArea, alphaMin + i * colorDiff));
+                    }
+                    return retLst;      
+                }
+
+                // var colorList1 = ['#006400','#FF4500','#00FF00','#3CB371','#8A2BE2','#40E0D0','#4B0082','#003C9D','#FFFF00','#CC0000 ',];
+                var colorList = ['lime', 'deepskyblue', 'lightgreen', 'violet', 'darkorange', 'royalblue','tomato','indigo','darkslategray','slategray'];
+                var splitCount = 5;
+                var colorAreaAlphaMin = 0.05;
+                var colorAreaAlphaMax = 0.25;
+                //rgb(30, 144, 255);
+                var colorArea = "#1E90FF";
+
+                var colorAreaList = generateColorList(colorArea, colorAreaAlphaMin, colorAreaAlphaMax, splitCount);
+                // var colorAreaList = [
+                //     "rgba(30, 144, 255, 0.05)",
+                //     "rgba(30, 144, 255, 0.1)",
+                //     "rgba(30, 144, 255, 0.15)",
+                //     "rgba(30, 144, 255, 0.2)",
+                //     "rgba(30, 144, 255, 0.25)",
+                // ];
+
+                // itemMax=
+                // [
+                //     {"name": "温度", "max": 100},
+                //     {"name": "湿度", "max": 100},
+                //     {"name": "PM2.5", "max": 300},
+                //     {"name": "PM10", "max": 150},
+                //     {"name": "噪音", "max": 100},
+                //     {"name": "风速", "max": 25},
+                //     {"name": "风力", "max": 10}
+                // ],
+                itemMax=
+                [
+                    100,
+                    100, 
+                    300,
+                    150, 
+                    100, 
+                    25,
+                    10,
+                ];
+
+                var optData = {};
+                optData.legendName = [];
+                optData.indicator = [];
+                optData.data = [];
+
+                var xCenterPosition = '50%';
+                var yCenterPosition = '50%';
+                // var data = [];
+                var colorLen = colorList.length;
+                var isFirstValue = true;
+                obj.forEach(function(elem){
+                    optData.legendName.push(elem.Name);
+                    var currData = [];
+                    if (isFirstValue) {
+                        elem.Item.forEach(function(ele, index){
+                            optData.indicator.push({name:ele.Name, max:itemMax[index], color:colorList[index % colorLen]});
+                        });
+                        isFirstValue = false;
+                    }
+                    elem.Item.forEach(function(ele, index){
+                        currData.push(ele.Value);
+                    });
+                    optData.data.push(currData);
+                });
+
+                var opt = {
+                    "radar": {
+                        "indicator": optData.indicator,
+                        "shape": "circle",
+                        center: [xCenterPosition, yCenterPosition],
+                        "splitNumber": splitCount,
+                        "splitLine": {
+                            "lineStyle": {
+                                "color": "rgba(255, 255, 255, 0.3)",
+                            }
+                        },
+                        "splitArea": 
+                        {
+                            show: true,
+                            areaStyle: {
+                                color: colorAreaList,
+                            }
+                        },
+                        "axisLine": {
+                            show:true,
+                            "lineStyle": {
+                                // "color": "rgba(238, 197, 102, 0.5)"
+                                "color": "rgba(255, 255, 255, 0.3)",
+                            }
+                        }
+                    },
+                    "title": null,
+                    "legend": null,
+                    "tooltip": {
+                        "trigger": null,
+                        "textStyle": {
+                            "color": "yellow",
+                            "fontSize": 18
+                        }
+                    },
+                    "toolbox": {
+                        "show": false,
+                        "feature": null
+                    },
+                    "series": [{
+                        "name": "环境监测",
+                        "type": "radar",
+                        "lineStyle": {
+                            "normal": {
+                                "width": 1,
+                                "opacity": 0.5
+                            }
+                        },
+                        "data": optData.data,
+                        "symbol": "none",
+                        "itemStyle": {
+                            "normal": {
+                                "color": "#F9713C"
+                            }
+                        },
+                        "areaStyle": {
+                            "normal": {
+                                "opacity": 0.3,
+                                "color": "yellow"
+                            }
+                        }
+                    }],
+                    "xAxis": null,
+                    "yAxis": null
+                }
+
+
+                var dom = document.getElementById("container");
+                var myChart = echarts.init(dom);
+
+                if (opt && typeof opt === "object") {
+                    myChart.setOption(opt, true);
+                }
+            }
+        }
+
+    })
+</script>

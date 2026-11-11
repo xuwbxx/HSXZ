@@ -1,0 +1,93 @@
+﻿<div id="DevicePopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="DeviceInfoTitle">监测设备信息</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="DeviceID" />
+            <input type="hidden" name="TypeDevice" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="field">监测设备名称:</td>
+                            <td><input name="DeviceName" type="text" value="" /></td>
+                            <td class="field">监测设备编号:</td>
+                            <td><input name="DeviceIden" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="field">所属项目:</td>
+                            <td>
+                                <select name="ProjectDeviceSelect">
+                                    <option value="">请选择</option>
+                                    @{
+                                        var Projects = ViewData["Projects"] as List<DataEntity.Base_Project>;
+                                        if (Projects != null && Projects.Count > 0)
+                                        {
+                                            foreach (var item in Projects)
+                                            {
+                                                <option value="@item.ID">@item.ProjectName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td class="field">通讯协议:</td>
+                            <td>
+                                <select name="DeviceProtocolSelect">
+                                    <option value="">请选择</option>
+                                    <option value="0">MCU</option>
+                                    <option value="1">光纤</option>
+                                    <option value="2">COMWIN</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field">所属区域:</td>
+                            <td>
+                                <select name="LayerSelect">
+                                    <option value="">请选择</option>
+                                    @{
+                                        var Layers = ViewData["Layers"] as List<DataEntity.MK_Layer>;
+                                        if (Layers != null && Layers.Count > 0)
+                                        {
+                                            foreach (var item in Layers)
+                                            {
+                                                <option value="@item.ID">@item.LayerName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                            <td class="field">通讯设备:</td>
+                            <td>
+                                <select name="CommunicationSelect">
+                                    <option value="">请选择</option>
+                                    @{
+                                        var Communications = ViewData["Communications"] as List<DataEntity.MK_CommunicationDevice>;
+                                        if (Communications != null && Communications.Count > 0)
+                                        {
+                                            foreach (var item in Communications)
+                                            {
+                                                <option value="@item.ID">@item.CommunicationName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field">校验码:</td>
+                            <td><input name="CRC" type="text" value="" /></td>
+                            <td class="field"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" @*data-toggle="modal" data-target="#myModal"*@ type="button" value="保存" onclick="DeviceJS.ShowDeviceModal();" />
+                    <input class="btn-primary" type="button" value="退回" onclick="DeviceJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>

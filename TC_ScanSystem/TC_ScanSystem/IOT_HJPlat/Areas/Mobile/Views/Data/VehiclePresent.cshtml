@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    var info = Model as List<Model.HJPlat.Response.VehiclePresentResponse>;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Mobile/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/IOT/css/bootstrap.css" />
+    <title>车辆进出</title>
+</head>
+<body>
+    <div>
+        <table class="table table-striped table-green">
+            <thead>
+                <tr>
+                    <th>车牌号</th>
+                    <th>进出工点</th>
+                    <th>进入时间</th>
+                    <th>区域描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var item in info)
+                    {
+                        <tr>
+                            <td>@item.EnterPlate</td>
+                            <td>@item.CaveName</td>
+                            <td>@item.EnterTime</td>
+                            <td>@item.AreaName</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

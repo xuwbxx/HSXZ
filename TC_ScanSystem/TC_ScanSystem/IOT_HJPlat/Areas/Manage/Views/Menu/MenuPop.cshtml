@@ -1,0 +1,39 @@
+﻿<div id="MenuPop" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="MenuTitle">编辑</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="ID" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td hidden="hidden" class="field">序号:</td>
+                            <td hidden="hidden"><input name="ID" type="text" value="" /></td>
+                            <td class="field">名称:</td>
+                            <td><input name="txt_MenuNamePop" type="text" value="" /></td>
+                            <td class="field">路径:</td>
+                            <td><input name="txt_PathPop" type="text" value="" /></td>
+                            <td class="field">父节点:</td>
+                            <td><input name="ParentID" type="text" value="" /></td>
+                        </tr>
+                        <tr>
+                            @*<td class="field">层级:</td>
+                            <td><input name="Depth" type="text" value="" /></td>*@
+                            <td class="field">样式:</td>
+                            <td><input name="txt_ClassPop" type="text" value="" /></td>
+                            <td class="field">排序:</td>
+                            <td><input name="txt_OrderPop" type="text" value="" /></td>
+                            <td class="field">菜单编码</td>
+                            <td><input name="txt_FunctionCodePop" type="text" value="" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" type="button" value="保存" onclick="MenuJS.SaveConfigInfo();" />
+                    <input class="btn-primary" type="button" value="退回" onclick="MenuJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>

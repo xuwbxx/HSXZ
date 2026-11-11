@@ -1,0 +1,16 @@
+﻿<div class="popup-max">
+    <div class="popup list">
+        <p id="Title">弹出框标题</p>
+        <a class="popup-close" href="#">关闭</a>
+        <div class="popup-content" id="QRCodeHtml">
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="QRCodeTemplate">
+    {{if list.length>=0}}
+    {{each list as value}}
+        <img src='{{value.QRCodeUrl}}'  alt="" style="width:150px; margin: 20px;" />
+    {{/each}}
+    {{/if}}
+</script>

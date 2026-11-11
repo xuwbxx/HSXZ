@@ -1,0 +1,30 @@
+﻿<script type="text/html" id="PersonInAndOutHtmlTemplate">
+    <table class="table table-striped table-blue">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>职位</th>
+                <th>工点</th>
+                <th>进场时间</th>
+                <th>闸机号</th>
+                <th>卡号</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{if list.length>=0}}
+            {{each list as Value}}
+                <tr>
+                    <td class="special">{{Value.EmployeeName}}</td>
+                    <td>{{Value.JobName}}</td>
+                    <td>{{Value.AreaName}}</td>
+                    <td>{{Value.EventTime}}</td>
+                    <td>{{Value.TypeName}}</td>
+                    <td>{{Value.Card}}</td>
+                </tr>
+            {{/each}}
+            {{/if}}
+            
+            
+        </tbody>
+    </table>
+</script>

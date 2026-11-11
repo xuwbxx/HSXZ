@@ -1,0 +1,304 @@
+﻿<div class="list speed">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">工程进度</p>
+        <!-- <div class="list-more">
+            <ul>
+                <li>总进度</li>
+                <li class="active">月进度</li>
+            </ul>
+        </div> -->
+    </div>
+    <!-- <div class="list-subhead" style="height:4vh">
+        <p class="list-subtitle" style="height:4vh">当月完成计划111%</p>
+        <p class="list-subtitle-content" style="height:4vh">当月计划产值：2345万</p>
+    </div> -->
+    <div class="speed-chart-title">
+        <p>当月完成计划：<a>112%</a></p>
+        <p>当月计划产值：<a>2456万</a></p>
+    </div>
+    <div class="speed-chart">
+        <div id="EChartProgress" style="height:100%;">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        ProgressQuery();
+
+        function ProgressQuery() {
+            var param = {};
+            // param.PointID = $("#select_Point").val();
+
+            $(".speed").addClass("mainmask");
+
+            $.post('/Main/Board/GetProgress', param)
+                .success(function (data, statusText, jqXRH) {
+                    if (data) {
+                        if (data.Success) {
+
+                            SetProgressOption(data.Data);
+                        }
+                    }
+                })
+                .fail(function (jqXHR, statusText, errorMessage) {
+                })
+                .always(function (data) {
+                    // 关闭等待遮罩
+                    //CloseMaskPopUp();
+                    $(".speed").removeClass("mainmask");
+                });
+        }
+        function SetProgressOption(progressObj) {
+            var dom = document.getElementById("EChartProgress");
+            var myChart = echarts.init(dom);
+
+            //后台数据
+            var seriesName = '完成计划';
+            var seriesData = new Array();
+            var xArr = new Array();
+            //后台数据结束
+
+            //var progressObj = [
+            //    {
+            //        "name": "工程进度", "unit": "月",
+            //        "item":
+            //            [
+            //                { "name": "一月", "valueExpect": 2345, "valueActual": 2345 },
+            //                { "name": "二月", "valueExpect": 1822, "valueActual": 1749.12 },
+            //                { "name": "三月", "valueExpect": 2166, "valueActual": 2274.3 },
+            //                { "name": "四月", "valueExpect": 2512, "valueActual": 2763 },
+            //                { "name": "五月", "valueExpect": 2456, "valueActual": 2210.4 },
+            //            ]
+            //    }
+            //];
+            var fmtStr = "yyyy年MM月";
+            var curr = {};
+            curr.ValueExpect = "";
+            curr.ValueActual = "";
+
+
+
+            //progressObj.forEach(function (item) {
+            progressObj.Item.reverse();
+            var max = 0;
+
+            // 对Date的扩展，将 Date 转化为指定格式的String
+            // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
+            // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
+            // 例子： 
+            // (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 
+            // (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18 
+            Date.prototype.Format = function (fmt) {
+                var o = {
+                    "M+": this.getMonth() + 1, //月份 
+                    "d+": this.getDate(), //日 
+                    "H+": this.getHours(), //小时 
+                    "m+": this.getMinutes(), //分 
+                    "s+": this.getSeconds(), //秒 
+                    "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+                    "S": this.getMilliseconds() //毫秒 
+                };
+                if (/(y+)/.test(fmt)) {
+                    fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                }
+                for (var k in o) {
+                    if (new RegExp("(" + k + ")").test(fmt)) {
+                        fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                    }
+                }
+                return fmt;
+            }
+
+
+            var len = progressObj.Item.length;
+
+            progressObj.Item.forEach(function (elem, index) {
+                //if (index === 0) {
+                //    return true;
+                //}
+
+                var dateObj = new Date(elem.Name);
+                var dateStr = dateObj.Format(fmtStr);
+
+
+                if (max < elem.ValueActual) {
+                    max = elem.ValueActual - 0;
+                }
+
+                //判断最后一月是否为当前月
+                if (index + 1 === len) {
+                    var dateNow = new Date(Date());
+                    var dateNowStr = dateNow.Format(fmtStr);
+                    if (dateNowStr === dateStr) {
+                        curr.ValueActual = elem.ValueActual;
+                        curr.ValueExpect = elem.ValueExpect;
+                        //return false;
+                    }
+                }
+
+                xArr.push(dateStr);
+                //xArr.push(elem.Name);
+                //seriesData.push((elem.valueActual * 100 / elem.valueExpect).toFixed(1));
+                //seriesData.push(elem.ValueActual.toFixed(1));
+                seriesData.push(elem.ValueActual);
+            })
+
+            //xArr.reverse();
+            //seriesData.reverse();
+            //});
+            var yScale = 1000;
+            //var yMax = 200;
+            //var yFormatter = '{value} %';
+            var yMax = Math.ceil(max / yScale) * yScale + yScale;
+            var yFormatter = '{value} 万';
+            var tooltipFormatter = '{b}<br/>{a}:{c}万';
+            //var app = {};
+            option = null;
+            // Schema:
+            // date,AQIindex,PM2.5,PM10,CO,NO2,SO2
+            option = {
+                // title: {
+                //     text: '工程进度'
+                // },
+                backgroundColor: '',
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: tooltipFormatter,
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#6a7985',
+                        }
+                    }
+                },
+                // legend: {
+                //     data: ['完成计划']
+                // },
+                // toolbox: {
+                //     feature: {
+                //         saveAsImage: {}
+                //     }
+                // },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    top: '5%',
+                    containLabel: true
+                },
+                axisPointer: {
+                    show: true,
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: 'rgba(255,255,255,0.3)',
+                            }
+                        },
+                        axisLine: { show: false, },
+                        axisLabel: {
+                            color: 'rgba(255,255,255,0.5)',
+                            //fontSize: 12,
+                            align:'right',
+                            //rotate: 20,
+                            interval: 0,
+                            //showMaxLabel: false,
+                            //showMinLabel: false,
+                        },
+                        boundaryGap: false,
+                        data: xArr,
+                    }
+                ],
+                yAxis: [
+                    {
+                        max: yMax,
+                        type: 'value',
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: 'rgba(255,255,255,0.3)',
+                            }
+                        },
+                        axisLine: { show: false, },
+                        axisLabel: {
+                            formatter: yFormatter,
+                            color: 'rgba(255,255,255,0.5)',
+                        },
+                        // data: yArr,
+                    }
+                ],
+                series: [
+                    {
+                        name: seriesName,
+                        type: 'line',
+                        label: {
+                            show: true,
+                        },
+                        // markPoint: {
+                        //     symbol: 'pin',
+                        // },
+
+                        //数据点形状
+                        symbol: 'circle',
+                        //数据点大小
+                        symbolSize: 6,
+                        smooth: true,
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    width: 5,
+                                    color: '#00d98b',
+                                },
+                                //数据点颜色
+                                color: '#00d98b',
+                                // color:'orange',
+                                //数据点边线粗细
+                                borderWidth: 1.5,
+                                //数据点边线颜色
+                                borderColor: 'white',
+                            },
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: 'rgba(0,217,319,0.3)' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: 'rgba(0,217,319,0.0)' // 100% 处的颜色
+                                }]
+                            }
+                        },
+                        data: seriesData,
+                    }
+                ]
+            };
+
+            //$(".speed-chart-title p a").first().html(seriesData[seriesData.length - 1] + '万');
+            //var currVal = progressObj[progressObj.length - 1].item[(progressObj[progressObj.length - 1].item).length - 1].valueExpect + "万";
+
+            //$(".speed-chart-title p a").first().html(progressObj.Item[0].ValueActual + '万');
+            //var currVal = progressObj.Item[0].ValueExpect + "万";
+            //$(".speed-chart-title p a").last().html(currVal);
+
+            $(".speed-chart-title p a").first().html(curr.ValueActual + '万');
+            //var currVal = progressObj.Item[0].ValueExpect + "万";
+            $(".speed-chart-title p a").last().html(curr.ValueExpect + '万');
+
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+
+        }
+    })
+</script>

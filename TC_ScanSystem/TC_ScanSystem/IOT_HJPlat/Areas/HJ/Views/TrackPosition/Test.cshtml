@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/BlankLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/IOT/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="~/Content/IOT/css/bootstrap.css">
+<script type="text/javascript" src="~/Content/IOT/js/jquery1.12.4.min.js"></script>
+<script type="text/javascript" src="~/Content/IOT/js/bootstrap.js"></script>
+<script type="text/javascript" src="~/Content/IOT/js/bootstrap-select.min.js"></script>
+
+
+<div class="container" id="queryVisitResultsInitSELContainer"
+     data-kind="tab">
+    <div class="row param-box">
+        <div class="col-xs-12 form-inline">
+            <div class="form-group form-group-xs">
+                <div style="float: right; padding-left: 5px;" id="selectDiv">
+                    <select id="selectbrand" data-live-search="true"
+                            class="selectpicker show-tick form-control">
+                        <option value="">
+                            请选择
+                        </option>
+                        <option value="">
+                            中国
+                        </option>
+                        <option value="">
+                            美国
+                        </option>
+                        <option value="">
+                            得过
+                        </option>
+                        <option value="">
+                            韩国
+                        </option>
+                        <option value="">
+                            日本
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+        <script type="text/javascript">
+		$('.selectpicker').selectpicker({
+			style: 'btn-info',
+			size: 10
+	});
+        </script>
+

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FBG" Class="DB2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=FBG;Integrated Security=True" SettingsObjectName="FDScanSystem.DAO.Properties.Settings" SettingsPropertyName="FBGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FBG_Data" Member="FBG_Data">
+    <Type Name="FBG_Data">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MyDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="V001" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V002" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V003" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V004" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V005" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V006" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V007" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V008" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V009" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V010" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V011" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V012" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V013" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V014" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V015" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V016" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V017" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V018" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V019" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V020" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V021" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V022" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V023" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V024" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V025" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V026" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V027" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V028" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V029" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V030" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V031" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V032" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V033" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V034" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V035" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V036" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V037" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V038" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V039" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V040" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V041" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V042" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V043" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V044" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V045" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V046" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V047" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V048" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V049" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="V050" Type="System.Single" DbType="Real" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

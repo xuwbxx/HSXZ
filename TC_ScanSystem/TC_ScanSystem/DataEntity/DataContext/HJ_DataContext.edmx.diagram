@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9ad794dd0a7e4db4a366ffc34c3786d3" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Depart" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Dict" Width="1.5" PointX="1.625" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_DownloadCenter" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Job" Width="1.5" PointX="3.875" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Menu" Width="1.5" PointX="1.875" PointY="5.125" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Position" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Project" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_ProjectMenu" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Role" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_RoleMenu" Width="1.5" PointX="3.625" PointY="6.25" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Team" Width="1.5" PointX="4.875" PointY="9" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_TeamPerson" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_User" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_UserRole" Width="1.5" PointX="2.625" PointY="9.875" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Board_Progress" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Board_Target" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.CCCC_MixingStation" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.CCCC_MixingStation_ByMaterial" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.CCCC_MixingStation_ByQuality" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Safety_Depart" Width="1.5" PointX="14.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Alarm_History" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Alarm_Type" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_EnvironmentData" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Inspect_Category" Width="1.5" PointX="16.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Inspect_ContentCategory" Width="1.5" PointX="16.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_AutoReadConfig" Width="1.5" PointX="14.75" PointY="16.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Command" Width="1.5" PointX="16.75" PointY="16.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_CommunicationDevice" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Current_Communication" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_DataValue" Width="1.5" PointX="18.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Device" Width="1.5" PointX="18.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Layer" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Point" Width="1.5" PointX="18.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Position" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Protocol" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_ScanType" Width="1.5" PointX="4.75" PointY="20.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Monitor_EnvItem" Width="1.5" PointX="6.75" PointY="20.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Monitor_EnvSpot" Width="1.5" PointX="20.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Point" Width="1.5" PointX="20.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Position_Current" Width="1.5" PointX="14.75" PointY="20.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Position_Current_temp" Width="1.5" PointX="20.75" PointY="16.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Position_History" Width="1.5" PointX="16.75" PointY="21.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Safty_CheckRecord" Width="1.5" PointX="18.75" PointY="21.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Safty_Inspection" Width="1.5" PointX="20.75" PointY="21.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Safty_InspectionContent" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Safty_RepairRecord" Width="1.5" PointX="22.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Safty_SecurityThreat" Width="1.5" PointX="22.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_Special_Monitor" Width="1.5" PointX="22.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_VehicleInAndOut" Width="1.5" PointX="22.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_VehiclePresent" Width="1.5" PointX="22.75" PointY="21.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Temp_User" Width="1.5" PointX="24.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Base_Structor" Width="1.5" PointX="24.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.Scan_JC_Communication_Initialize" Width="1.5" PointX="4.75" PointY="24.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Alarm_SMSUser" Width="1.5" PointX="24.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_Cave_Coordinate" Width="1.5" PointX="10.75" PointY="24.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_Equipment" Width="1.5" PointX="24.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_Equipment_Export" Width="1.5" PointX="24.75" PointY="19.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_Equipment_Special" Width="1.5" PointX="24.75" PointY="24.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_LED_SyncInfo" Width="1.5" PointX="12.75" PointY="25.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_ProjectMenu" Width="1.5" PointX="26.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_RoleMenu" Width="1.5" PointX="26.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_Structor_Cave_Area" Width="1.5" PointX="26.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_TeamPerson" Width="1.5" PointX="26.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Base_User_RoleFunction" Width="1.5" PointX="14.75" PointY="26.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_BaseUser" Width="1.5" PointX="16.75" PointY="26.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_EnvironmentData" Width="1.5" PointX="26.75" PointY="19.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_PositionHistory" Width="1.5" PointX="26.75" PointY="24.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_Door_InAndOutRecord" Width="1.5" PointX="28.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_EnvironmentData" Width="1.5" PointX="0.75" PointY="28.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_JC_AutoScan" Width="1.5" PointX="2.75" PointY="28.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_JC_Device" Width="1.5" PointX="28.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_JC_Layer" Width="1.5" PointX="8.75" PointY="28.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_JC_Point" Width="1.5" PointX="28.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_JC_Position" Width="1.5" PointX="28.75" PointY="16.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_JC_ScanType" Width="1.5" PointX="28.75" PointY="20.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_Loc_UserData" Width="1.5" PointX="22.75" PointY="28.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_Loc_UserDataHistory" Width="1.5" PointX="28.75" PointY="24.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_PersonInAndOut" Width="1.5" PointX="24.75" PointY="28.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_Position_Current" Width="1.5" PointX="18.75" PointY="29.75" />
+        <EntityTypeShape EntityType="HJ_DataModelContext.View_Scan_VehiclePresent" Width="1.5" PointX="30.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

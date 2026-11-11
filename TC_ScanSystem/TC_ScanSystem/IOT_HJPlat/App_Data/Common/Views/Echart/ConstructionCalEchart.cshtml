@@ -1,0 +1,35 @@
+﻿@*EChart弹出窗*@
+@*<div class="EChartselect1">
+    <a>切换皮肤:</a>
+    <select id="ThemeChoose" >
+        <option value="macarons">蛋白</option>
+        <option value="shine">明亮</option>
+        <option value="wonderland">仙境</option>
+        <option value="dark">黑暗</option>
+        <option value="vintage">复古</option>
+        <option value="roma">罗马</option>
+    </select>
+</div>*@
+<div id="EchartDiv">
+    <div class="popup-content" id="EChartContent1" style="width:100%; height:100%; margin:0 auto;"></div>
+</div>
+
+<script type="text/javascript" src="~/Content/Board/EchartGL/echarts.js"></script>
+
+@*皮肤*@
+<script type="text/javascript" src="~/Content/Echart/Theme/macarons.js"></script>
+<script type="text/javascript" src="~/Content/Echart/Theme/dark.js"></script>
+<script type="text/javascript" src="~/Content/Echart/Theme/shine.js"></script>
+<script type="text/javascript" src="~/Content/Echart/Theme/vintage.js"></script>
+<script type="text/javascript" src="~/Content/Echart/Theme/wonderland.js"></script>
+<script type="text/javascript" src="~/Content/Echart/Theme/roma.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("div#EChartContent1").css('height', $("div#myTabContent").height()-300);
+        $("div#EChartContent1").css('width', $("div#myTabContent").width() - 50);
+    })
+
+</script>

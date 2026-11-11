@@ -1,0 +1,15 @@
+﻿<div class="container-fluid-full head navbar-fixed-top">
+    <div class="logo"></div>
+    <div class="exit">
+        <a href="/Home/LogOut" title="退出登录"><img src="~/Content/IOT/img/icon_exit.png" /></a>
+    </div>
+    @*<div class="set">
+        <a href="#" title="系统设置"><img src="~/Content/IOT/img/icon_set.png" /></a>
+    </div>*@
+    <div class="user hidden-sm hidden-xs">
+        <a href="#" title="@(ViewData["RealName"] ?? "")"><img src="~/Content/IOT/img/user.png" /></a>
+    </div>
+    <div class="view hidden-sm hidden-xs">
+        <a href="/Main/Board/Index" title="回到看板页"><img src="~/Content/IOT/img/view.png"/></a>
+    </div>
+</div>

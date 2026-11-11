@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "监测区域";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/IOT/css/bootstrap-select.min.css" />
+<script type="text/javascript" src="~/Content/IOT/js/bootstrap-select.min.js"></script>
+
+@{
+    var LayerList = ViewData["LayerList"] as List<DataEntity.MK_Layer>;
+    var LayerImg = ViewData["LayerImg"].ToString();
+    var PositionList = ViewData["PositionList"] as List<Model.HJPlat.Response.ConstructCfgPositionResponse>;
+    //var ScanTypeList = ViewData["ScanTypeList"] as List<DataEntity.MK_ScanType>;
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        //do something
+        $("select[name='select_AutoLayer'] option[value='" + $("#select").val() + "']").prop('selected', true);
+    })
+
+
+    $('.content-max').width(document.body.scrollWidth - 201);
+    // content限制高度
+    $('.content-min').css({ 'min-height': window.innerHeight - 140 + 'px' });
+    $('.tab-content').css({ 'min-height': window.innerHeight - 182 + 'px' });
+    $('.choice').css({ 'min-height': window.innerHeight - 120 + 'px' });
+</script>
+
+
+<div class="content">
+    <div class="col-lg-12">
+        @{ 
+            var ID = Request.QueryString["ID"];
+            <input type="hidden" value="@ID" id="select" />
+        }
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#shuju" data-toggle="tab">监测区域</a>
+            </li>
+            @*<li>
+                    <a href="#qushi" data-toggle="tab">趋势图</a>
+                </li>*@
+        </ul>
+
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--车辆进出数据-->
+            <div class="tab-pane fade in active" id="shuju">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+
+                        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <a class="screen-a">监测区域：</a>
+                            <select id="select_AutoLayer" name="select_AutoLayer">
+                                @*<option value="0">请选择</option>*@
+                                @{
+                                    if (LayerList != null && LayerList.Count > 0)
+                                    {
+                                        foreach (var item in LayerList)
+                                        {
+                                            <option value="@item.ID">@item.LayerName</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </li>
+                        <li class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                            <input type="button" value="查询" onclick="LayerJS.SelectChange()" />
+
+                        </li>
+                    </ul>
+                <!--表-->
+                <div class="mapp col-lg-12 col-md-4 col-sm-6 col-xs-12" id="imglist">
+                    @{ 
+                    <img src="~/Upload/@LayerImg" id="imgback" />
+                    }
+                    @*<ul class="mapp-icon" id="imglist">
+                        @{
+                            if (PositionList != null && PositionList.Count > 0)
+                            {
+                                foreach (var item in PositionList)
+                                {
+                                    <li><a style="top: @item.MapYs; left: @item.MapXs;" title="@item.PositionName" href="/Scan/HomePage/Position?ID=@item.ID&LayerId=@item.LayerId">@item.PositionName</a></li>
+                                }
+                            }
+                        }
+                    </ul>*@
+                    @{
+                        if (PositionList != null && PositionList.Count > 0)
+                        {
+                            foreach (var item in PositionList)
+                            {
+                                @*<li><a style="top: @item.MapYs; left: @item.MapXs;" title="@item.PositionName" href="/Scan/HomePage/Position?ID=@item.ID&LayerId=@item.LayerId">@item.PositionName</a></li>*@
+                                <a href="/Scan/HomePage/Position?ID=@item.ID&LayerId=@item.LayerId" title="@item.PositionName" style="top:@item.MapYs; left:@item.MapXs; width:@item.Widths; height:@item.Heights;"></a>
+                            }
+                        }
+                    }
+                </div>
+                <div style="clear:both;"></div>
+
+            </div>
+
+
+            <!--趋势图-->
+            @*<div class="tab-pane fade" id="qushi">
+
+                </div>*@
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    <script type="text/javascript" src="~/Scripts/IOT/Home_Layer.js"></script>
+</div>

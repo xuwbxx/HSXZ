@@ -1,0 +1,55 @@
+# Visual Studio 本地状态
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# TFS 源码控制绑定（历史遗留，防止再次混入）
+*.vspscc
+*.vssscc
+
+# 构建输出
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+TestResults/
+*.log
+[Ll]og/
+输出-生成.txt
+
+# NuGet（旧式 packages.config 还原目录）
+packages/
+*.nupkg
+
+# ReSharper / Rider
+_ReSharper*/
+.idea/
+*.DotSettings.user
+
+# 发布与打包产物
+publish/
+*.publishsettings
+*.azurePubxml
+*.pubxml
+
+# 原始源码压缩包（已解压入库）
+TC_ScanSystem.zip
+*.zip
+*.7z
+*.rar
+
+# 运行时数据（体积大，不入库，部署时单独放置）
+TC_ScanSystem/IOT_HJPlat/Upload/
+TC_ScanSystem/IOT_HJPlat/File/Video/
+
+# 其他
+*.tmp
+*.bak
+*.cache
+Thumbs.db
+Desktop.ini

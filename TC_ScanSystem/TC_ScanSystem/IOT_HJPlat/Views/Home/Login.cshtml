@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "横沙码头监测平台";
+    Layout = "~/Views/Shared/LoginLayout.cshtml";
+}
+
+<div class="sign-content">
+    <div class="sign-logo-1">
+        <img src="~/Content/IOT/img/sign-logo-1.png" />
+    </div>
+    <div class="sign-contentmin">
+        <div class="sign-logo-2"></div>
+        <div class="sign-in">
+            <div>
+                <a>密码登录</a>
+            </div>
+            <form action="/Home/DoLogin" method="post">
+                <input class="input1" type="text" name="UserName" placeholder="请输入用户名" />
+                <input class="input2" type="password" name="Password" placeholder="请输入密码" />
+                <label class="sign-check">
+                    <input type="checkbox" value="记住用户名" />
+                    <a>记住用户名</a>
+                </label>
+                <input class="input3" type="submit" value="登录" />
+            </form>
+            @*<p><a href="#">忘记密码？</a></p>*@
+        </div>
+        <p>没有账号，请联系管理员</p>
+    </div>
+    <div class="sign-footer">
+        <p>版权所有：中交上海三航科学研究院有限公司</p>
+        <p><a href="#">联系电话：021—64399960</a></p>
+    </div>
+</div>
+

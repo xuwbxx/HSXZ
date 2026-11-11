@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "环境监测";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<div class="content">
+    <div class="content-min col-lg-12">
+        @*<div class="nev-bread col-lg-12">
+                <a>车辆进出</a>
+                <ul class="breadcrumb">
+                    <li><a href="#">车辆进出</a></li>
+                    <li class="active">进出管理</li>
+                </ul>
+            </div>*@
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#shuju" data-toggle="tab">环境数据</a>
+            </li>
+            <li>
+                <a href="#qushi" data-toggle="tab">趋势图</a>
+            </li>
+        </ul>
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--车辆进出实时数据-->
+            <div class="tab-pane fade in active" id="shuju">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">测点：</a>
+                        <select name="Select_Point">
+                            <option>请选择</option>
+                        </select>
+                    </li>
+                    <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <label for="dtp_input1" class="col-md-2 control-label">开始时间：</label>
+                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input1">
+                            <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="dtp_input1" name="environmentBegin" value="" /><br />
+                    </div>
+                    <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <label for="dtp_input2" class="col-md-2 control-label">结束时间：</label>
+                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii p" data-link-field="dtp_input2">
+                            <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        <input type="hidden" id="dtp_input2" name="environmentEnd" value="" /><br />
+                    </div>
+
+                    <li class="col-lg-1 col-md-4 col-sm-6 col-xs-12">
+                        <input class="btn btn-primary" style="width:50px;" type="button" value="查询" onclick="EnvironmentJS.DoQuery()" />
+                        <!--<input type="button" value="重置查询"/>-->
+                    </li>
+                </ul>
+                <!--表-->
+                <div id="EnvironmentHtml">
+                </div>
+                
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div id="Pagination">
+                    </div>
+                </div>
+            </div>
+            <!--趋势图-->
+            <div class="tab-pane fade" id="qushi">
+                @Html.Partial("~/Areas/HJ/Views/Environment/EnvironmentEchart.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("Template")
+
+<script type="text/javascript" src="~/Scripts/Scan/EnvironmentJS.js"></script>
+

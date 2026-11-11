@@ -1,0 +1,503 @@
+﻿body
+{
+    margin: 0px;
+    font-size: 12px;
+}
+.table
+{
+    width: 100%;
+    margin-top: 5px;
+    border: 1px;
+}
+.table td, .table th
+{
+    font-size: 1em;
+    border: 1px solid #98bf21;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+    height: 20px;
+}
+.table th
+{
+    font-size: 1.1em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #C0C0C0;
+    height: 20px;
+    color: #ffffff;
+    border-bottom: 3px solid #98bf21;
+}
+.table .pagego
+{
+    width: 30px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #ededed;
+}
+.table .AlternateColor
+{
+    background-color: #ECF8FF;
+}
+.tablist2
+{
+    background: #b8c7d1;
+    margin-top: 0px;
+    width: 100%;
+    margin-bottom: 4px;
+}
+.tablist2 .td1 {
+    background: none repeat scroll 0 0 #e1e1e1;
+    height: 18px;
+    padding: 4px;
+    text-align: left;
+    white-space: nowrap;
+}
+.tablist2 .td2
+{
+    text-align: left;
+    background: #fff;
+    padding: 5px;
+    height: 18px;
+}
+.tablist2 .td3
+{
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    height: 18px;
+}
+.tablist2 .td4
+{
+    text-align: center;
+    background: none repeat scroll 0 0 #e1e1e1;
+    padding: 5px;
+    height: 18px;
+}
+.td3
+{
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    height: 18px;
+}
+.MsgHide
+{
+    display: none;
+}
+.MsgShow
+{
+    display: inline;
+    color: Red;
+}
+
+/*from zhuo*/
+.tablelist {
+    border: 1px solid #c4c4c4;
+    border-collapse: collapse;
+    width: 100%;
+}
+.tablelist td, th
+{
+    border-collapse: collapse;
+    border: 1px solid #B8C7D1;
+}
+
+.tablelist th
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+.tablelist .toptitle {
+    background: url("../images/table_title.gif") repeat-x scroll 0 0 #E8EEF2;
+    color: #333333;
+    height: 25px;
+    text-align: center;
+}
+
+.tablelist .listr1 {
+    background-color: #f7f7f7;
+    height: 24px;
+    text-align: center;
+}
+
+/*查询无记录时背景颜色*/
+.tablelist .listr2 {
+    background-color: #e4e4e4;
+    height: 24px;
+    text-align: center;
+}
+.tablelist .listr3 {
+    background-color: #cbcce7;
+    height: 24px;
+    text-align: center;
+}
+.tablelist .listr4 {
+    background-color: #cbcce7;
+    color: Red;
+    height: 24px;
+    text-align: center;
+}
+
+.h3
+{
+    /* 	background: #edf4d5; 	padding: 3px 10px; 	margin: 0px; 	border: solid 1px #c4c4c4; 	border-bottom: none; 	cursor: pointer; */
+    background: url(../images/table_title.gif) repeat-x #E8EEF2;
+    color: #4166A9;
+    height: 20px;
+    border-top: 1px solid #B8C7D1;
+    border-left: 1px solid #B8C7D1;
+    border-right: 1px solid #B8C7D1;
+    font-weight: bold;
+    text-indent: 5px;
+    padding-top: 5px;
+}
+.h3:hover
+{
+    background-color: #e3e2e2;
+}
+
+
+.search
+{
+    background: url(../images/search.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.search_hover
+{
+    background: url(../images/search_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.add
+{
+    background: url(../images/add.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 0px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.add_disabled
+{
+    background: url(../images/add.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 0px 0 0 16px;
+    cursor: pointer;
+    color: #808080;
+}
+.add_hover
+{
+    background: url(../images/add_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 0px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/*修改*/
+.modify
+{
+    background: url(../images/modify.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 0px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.modify_hover
+{
+    background: url(../images/modify_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+/*删除*/
+.delete
+{
+    background: url(../images/delete.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.delete_hover
+{
+    background: url(../images/delete_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.print
+{
+     background: url(../images/print.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.print_hover
+{
+     background: url(../images/print_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.save
+{
+    background: url(../images/save.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.save_hover
+{
+    background: url(../images/save_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+.reset
+{
+    background: url(../images/reset.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.reset_hover
+{
+    background: url(../images/reset_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.close
+{
+    background: url(../images/close.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.close_hover
+{
+    background: url(../images/close_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.submit
+{
+    background: url(../images/submit_big.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.submit_hover
+{
+    background: url(../images/submit_big_on.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.back
+{
+    background: url(../images/back.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.back_hover
+{
+    background: url(../images/back_on.jpg);
+    width: 59px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.addDetail
+{
+    background: url(../images/add_big.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.addDetail_hover
+{
+    background: url(../images/add_big_on.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.txtOnFocus, textarea:focus
+{
+    background: lightyellow;
+    border: 1px solid #A0C5E5;
+}
+
+.txtOnBlur, textarea:blur
+{
+    background: none;
+}
+
+.msg_list
+{
+    margin: 0px;
+    padding: 0px;
+}
+.msg_head
+{
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    color: #4166a9;
+    background: url(../images/table_title.gif) #e8eef2 repeat-x;
+    font-weight: bold;
+    margin: 1px;
+}
+.msg_body
+{
+    padding: 5px 10px 15px;
+    background-color: #F4F4F8;
+    border: 1px solid #00FFCC;
+}
+
+
+.select
+{
+    background: url(../images/add_big.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.select_hover
+{
+    background: url(../images/add_big_on.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.release
+{
+    background: url(../images/submit_big.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #184097;
+}
+.release_hover
+{
+    background: url(../images/submit_big_on.jpg);
+    width: 91px;
+    height: 23px;
+    border: 0;
+    padding: 0 0 0 16px !important;
+    padding: 3px 0 0 16px;
+    cursor: pointer;
+    color: #fff;
+}

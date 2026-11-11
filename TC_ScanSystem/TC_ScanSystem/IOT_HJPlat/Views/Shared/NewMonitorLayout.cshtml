@@ -1,0 +1,25 @@
+﻿@* 
+    监测总览图新版页面（/Monitor/Main/NewIndex）专用布局。
+    只引用 Content/NewMonitor 下的样式与脚本，避免与 Content/New/css/style.css
+    中的同名 CSS 类（.head、.data 等）冲突，不影响现有页面。
+*@
+<!DOCTYPE html>
+
+<html style="height:100vh; overflow:hidden;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上海现代农业产业园（横沙新洲）全装配式码头全寿命健康监测系统</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/NewMonitor/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/NewMonitor/css/style.css" />
+    <!--link rel="stylesheet" type="text/css" href="~/Content/NewMonitor/css/newindex.css" /-->
+</head>
+<body>
+    @RenderBody()
+    <script type="text/javascript" src="~/Content/NewMonitor/js/jquery1.12.4.min.js"></script>
+    <script type="text/javascript" src="~/Content/NewMonitor/js/time.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

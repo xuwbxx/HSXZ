@@ -1,0 +1,63 @@
+# ============================================================
+# 横沙监测（BH_ScanSystem + TC_ScanSystem）统一 Git 仓库
+# 2026-11 由 TFS 迁移至 Git，两个子项目历史已合并至本仓库
+# ============================================================
+
+# ---------- Visual Studio 本地状态 ----------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.dtbcache.json
+
+# ---------- TFS 源码管理遗留（防止再次混入）----------
+*.vspscc
+*.vssscc
+*.scc
+*.tfs
+*.###
+
+# ---------- 构建输出 ----------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+TestResults/
+*.log
+[Ll]og/
+输出-生成.txt
+
+# ---------- NuGet（旧式 packages.config 还原目录）----------
+packages/
+*.nupkg
+
+# ---------- 旧版备份 / 压缩包 ----------
+Backup/
+*.zip
+*.7z
+*.rar
+
+# ---------- 运行时数据（体积大，不入库，部署时单独放置）----------
+TC_ScanSystem/TC_ScanSystem/IOT_HJPlat/Upload/
+TC_ScanSystem/TC_ScanSystem/IOT_HJPlat/File/Video/
+BH_ScanSystem/BH_ScanSystem/FDScanSystem.Web/Upload/
+
+# ---------- 发布与打包产物 ----------
+publish/
+*.publishsettings
+*.azurePubxml
+*.pubxml
+
+# ---------- 编辑器 / 工具 ----------
+_ReSharper*/
+.idea/
+*.DotSettings.user
+*.tmp
+*.bak
+*.cache
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/uploadify/jquery.uploadify.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#uploadify").uploadify({
+                'swf': '/uploadify/uploadify.swf',
+                'uploader': '/Scan/test/UpLoadFile',
+                'auto': true,
+                'buttonText': '上传附件',
+                'queueSizeLimit': 3,
+                'multi': true,
+                'onQueueComplete': function (a, b, c) { mainClientGrid.PerformCallback(jQuery("#fileValues").val()); setTimeout(function () { jQuery("#fileValues").val(""); }, 200) },
+                'onUploadSuccess': function (file, data, response) {
+                    data = eval("(" + data + ")")
+                    // for (var t in file) { alert(file[t]); }
+                    if (data.id == 1) {
+                        alert(data.mess);
+
+                        // jQuery("#logoImg").attr("src", data.mess);
+                    }
+                    else {
+                        if (jQuery("#fileValues").val() == "") {
+                            jQuery("#fileValues").val(data.mess);
+                        }
+                        else {
+                            jQuery("#fileValues").val(jQuery("#fileValues").val() + "," + data.mess);
+                        }
+                    }
+                }
+
+            });
+        });
+    </script>
+       
+    <title></title>
+</head>
+<body>
+    <div>
+    <input type="file" name="uploadify" id="uploadify" />
+        <input type="hidden" value="" id="fileValues" name="fileValues" />
+    </div>
+
+  
+</body>
+
+
+
+</html>

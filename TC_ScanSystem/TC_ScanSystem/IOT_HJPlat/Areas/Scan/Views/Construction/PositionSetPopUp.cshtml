@@ -1,0 +1,106 @@
+﻿@*详情弹出框*@
+<div id="PositionSetPopUp" class="popup-max" style="width:100%;">
+    <div class="popup list" style="width:90%; left:5%; margin-left:0;">
+        <p name="PositionInfoTitle">监测位置信息</p>
+        <a class="popup-close" href="javascript:void(0);">关闭</a>
+        <lable>
+            <input type="hidden" name="PositionID" />
+            <input type="hidden" name="PositionType" />
+			 <input type="hidden" name="x" />
+            <input type="hidden" name="y" />
+            <div class="user-detailsinformation">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="field">位置名称:</td>
+                            <td><input name="PositionName" type="text" value="" /></td>
+                            <td class="field">上传文件:</td>
+                            <td>
+                                <input type="file" name="uploadify_position" id="uploadify_position" />
+                                <input type="hidden" value="" id="fileValues_layer" name="fileValues_position" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field">监测桩直径:</td>
+                            <td><input name="PileDiameter" type="text" value="" /></td>
+                            <td class="field">监测桩长度:</td>
+                            <td><input name="PileLength" type="text" value="" /></td>
+                        </tr>
+                        @*<tr>
+                            <td class="field">监测坐标X:</td>
+                            <td><input name="MapX" type="text" value="" /></td>
+                            <td class="field">监测坐标Y:</td>
+                            <td><input name="MapY" type="text" value="" /></td>
+                        </tr>*@
+                        @*<tr>
+                            <td class="field">坐标宽度:</td>
+                            <td><input name="Width" type="text" value="" /></td>
+                            <td class="field">监测高度:</td>
+                            <td><input name="Height" type="text" value="" /></td>
+                        </tr>*@
+                        <tr>
+                          
+                            <td class="field">监测区域:</td>
+                            <td>
+                                <select name="PositionSelectLayer" id="PositionSelectLayer">
+                                    <option value="0">全部</option>
+                                    @{
+                                        var Layers = ViewData["Layers"] as List<DataEntity.MK_Layer>;
+                                        if (Layers != null && Layers.Count > 0)
+                                        {
+                                            foreach (var item in Layers)
+                                            {
+                                                <option value="@item.ID">@item.LayerName</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="field">监测桩（测斜管）编号:</td>
+                            <td><input name="PileNumber" type="text" value="" /></td>
+                            </tr>
+                    </tbody>
+                </table>
+                <div class="user-detailsinformation-input">
+                    <input class="btn-primary" @*data-toggle="modal" data-target="#myModal"*@ type="button" value="保存" onclick="PositionSetJS.ShowModal();" />
+                    <input class="btn-primary" type="button" value="退回" onclick="PositionSetJS.TurnBack();" />
+                </div>
+            </div>
+        </lable>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#uploadify_position").uploadify({
+            'swf': '/uploadify/uploadify.swf',
+            'uploader': '/Scan/Construction/UpLoad_Layer',
+            'auto': true,
+            'buttonText': '上传附件',
+            'queueSizeLimit': 3,
+            'multi': false
+            //'onQueueComplete': function (a, b, c) { mainClientGrid.PerformCallback(jQuery("#fileValues").val()); setTimeout(function () { jQuery("#fileValues").val(""); }, 200) },
+            //'onUploadSuccess': function (file, data, response) {
+            //    data = eval("(" + data + ")")
+            //    // for (var t in file) { alert(file[t]); }
+            //    if (data.id == 1) {
+            //        alert(data.mess);
+
+            //        // jQuery("#logoImg").attr("src", data.mess);
+            //    }
+            //    else {
+            //        if (jQuery("#fileValues").val() == "") {
+            //            jQuery("#fileValues").val(data.mess);
+            //        }
+            //        else {
+            //            jQuery("#fileValues").val(jQuery("#fileValues").val() + "," + data.mess);
+            //        }
+            //    }
+            //}
+
+        });
+    });
+</script>
+

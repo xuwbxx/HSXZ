@@ -1,0 +1,368 @@
+﻿
+@{
+    ViewBag.Title = "监测总览图";
+    Layout = "~/Views/Shared/MonitorLayout.cshtml";
+}
+@{
+    var MonitorTypes = Model as List<Model.Monitor.Response.MonitorType>;
+
+    string PHC7 = ViewData["7PHC"].ToString();
+    string PHC47 = ViewData["47PHC"].ToString();
+    string ZL7 = ViewData["7ZL"].ToString();
+    string ZL47 = ViewData["47ZL"].ToString();
+    string HL7 = ViewData["7HL"].ToString();
+    string HL47 = ViewData["47HL"].ToString();
+    string PHC7_img = ViewData["7PHC_Img"].ToString();
+    string PHC47_img = ViewData["47PHC_Img"].ToString();
+    string ZL7_img = ViewData["7ZL_Img"].ToString();
+    string ZL47_img = ViewData["47ZL_Img"].ToString();
+    string HL7_img = ViewData["7HL_Img"].ToString();
+    string HL47_img = ViewData["47HL_Img"].ToString();
+}
+
+<input id="hid_MonitorTypeID" type="hidden" value="@ViewData["MonitorTypeID"].ToString()" />
+<input id="hid_BackGroundPic" type="hidden" value="../../Content/New/img/太仓码头.jpg" />
+<input id="hid_isClick" type="hidden" value="true" />
+
+@*<div class="head">
+    <div class="logo"></div>
+    <div class="title">高桩码头全寿命周期健康监测系统</div>
+    <div class="weather">
+        <div id="div_Time"></div>
+        <div id="div_Weather">横沙  晴  22-32℃</div>
+    </div>
+    <div class="icon">
+        <div id="div_Setting" title="后台配置页"></div>
+        <div id="div_LogOut" title="退出登录"></div>
+    </div>
+
+</div>*@
+<div class="head">
+    @*<div class="logo"></div>*@
+    @*<div class="title">上海现代农业产业园（横沙新洲）全装配式码头全寿命健康监测系统</div>*@
+    <div class="title_l">上海现代农业产业园（横沙新洲）</div>
+    <div class="title_fc_name">全装配式码头全寿命健康监测系统</div>
+
+    <div class="icon">
+        <div id="div_Setting" title="后台配置页"></div>
+        <div id="div_LogOut" title="退出登录"></div>
+        <div class="weather">
+            <div id="div_Time"></div>
+            <div id="div_Weather">横沙  晴  22-32℃</div>
+        </div>
+    </div>
+    @*<div class="state"></div>*@
+</div>
+
+
+<div class="CGQ_mod">
+    <div class="CGQ_modtitle"><img src="../../Content/New/img/icon_ZL.png">传感器总览信息</div>
+    <div class="CGQ_modcon">
+
+        <div class="CGQ_modson">
+            <div class="CGQ_modsontitle">7#排架</div>
+            <div class="CGQ_modson_con clearfix">
+                <div class="col-sm-4 pl0 pr10" onClick="window.location.href = '/Scan/Construction/AlertIndex?LayerId=21'">
+                    <div class="CGQ_mod_jt">
+                        <div class="ztdiv_color"><img src="../../Content/New/img/@PHC7_img"></div>
+                        <div class="icon_cgq"><img src="../../Content/New/img/icon_phccgq.png"></div>
+                        <div class="name">PHC桩应力传感器</div>
+                        <div class="bjcs">当日累计报警次数：<span id="7PHC_Total">@PHC7</span>次</div>
+                    </div>
+                </div>
+                <div class="col-sm-4 pl0 pr10" onClick="window.location.href = '/Scan/Construction/AlertIndex?LayerId=22'">
+                    <div class="CGQ_mod_jt">
+                        <div class="ztdiv_color"><img src="../../Content/New/img/@HL7_img"></div>
+                        <div class="icon_cgq"><img src="../../Content/New/img/icon_hlcgq.png"></div>
+                        <div class="name">横梁应力传感器</div>
+                        <div class="bjcs">当日累计报警次数：<span id="7HL_Total">@HL7</span>次</div>
+                    </div>
+                </div>
+                <div class="col-sm-4 pl0 pr10" onClick="window.location.href = '/Scan/Construction/AlertIndex?LayerId=27'">
+                    <div class="CGQ_mod_jt">
+                        <div class="ztdiv_color"><img src="../../Content/New/img/@ZL7_img"></div>
+                        <div class="icon_cgq"><img src="../../Content/New/img/icon_zlylglq.png"></div>
+                        <div class="name">纵梁应力管理器</div>
+                        <div class="bjcs">当日累计报警次数：<span id="7ZL_Total">@ZL7</span>次</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="CGQ_modson">
+            <div class="CGQ_modsontitle">47#排架</div>
+            <div class="CGQ_modson_con clearfix">
+                <div class="col-sm-4 pl0 pr10" onClick="window.location.href = '/Scan/Construction/AlertIndex?LayerId=11'">
+                    <div class="CGQ_mod_jt">
+                        <div class="ztdiv_color"><img src="../../Content/New/img/@PHC47_img"></div>
+                        <div class="icon_cgq"><img src="../../Content/New/img/icon_phccgq.png"></div>
+                        <div class="name">PHC桩应力传感器</div>
+                        <div class="bjcs">当日累计报警次数：<span id="47PHC_Total">@PHC47</span>次</div>
+                    </div>
+                </div>
+                <div class="col-sm-4 pl0 pr10" onClick="window.location.href = '/Scan/Construction/AlertIndex?LayerId=14'">
+                    <div class="CGQ_mod_jt">
+                        <div class="ztdiv_color"><img src="../../Content/New/img/@HL47_img"></div>
+                        <div class="icon_cgq"><img src="../../Content/New/img/icon_hlcgq.png"></div>
+                        <div class="name">横梁应力传感器</div>
+                        <div class="bjcs">当日累计报警次数：<span id="47HL_Total">@HL47</span>次</div>
+                    </div>
+                </div>
+                <div class="col-sm-4 pl0 pr10" onClick="window.location.href = '/Scan/Construction/AlertIndex?LayerId=26'">
+                    <div class="CGQ_mod_jt">
+                        <div class="ztdiv_color"><img src="../../Content/New/img/@ZL47_img"></div>
+                        <div class="icon_cgq"><img src="../../Content/New/img/icon_zlylglq.png"></div>
+                        <div class="name">纵梁应力管理器</div>
+                        <div class="bjcs">当日累计报警次数：<span id="47ZL_Total">@ZL47</span>次</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<div class="bg">
+    <img src="~/Content/New/img/太仓码头.png" />
+    @*<canvas id="container" style="cursor:default;background:url(/Content/New/img/太仓码头.jpg);width:100%;height:100%;"></canvas>*@
+    <ul class="pointul"></ul>
+</div>
+
+<div class="typeswitch">
+    <div class="button">
+        <a class="change">
+            <div></div>
+            <p>传感器类型/位置</p>
+        </a>
+        @*<a class="warning" onclick="OpenMonitorAlarm()">
+                <div></div>
+                <p>预警中心</p>
+            </a>*@
+    </div>
+    <ul class="changeul">
+        @{
+            if (MonitorTypes != null && MonitorTypes != null)
+            {
+                foreach (var item in MonitorTypes)
+                {
+                    <li data-id="@item.ID" data-name="@item.MonitorName" class="@item.IconClass" onclick="ChangeMonitorType(this)">
+                        <div></div>
+                        <p>@item.MonitorName</p>
+                    </li>
+                }
+            }
+        }
+
+    </ul>
+</div>
+
+<script>
+    $('div#div_Setting').click(function () {
+        window.location.href = '/Scan/Construction/DynamicIndex';
+    });
+    $('div#div_LogOut').click(function () {
+        window.location.href = '/Home/LogOut';
+    });
+
+    $(document).ready(function () {
+
+        getThisWeather();
+
+        ChangeMonitorType();
+
+       // init();
+       // InitView(20, -14, 33);
+        //animate();
+      //  DisplayAlarmArea();
+    })
+
+
+    //类型切换
+    var onoff = true;
+    $('.change').click(function () {
+        if (onoff) {
+            $('.changeul').fadeIn();
+            //$('.bg').children('img').attr("src","../../Content/New/img/bg.png");
+            //$('.pointul').fadeIn(500);
+            //$('.popup').fadeOut();
+            onoff = false;
+
+
+
+        } else {
+            $('.changeul').fadeOut();
+            onoff = true;
+        }
+    })
+
+    //热点悬浮
+    $('.pointul li ul li').children('div').hover(function () {
+        $(this).parent('li').css({ "z-index": "8" })
+    }, function () {
+        $(this).parent('li').css({ "z-index": "5" })
+    })
+    //弹窗关闭
+    $('.monitarea>div').children('.popclose').click(function () {
+        $('.popup').fadeOut();
+    })
+    $('.monitdate>div').children('.popclose').click(function () {
+        $(this).parent('.popuptitle').parent('.popup').fadeOut();
+    })
+    //数据弹窗打开
+    $('.monitdateopen').click(function () {
+        $('.monitdate').fadeIn();
+    })
+
+
+    //获取时间
+    function getThisDate() {
+        //获取当前时间
+        var date = new Date();
+        //格式化为本地时间格式
+        var date1 = date.toLocaleString();
+        $('#div_Time').html(date1);
+    }
+    //使用定时器每秒向div写入当前时间
+    setInterval("getThisDate()", 1000);
+
+    //获取天气
+    function getThisWeather() {
+
+        $.post('GetWeather', '')
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+
+                        var WeatherHtml = '';
+                        WeatherHtml += data.Point + ' ' + data.Weather + ' ' + data.MinTemp + '-' + data.MaxTemp + '℃';
+                        $('#div_Weather').html(WeatherHtml);
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+                $('#div_Weather').html('');
+            })
+            .always(function (data) {
+            });
+    }
+
+    //切换监测类型
+    function ChangeMonitorType(dom) {
+        $('ul.pointul').html('');
+        var ID;
+        if (dom == null) {
+            var MonitorTypeID = $('#hid_MonitorTypeID').val();
+            ID = MonitorTypeID;
+        }
+        else {
+            ID = $(dom).attr('data-id');
+            var MonitorName = $(dom).attr('data-name');
+            //$('div.state').html(MonitorName);
+        }
+
+        if (ID == null || ID == 0)
+            return;
+
+        var Param = {};
+        
+        Param.MonitorTypeID = ID;
+       // init();
+        $.post('getMonitorLayers', Param)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+                       // pointObjs = new Array();
+                       
+                        //$(data.Data).each(function (index, dom) {
+                        //    //dom.method = "ChangeMonitorArea";
+                        //    //dom.params = "MonitorAreaID";
+                        //    if (dom.NewMapX && dom.NewMapY && dom.NewMapZ) {
+
+                        //        if (index === 0) {
+                        //            //InitView(dom.NewMapX - 60, dom.NewMapY - 5, dom.NewMapZ - 0);
+                        //         //   InitView(15, -20, 40);
+                        //        }
+                        //       // SetClickEnable(true);
+                        //       // CreatePoint(dom);
+                        //    }
+                        //   // CreatePoint(dom);
+                        //});
+
+
+                        var html = '<li class=""><ul>';
+                        $(data.Data).each(function (index, dom) {
+                            //html += '<li onclick="ChangeMonitorArea(' + dom.MonitorAreaID + ')" style="left:' + dom.X + '%; top:' + dom.Y + '%;"><p>' + dom.MonitorAreaName + '</p><div class="' + (dom.IsAlarm ? 'point2' : 'point1') + '"></div></li>';
+                            html += '<li onclick="ChangeMonitorArea(' + dom.MonitorAreaID + ')" style="left:' + dom.X + '%; top:' + dom.Y + '%;"><p>' + dom.MonitorAreaName + '</p><div class="' + dom.IconClass +'"></div></li>';
+
+                        });
+                        html += '</ul></li>';
+                        $('ul.pointul').html('');
+                        $('ul.pointul').html(html);
+
+                        //$(testData).each(function (index, dom) {
+                        //    CreatePoint(dom);
+                        //});
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+                $('#div_Weather').html('');
+            })
+            .always(function (data) {
+            });
+    }
+
+    var testData = [
+        { ID: 1, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "126排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "-16.5", Y: "45" },
+        { ID: 2, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "128排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "1.5", Y: "40" },
+        { ID: 3, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "130排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "20", Y: "33" },
+        { ID: 4, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "132排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "40", Y: "28" },
+        { ID: 5, IconClass: "point1", IsAlarm: false, IsCommand: 3, MonitorAreaName: "134排", MonitorTypeID: 1, MonitorTypeName: "PHC管桩传感器", X: "58", Y: "21" }
+    ]
+
+    function ChangeMonitorArea(Name) {
+
+        if (Name == null || Name == '')
+            return;
+        window.open('MonitorDetail?MonitorAreaID=' + Name);
+        //window.location.href = 'MonitorDetail?MonitorAreaID=' + ID
+    }
+
+    var OpenMonitorAlarm = function () {
+        DisplayAlarmArea();
+    }
+
+    function DisplayAlarmArea() {
+
+        $('ul.pointul').html('');
+
+        var Param = {};
+        $.post('getMonitorAreaAlarm', Param)
+            .success(function (data, statusText, jqXRH) {
+                if (data) {
+                    if (data.Success) {
+
+                        var html = '<li class=""><ul>';
+                        $(data.Data).each(function (index, dom) {
+                            var AlarmClass = dom.IsAlarm ? 'point2' : 'point1';
+
+                            html += '<li onclick="ChangeMonitorArea(' + dom.ID + ')" style="left:' + dom.X + '%; top:' + dom.Y + '%;"><p>' + dom.MonitorAreaName + '</p>' +
+                                '<div class="' + AlarmClass + '"></div></li>';
+                        });
+                        html += '</ul></li>';
+                        $('ul.pointul').html(html);
+                    }
+                }
+            })
+            .fail(function (jqXHR, statusText, errorMessage) {
+            })
+            .always(function (data) {
+            });
+    }
+
+</script>
+
+@*<script type="text/javascript" src="~/Scripts/Monitor/GWYSolid.js"></script>
+<script type="text/javascript" src="~/Scripts/Monitor/GWYMaker.js"></script>*@

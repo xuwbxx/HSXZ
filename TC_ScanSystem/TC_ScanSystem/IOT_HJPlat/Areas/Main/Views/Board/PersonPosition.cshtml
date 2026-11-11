@@ -1,0 +1,360 @@
+﻿<div class="list position">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">人员定位</p>
+    </div>
+    <div class="position-chart">
+        <div id="allmap" style="height:100%;"></div>
+    </div>
+</div>
+
+<input id="hid_Caves" type="hidden" value="@(ViewData["WorkCaves"].ToString())" />
+
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=QvH784WqSmVKkGCRbDjQTZ4sPInmTo26"></script>
+<script type="text/javascript" src="~/Scripts/Position/GeoUtils.js"></script>
+@*<script src="~/Scripts/Position/PersonJS.js"></script>*@
+
+
+<script>
+    var map;
+
+    var PolygonJson;
+
+    var CavePositionInfo;
+
+    $(document).ready(function () {
+
+        PolygonInit();
+
+        setTimeout(MapLoad, 1000);
+
+    });
+
+    var PolygonInit = function () {
+
+        PolygonJson = JSON.parse($("#hid_Caves").val());
+
+        $(PolygonJson).each(function (index, dom) {
+
+            var PolygonPoints = new Array();
+            $(dom.Coordinates).each(function (i, d) {
+                var PolygonPoint = new BMap.Point(d.Lon, d.Lat);
+                PolygonPoints.push(PolygonPoint);
+            })
+
+            var polygon = new BMap.Polygon(PolygonPoints, PolygonStyle);  //创建多边形
+            dom.polygon = polygon;
+        })
+
+
+    }
+
+    var MapInit = function () {
+        map = new BMap.Map("allmap", { mapType: BMAP_HYBRID_MAP });    // 创建Map实例
+        $("#allmap").css("height", "100%");
+        var point = new BMap.Point(118.67411463366000, 32.06351100981980);//中心点
+        map.centerAndZoom(point, 15);  // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+        //工具栏
+        //ToolBuild();
+
+    }
+
+
+    var MapLoad = function () {
+
+        $("div#allmap").css('height', window.innerHeight - 180);
+
+        MapInit();
+
+        //读取数据
+        OpenMaskLayout();
+
+        var Param = {};
+
+        $.post('/Position/Person/DataQuery', Param)
+                .success(function (data, statusText, jqXRH) {
+                    if (data) {
+                        if (data.Success) {
+                            CavePositionInfo = data.Data;
+                            //CircleBorderBuild(data.Data);
+
+                            DisplayPersonPosition(PolygonJson[0]);
+                        }
+                    }
+                })
+                .fail(function (jqXHR, statusText, errorMessage) {
+                    //console.error(arguments);
+                })
+                .always(function (data) {
+                    CloseMaskLayout();
+                });
+    }
+
+    //画圆形工区
+    var CircleBorderBuild = function (points) {
+        $(PolygonJson).each(function (index, dom) {
+            //圆圈
+            var CirclePoint = new BMap.Point(dom.CenterLon, dom.CenterLat);
+            var circle = new BMap.Circle(CirclePoint, 500, { strokeWeight: 2, strokeOpacity: 0.3, fillColor: "#6a9ff6" }); //创建圆
+            map.addOverlay(circle);
+            //添加事件
+            circle.addEventListener("click", OpenWorkCave);
+
+            //标题
+            var CircleLabel = new BMap.Label(dom.CaveName, {
+                position: CirclePoint,    // 指定文本标注所在的地理位置
+                offset: new BMap.Size(-35, -15)    //设置文本偏移量
+            });  // 创建文本标注对象
+            CircleLabel.setStyle(CircleCaveLabelStyle);
+            CircleLabel.addEventListener("click", OpenWorkCave);
+            map.addOverlay(CircleLabel);
+
+
+            //统计在区域人数
+            var count = 0;
+            dom.Persons = new Array();
+            if (dom.polygon.ia.length > 0)
+            {
+                $(points).each(function (i, d) {
+                    var point = new BMap.Point(d.BDLon, d.BDLat);
+                    if (BMapLib.GeoUtils.isPointInPolygon(point, dom.polygon)) {
+                        count++;
+                        dom.Persons.push(d);
+                    }
+                    //count++;
+                    //dom.Persons.push(d);
+                })
+
+            }
+            var NumberLabel = new BMap.Label(count + " 人", {
+                position: CirclePoint,    // 指定文本标注所在的地理位置
+                offset: new BMap.Size(-15, 5)    //设置文本偏移量
+            });  // 创建文本标注对象
+            NumberLabel.setStyle(CircleNumLabelStyle);
+            NumberLabel.addEventListener("click", OpenWorkCave);
+            map.addOverlay(NumberLabel);
+
+        })
+    }
+
+    //工具栏
+    var ToolBuild = function () {
+
+        var top_left_control = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT });// 左上角，添加比例尺
+        var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+        map.addControl(top_left_control);
+        map.addControl(top_left_navigation);
+        //添加地图类型控件
+        //map.addControl(new BMap.MapTypeControl({
+        //    mapTypes: [
+        //        BMAP_NORMAL_MAP,
+        //        BMAP_HYBRID_MAP
+        //    ]
+        //}));
+    }
+
+    //生成自定义按键
+    function ZoomControl() {
+        // 默认停靠位置和偏移量
+        this.defaultAnchor = BMAP_ANCHOR_TOP_RIGHT;
+        this.defaultOffset = new BMap.Size(10, 10);
+    }
+
+    var CustomControlBuild = function () {
+
+        // 通过JavaScript的prototype属性继承于BMap.Control
+        ZoomControl.prototype = new BMap.Control();
+
+        // 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+        // 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
+        ZoomControl.prototype.initialize = function (map) {
+            // 创建一个DOM元素
+            var input = document.createElement("input");
+            // 添加文字说明
+            input.type = "button";
+            input.value = "返回工区";
+            // 设置样式
+            input.style.cursor = "pointer";
+            input.style.border = "1px solid gray";
+            input.style.backgroundColor = "white";
+            // 绑定事件,点击一次放大两级
+            input.onclick = function (e) {
+                MapInit();
+                CircleBorderBuild(CavePositionInfo);
+            }
+            // 添加DOM元素到地图中
+            map.getContainer().appendChild(input);
+            // 将DOM元素返回
+            return input;
+        }
+        // 创建控件
+        var myZoomCtrl = new ZoomControl();
+        // 添加到地图当中
+        map.addControl(myZoomCtrl);
+    }
+
+
+    //Circle打开工区详情
+    var OpenWorkCave = function (e) {
+        var target = e.target;
+        var object;
+        $(PolygonJson).each(function (index, dom) {
+            if (dom.CenterLat == target.point.lat && dom.CenterLon == target.point.lng) {
+                object = dom;
+            }
+        })
+        if (object == null)
+            return;
+
+        //显示人员定位
+        DisplayPersonPosition(object);
+
+    }
+
+    var DisplayPersonPosition = function (CaveInfo) {
+
+        map = new BMap.Map("allmap", { mapType: BMAP_HYBRID_MAP });    // 创建Map实例
+        var point = new BMap.Point(CaveInfo.CenterLon, CaveInfo.CenterLat);//中心点
+        map.centerAndZoom(point, 17);  // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+        //工具栏
+        //ToolBuild();
+
+        //返回工区按钮
+        //CustomControlBuild();
+
+        //画工区
+        var PolygonPoints = new Array();
+        $(CaveInfo.Coordinates).each(function (i, d) {
+            var PolygonPoint = new BMap.Point(d.Lon, d.Lat);
+            PolygonPoints.push(PolygonPoint);
+        })
+
+        var polygon = new BMap.Polygon(PolygonPoints, PolygonStyle);  //创建多边形
+        map.addOverlay(polygon);
+
+        CaveInfo.Persons = new Array();
+        $(CavePositionInfo).each(function (i, d) {
+            var point = new BMap.Point(d.BDLon, d.BDLat);
+            //if (BMapLib.GeoUtils.isPointInPolygon(point, dom.polygon)) {
+            //    count++;
+            //    dom.Persons.push(d);
+            //}
+            CaveInfo.Persons.push(d);
+        })
+
+        //画工人
+        if (CaveInfo.Persons.length == 0)
+            return;
+
+        $(CaveInfo.Persons).each(function (index, dom) {
+            var PersonPoint = new BMap.Point(dom.BDLon, dom.BDLat);
+            var myIcon = new BMap.Icon("/Content/IOT/img/map-people.png", new BMap.Size(24, 30)
+            );
+            //var content = dom.PersonName;
+            //var content = "<a href='#'>" + dom.PersonName + "</a>";
+            var content = "<ul style='float:left; font-size: 14px;'><li>姓名：" + dom.PersonName + "</li><li>岗位：" + dom.UnitName + "</li></ul>" + "<div style='width:60px; height:60px; float:right; background:url(/Content/IOT/img/Worker_Face.png)'></div>";
+            var name = dom.PersonName;
+            addCustomMarker(PersonPoint, myIcon, content, name);
+        });
+
+
+    }
+
+    //添加自定义图标
+    var addCustomMarker = function (point, Icon, content, name) {
+        var marker = new BMap.Marker(point, { icon: Icon });  // 创建标注
+
+        //var label = new BMap.Label(name, { offset: new BMap.Size(-10, -30) });
+        //label.setStyle(labelStyle);
+        //marker.setLabel(label);
+
+        map.addOverlay(marker);
+
+
+
+        addClickHandler(content, marker);
+    }
+
+    //弹出信息窗口
+    function addClickHandler(content, marker) {
+        marker.addEventListener("click", function (e) {
+            openInfo(content, e)
+        }
+        );
+
+    }
+    function openInfo(content, e) {
+        var p = e.target;
+        var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+        var infoWindow = new BMap.InfoWindow(content, PopStyle);  // 创建信息窗口对象
+        map.openInfoWindow(infoWindow, point); //开启信息窗口
+
+        var num = map.getZoom();
+    }
+
+    var CircleCaveLabelStyle = {
+        color: "white",
+        fontSize: "16px",
+        height: "20px",
+        lineHeight: "20px",
+        fontFamily: "微软雅黑",
+        border: "0",
+        fontWeight: "bold",
+        background: 'none',
+        cursor: "pointer"
+    };
+    var CircleNumLabelStyle = {
+        color: "green",
+        fontSize: "16px",
+        height: "20px",
+        lineHeight: "20px",
+        fontFamily: "微软雅黑",
+        border: "0",
+        fontWeight: "bold",
+        background: 'none',
+        cursor: "pointer"
+    };
+
+    var PolygonStyle = {
+        strokeColor: 'red',//边框颜色
+        fillColor: 'red',//填充颜色
+        strokeWeight: 1,//边框粗细
+        strokeOpacity: 1,//边框透明度
+        fillOpacity: 0.2,//填充透明度
+        strokeStyle: 'dash'
+    };
+
+    var labelStyle = {
+
+        color: "#005db2 ", //字体颜色
+        fontSize: "14px",//字体大小 　
+        lineHeight: "20px",
+        marginBottom: "4px",
+        height: "26px",
+        width: "50px",
+        display: "block",
+        textAlign: 'center',
+        border: "1.5px solid #0b8aff ",
+        borderRadius: "3px",
+        backgroundColor: "0.05", //文本标注背景颜色　
+        //border: "solid",
+        //borderColor: "green",
+        //fontWeight: "bold" //字体加粗
+
+    };
+
+    var PopStyle = {
+        width: 200,     // 信息窗口宽度
+        height: 80,     // 信息窗口高度
+        title: "人员信息", // 信息窗口标题
+        enableMessage: true,//设置允许信息窗发送短息,
+        fontSize: "14px"//字体大小 　
+    };
+</script>

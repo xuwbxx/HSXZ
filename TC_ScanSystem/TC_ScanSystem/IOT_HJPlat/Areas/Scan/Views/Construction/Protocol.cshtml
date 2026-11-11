@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "协议管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<div class="tab-pane fade" id="protocol">
+    <!--筛选条件-->
+    <ul class="mine-screen row-fluid">
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <a class="screen-a">协议：</a>
+            <input placeholder="请输入协议名" id="Protocol" type="text" value="" />
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <input type="button" value="查询" onclick="ConstructConfigProtocolJS.DoProtocolQuery()" />
+            @*<input type="button" value="重置查询" />*@
+        </li>
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <input type="button" value="新增" onclick="ConstructConfigProtocolJS.AddProtocol()" />
+            @*<input type="button" value="重置查询" />*@
+        </li>
+    </ul>
+    <!--表-->
+    <div id="ProtocolHtmlTemplate" class="panel panel-primary">
+
+    </div>
+    <!--翻页-->
+    <div class="change-page" style="height:34px;">
+        <div class="box">
+            <div id="Pagination" class="page fl">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@Html.Partial("ProtocolTemplate")
+@Html.Partial("ProtocolPopUp")
+<script type="text/javascript" src="~/Scripts/IOT/ConstructConfigProtocol.js"></script>

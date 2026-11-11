@@ -1,0 +1,28 @@
+﻿<script type="text/html" id="ProtocolTemplate">
+    <div class="panel-body">
+        <table class="table table-striped table-red">
+            <thead>
+                <tr>
+                    <th>协议名称</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{if list.length>=0}}
+                {{each list as Value}}
+                <tr>
+                    <td>{{Value.Protocol}}</td>
+                    <td>{{Value.CreateTime}}</td>
+                    <td>
+                        <a href="javascript:void(0);" data-id="{{Value.ID}}" onclick="ConstructConfigProtocolJS.ShowProtocolInfo(this)">编辑</a>
+                        /
+                        <a href="javascript:void(0);" data-id="{{Value.ID}}" onclick="ConstructConfigProtocolJS.DeleteProtocol(this)">删除</a>
+                    </td>
+                </tr>
+                {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+</script>

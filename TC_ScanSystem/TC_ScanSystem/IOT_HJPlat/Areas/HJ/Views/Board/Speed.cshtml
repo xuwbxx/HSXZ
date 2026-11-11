@@ -1,0 +1,197 @@
+﻿<div class="list speed">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">工程进度</p>
+        <div class="list-more">
+            <ul>
+                <li>总进度</li>
+                <li class="active">月进度</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="list-subhead" style="height:4vh">
+        <p class="list-subtitle" style="height:4vh">当月完成计划111%</p>
+        <p class="list-subtitle-content" style="height:4vh">当月计划产值：2345万</p>
+    </div> -->
+    <div class="speed-chart-title">
+        <p>当月完成计划：<a>112%</a></p>
+        <p>当月计划产值：<a>2456万</a></p>
+    </div>
+    <div class="speed-chart">
+        <div id="EChartProgress" style="height:100%;">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dom = document.getElementById("EChartProgress");
+        var myChart = echarts.init(dom);
+
+        //后台数据
+        var seriesName = '完成计划';
+        var seriesData = new Array();
+        var xArr = new Array();
+        // var seriesData = ['100', '96', '105', '110', '90'];
+        // var xArr = ['一月', '二月', '三月', '四月', '五月'];
+        // var yArr = ['0', '50', '100', '150', '200',];
+        //后台数据结束
+        
+        var progressObj = [
+            {
+                "name": "工程进度", "unit": "月",
+                "item":
+                [
+                    { "name": "一月", "valueExpect":2345, "valueActual":2345 },
+                    { "name": "二月", "valueExpect":1822, "valueActual":1749.12 },
+                    { "name": "三月", "valueExpect":2166, "valueActual":2274.3 },
+                    { "name": "四月", "valueExpect":2512, "valueActual":2763 },
+                    { "name": "五月", "valueExpect":2456, "valueActual":2210.4 },
+                ]
+            }
+        ];
+        
+        progressObj.forEach(function(item){
+            item.item.forEach(function(elem){
+                xArr.push(elem.name);
+                seriesData.push((elem.valueActual * 100/elem.valueExpect).toFixed(1));
+            })
+        });
+
+        var yMax = 200;
+        var yFormatter = '{value} %';
+        var tooltipFormatter = '{b}<br/>{a}:{c}%';
+        //var app = {};
+        option = null;
+        // Schema:
+        // date,AQIindex,PM2.5,PM10,CO,NO2,SO2
+        option = {
+            // title: {
+            //     text: '工程进度'
+            // },
+            backgroundColor: '',
+            tooltip: {
+                trigger: 'axis',
+                formatter: tooltipFormatter,
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985',
+                    }
+                }
+            },
+            // legend: {
+            //     data: ['完成计划']
+            // },
+            // toolbox: {
+            //     feature: {
+            //         saveAsImage: {}
+            //     }
+            // },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                top: '5%',
+                containLabel: true
+            },
+            axisPointer: {
+                show: true,
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: 'rgba(255,255,255,0.3)',
+                        }
+                    },
+                    axisLine: { show: false, },
+                    axisLabel: {
+                        color: 'rgba(255,255,255,0.5)',
+                        fontSize:15,
+                    },
+                    boundaryGap: false,
+                    data: xArr,
+                }
+            ],
+            yAxis: [
+                {
+                    max: yMax,
+                    type: 'value',
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            color: 'rgba(255,255,255,0.3)',
+                        }
+                    },
+                    axisLine: { show: false, },
+                    axisLabel: {
+                        formatter: yFormatter,
+                        color: 'rgba(255,255,255,0.5)',
+                    },
+                    // data: yArr,
+                }
+            ],
+            series: [
+                {
+                    name: seriesName,
+                    type: 'line',
+                    label: {
+                        show: true,
+                    },
+                    // markPoint: {
+                    //     symbol: 'pin',
+                    // },
+
+                    //数据点形状
+                    symbol: 'circle',
+                    //数据点大小
+                    symbolSize: 6,
+                    smooth: true,
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                width: 5,
+                                color: '#00d98b',
+                            },
+                            //数据点颜色
+                            color: '#00d98b',
+                            // color:'orange',
+                            //数据点边线粗细
+                            borderWidth: 1.5,
+                            //数据点边线颜色
+                            borderColor: 'white',
+                        },
+                    },
+                    areaStyle: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                offset: 0, color: 'rgba(0,217,319,0.3)' // 0% 处的颜色
+                            }, {
+                                offset: 1, color: 'rgba(0,217,319,0.0)' // 100% 处的颜色
+                            }]
+                        }
+                    },
+                    data: seriesData,
+                }
+            ]
+        };
+
+        $(".speed-chart-title p a").first().html(seriesData[seriesData.length - 1] + '%');
+        var currVal = progressObj[progressObj.length - 1].item[(progressObj[progressObj.length - 1].item).length - 1].valueExpect + "万";
+        $(".speed-chart-title p a").last().html(currVal);
+
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    })
+</script>

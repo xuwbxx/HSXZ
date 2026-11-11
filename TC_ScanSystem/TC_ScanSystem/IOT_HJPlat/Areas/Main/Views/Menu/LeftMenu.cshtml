@@ -1,0 +1,57 @@
+﻿@{ 
+    var Menus = Model as List<Model.Manage.Response.MenuResponse>;
+}
+
+<input type="hidden" id="hid_MenuID" value="@(ViewData["ActivedMenu"] ?? "")" />
+
+<div class="nev-max">
+    <ul class="nev">
+
+        @{
+            if (Menus != null && Menus.Count > 0)
+            {
+                foreach (var FirstMenu in Menus)
+                {
+                    <li class="">
+                        <a data-id="@FirstMenu.ID">
+                            <div class="@FirstMenu.Class"></div>
+                            <p>@FirstMenu.MenuName</p>
+                            <div class="more"></div>
+                        </a>
+                        <ul class="nev-two">
+                            @{
+                                foreach (var child in FirstMenu.Child)
+                                {
+                                    <li><a data-id="@child.ID" href="@child.Path">@child.MenuName</a></li>
+                                }
+                            }
+                        </ul>
+                        
+                        
+                    </li>
+                }
+            }
+        }
+
+        
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //debugger;
+        var ActivedMenuID = $("#hid_MenuID").val();
+        if (ActivedMenuID != null && ActivedMenuID != '')
+        {
+            //二级菜单高亮
+            var ChildMenu = $("ul.nev a[data-id='" + ActivedMenuID + "']");
+            ChildMenu.click();
+
+            //一级菜单
+            var FirstMenu = $(ChildMenu).parent().parent().prev('a').parent('li');
+            $(FirstMenu).addClass('active');
+
+            $(ChildMenu).parent().parent().css('display', 'block')
+        }
+    })
+</script>

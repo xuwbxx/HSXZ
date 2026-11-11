@@ -1,0 +1,38 @@
+﻿<script type="text/html" id="EnvironmentHtmlTemplate">
+    <table class="table table-striped table-blue">
+        <thead>
+            <tr>
+                <th>测点</th>
+                <th>温度</th>
+                <th>湿度</th>
+                <th>噪音</th>
+                <th>PM2.5</th>
+                <th>PM10</th>
+                <th>风速</th>
+                <th>风向</th>
+                <th>风力</th>
+                <th>监测时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{if list.length>=0}}
+            {{each list as Value}}
+                <tr>
+                    <td>{{Value.PointName}}</td>
+                    <td>{{Value.Temperature}}</td>
+                    <td>{{Value.Humidity}}</td>
+                    <td>{{Value.Noise}}</td>
+                    <td>{{Value.PM25}}</td>
+                    <td>{{Value.PM10}}</td>
+                    <td>{{Value.WindSpeed}}</td>
+                    <td>{{Value.WindDirectionText}}</td>
+                    <td>{{Value.WindForce}}</td>
+                    <td>{{Value.CreateTime}}</td>
+                </tr>
+            {{/each}}
+            {{/if}}
+            
+            
+        </tbody>
+    </table>
+</script>

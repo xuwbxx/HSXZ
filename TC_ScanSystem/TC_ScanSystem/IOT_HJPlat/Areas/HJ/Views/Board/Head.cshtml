@@ -1,0 +1,28 @@
+﻿<div class="head">
+    <div><a href="/HJ/HomePage/Index"><img src="~/Content/Board/img/back.png" /></a></div>
+    <p>横江大道快速化改造工程物联监控平台</p>
+    <div>
+        <p id="p_Time">2019/01/10 14:45</p>
+        @{
+            var weather = Model as Model.Other.WeatherResponse;
+            if (weather.Success)
+            {
+                <p>@weather.Point @weather.Weather @weather.MinTemp-@(weather.MaxTemp)℃</p>
+            }
+            else
+            {
+                <p>暂无天气数据</p>
+            }
+        }
+        
+    </div>
+</div>
+
+<script>
+    var Run = function () {
+        var date = GetFullDateTime();
+        $("#p_Time").html(date);
+    }
+    setInterval('Run()', 1000);
+
+</script>

@@ -1,0 +1,27 @@
+﻿<script type="text/html" id="DownloadTemplate">
+    <p>应用下载</p>
+    @*<a href="/Main/HomePage/DownloadCenter?OP=13">查看更多</a>*@
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>文件名</th>
+                    <th>上传日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{if list.length>=0}}
+                {{each list as Value}}
+                <tr>
+                    <td><a href="javascript:void(0);" data-id="{{Value.ID}}" onclick="MainJS.DownloadFile(this)">{{Value.FileName}}</a></td>
+                    <td>{{Value.CreateTime}}</td>
+                </tr>
+                {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+</script>
+
+
+

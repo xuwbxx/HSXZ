@@ -1,0 +1,563 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>南京横江大道项目</title>
+<link rel="icon" href="img/title-logo.ico" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery1.12.4.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<style>
+
+</style>
+</head>
+<body style="">
+<div class="container-fluid-full head navbar-fixed-top" >
+	<div class="logo"></div>
+    <div class="exit">
+    	<a href="#" title="退出登录"><img src="img/icon_exit.png"/></a>
+    </div>
+    <div class="set">
+    	<a href="#" title="系统设置"><img src="img/icon_set.png"/></a>
+    </div>
+    <div class="user hidden-sm hidden-xs">
+    	<a href="#" title="小王"><img src="img/user.png"/></a>
+    </div>
+</div>
+<div class="container-fluid-full content-main">
+	<div class="row-fluid">
+    	<div class="nev-max" style="width:180px;">
+        	<ul class="nev">
+                <li>
+                    <a>
+                        <div class="nev-home"></div>
+                        <p>首页</p>
+                        <div class="more"></div>
+                    </a>
+                    <ul class="nev-two"></ul>
+                </li>
+                <li>
+                    <a>
+                        <div class="nev-jiankong"></div>
+                        <p>视频监控</p>
+                        <div class="more"></div>
+                    </a>
+                    <ul class="nev-two">
+                        <li><a>实时监控</a></li>
+                        <li><a>历史回放</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a>
+                        <div class="nev-jinchu"></div>
+                        <p>进出管理</p>
+                        <div class="more"></div>
+                    </a> 
+                    <ul class="nev-two" style="display:block;">
+                        <li><a>人员进出</a></li>
+                        <li class="clickactive"><a>车辆进出</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>
+                        <div class="nev-jiaoyu"></div>
+                        <p>人员教育</p>
+                        <div class="more"></div>
+                    </a>
+                    <ul class="nev-two">
+                        <li><a>安全培训箱</a></li>
+                        <li><a>三级安全教育</a></li>
+                        <li><a>安全培训箱</a></li>
+                        <li><a>三级安全教育</a></li>
+                        <li><a>安全培训箱</a></li>
+                        <li><a>三级安全教育</a></li>
+                        <li><a>安全培训箱</a></li>
+                        <li><a>三级安全教育</a></li>
+                        <li><a>安全培训箱</a></li>
+                        <li><a>三级安全教育</a></li>
+                        <li><a>安全培训箱</a></li>
+                        <li><a>三级安全教育</a></li>
+                        <li><a>安全培训箱</a></li>
+                        <li><a>三级安全教育</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>
+                        <div class="nev-huanjing"></div>
+                        <p>环境监测</p>
+                        <div class="more"></div>
+                    </a>
+                    <ul class="nev-two">
+                        <li><a>水质监测</a></li>
+                        <li><a>空气监测</a></li>
+                        <li><a>PM2.5监测</a></li>
+                        <li><a>风力监测</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>
+                        <div class="nev-chenjiang"></div>
+                        <p>沉降观测</p>
+                        <div class="more"></div>
+                    </a>
+                    <ul class="nev-two">
+                        <li><a>基坑沉降</a></li>
+                        <li><a>建筑沉降</a></li>
+                        <li><a>基础沉降</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>
+                        <div class="nev-shebei"></div>
+                        <p>设备管理</p>
+                        <div class="more"></div>
+                    </a>
+                    <ul class="nev-two">
+                        <li><a>龙门吊</a></li>
+                        <li><a>塔吊</a></li>
+                        <li><a>盾构机</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content-max">
+        	<div class="content">
+                <div class="content-min col-lg-12">
+                	<!--<div class="nev-bread col-lg-12">
+                        <a>车辆进出</a>
+                        <ul class="breadcrumb">
+                            <li><a href="#">车辆进出</a></li>
+                            <li class="active">进出管理</li>
+                        </ul>
+                    </div>-->
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#shishi" data-toggle="tab">实时数据</a>
+                        </li>
+                        <li>
+                        	<a href="#lishi" data-toggle="tab">历史数据</a>
+                        </li>
+                        <li>
+                        	<a href="#qushi" data-toggle="tab">趋势图</a>
+                        </li>
+                    </ul>
+                    <!--tab内容-->
+                    <div class="tab-content" id="myTabContent">
+                        <!--车辆进出实时数据-->
+                        <div class="tab-pane fade in active" id="shishi">
+                            <!--筛选条件-->
+                            <ul class="mine-screen row-fluid">
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">查询内容：</a>
+                                    <select>
+                                        <option>实时查询</option>
+                                        <option>历史数据</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">所属标段：</a>
+                                    <select>
+                                        <option>温度</option>
+                                        <option>水质</option>
+                                        <option>噪音</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">所属区域：</a>
+                                    <select>
+                                        <option>工点1</option>
+                                        <option>工点2</option>
+                                        <option>工点3</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">车牌号：</a>
+                                    <input type="text" value="输入车牌号"/>
+                                </li>
+                                <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="dtp_input1" class="col-md-2 control-label">开始时间：</label>
+                                    <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                        <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input1" value=""/><br/>
+                                </div>
+                                <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="dtp_input1" class="col-md-2 control-label">结束时间：</label>
+                                    <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                        <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input1" value=""/><br/>
+                                </div>
+                                
+                                <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                                    <input class="btn btn-primary" type="button" value="查询"/>
+                                    <!--<input type="button" value="重置查询"/>-->
+                                </li>
+                        	</ul>
+                            <!--表-->
+                            <table class="table table-striped table-blue">
+                              <thead>
+                                <tr>
+                                  <th>车牌号</th>
+                                  <th>进出工点</th>
+                                  <th>进入时间</th>
+                                  <th>区域描述</th>
+                                  <th>操作选项</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td style="width:20%;"><a style=" word-wrap:break-word;">11111111111</a></td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <!--翻页-->
+                            <div class="change-page" style="height:34px;">
+                                <ul class="pagination">
+                                    <li><a href="#">&laquo;</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--车辆进出历史数据-->
+                        <div class="tab-pane fade" id="lishi">
+                        	<!--筛选条件-->
+                            <ul class="mine-screen row-fluid">
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">查询内容：</a>
+                                    <select>
+                                        <option>实时查询</option>
+                                        <option>历史数据</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">所属标段：</a>
+                                    <select>
+                                        <option>温度</option>
+                                        <option>水质</option>
+                                        <option>噪音</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">所属区域：</a>
+                                    <select>
+                                        <option>工点1</option>
+                                        <option>工点2</option>
+                                        <option>工点3</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">车牌号：</a>
+                                    <input type="text" value="输入车牌号"/>
+                                </li>
+                                <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="dtp_input1" class="col-md-2 control-label">开始时间：</label>
+                                    <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                        <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input1" value=""/><br/>
+                                </div>
+                                <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="dtp_input1" class="col-md-2 control-label">结束时间：</label>
+                                    <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                        <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input1" value=""/><br/>
+                                </div>
+                                
+                                <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                                    <input class="btn btn-primary" type="button" value="查询"/>
+                                    <!--<input type="button" value="重置查询"/>-->
+                                </li>
+                        	</ul>
+                            <!--表-->
+                            <table class="table table-striped table-blue">
+                              <thead>
+                                <tr>
+                                  <th>车牌号</th>
+                                  <th>进出工点</th>
+                                  <th>进入时间</th>
+                                  <th>区域描述</th>
+                                  <th>操作选项</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td style="width:20%;"><a style=" word-wrap:break-word;">11111111111</a></td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                                <tr>
+                                  <td>皖AW78653</td>
+                                  <td class="special">梁梅路工地</td>
+                                  <td>2016.09.10 12:23:34</td>
+                                  <td>主分区</td>
+                                  <td><a href="#">编辑</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <!--翻页-->
+                            <div class="change-page" style="height:34px;">
+                                <ul class="pagination">
+                                    <li><a href="#">&laquo;</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--趋势图-->
+                        <div class="tab-pane fade" id="qushi">
+                        	<!--筛选条件-->
+                            <ul class="mine-screen row-fluid">
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">查询内容：</a>
+                                    <select>
+                                        <option>实时查询</option>
+                                        <option>历史数据</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">所属标段：</a>
+                                    <select>
+                                        <option>温度</option>
+                                        <option>水质</option>
+                                        <option>噪音</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">所属区域：</a>
+                                    <select>
+                                        <option>工点1</option>
+                                        <option>工点2</option>
+                                        <option>工点3</option>
+                                    </select>
+                                </li>
+                                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a class="screen-a">车牌号：</a>
+                                    <input type="text" value="输入车牌号"/>
+                                </li>
+                                <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="dtp_input1" class="col-md-2 control-label">开始时间：</label>
+                                    <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                        <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input1" value=""/><br/>
+                                </div>
+                                <div class="form-group col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="dtp_input1" class="col-md-2 control-label">结束时间：</label>
+                                    <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                        <input class="form-control" size="16" type="text" value="" readonly style="width:100%;">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                    </div>
+                                    <input type="hidden" id="dtp_input1" value=""/><br/>
+                                </div>
+                                
+                                <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                                    <input class="btn btn-primary" type="button" value="查询"/>
+                                    <!--<input type="button" value="重置查询"/>-->
+                                </li>
+                        	</ul>
+                            <!--表-->
+                            
+                            <!--翻页-->
+                            <div class="change-page" style="height:34px;">
+                                <ul class="pagination">
+                                    <li><a href="#">&laquo;</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           	<div class="pagefoot"><p>版权所有：中交上海三航科学研究院有限公司</p></div>
+        </div>
+    </div>
+</div>
+<div class="popup-max">
+    <div class="popup list">
+        <p>施工推演</p>
+        <a class="popup-close" href="#">关闭</a>
+        <div>这里放视频，把高度限制去掉</div>
+    </div>
+</div>
+</body>
+<script>s
+$('.monitor').children('ul').load(function() {
+    alert(123)
+});
+
+</script>
+</html>

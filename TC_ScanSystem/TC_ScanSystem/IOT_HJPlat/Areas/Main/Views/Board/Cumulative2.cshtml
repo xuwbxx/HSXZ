@@ -1,0 +1,70 @@
+﻿<div class="cumulative">
+    <ul>
+        <li>
+            <p>累计产值（万元）</p>
+            <div>
+                <a>238</a>
+                @*<a><img src="~/Content/Board/img/up.png" /></a>
+                    <a>3%</a>
+                    <a><img src="~/Content/Board/img/arrow-up.png" /></a>
+                    <span>同比上升</span>*@
+            </div>
+        </li>
+        <li>
+            <p>进场人员（人）</p>
+            <div>
+                <a>8</a>
+                @*<a><img src="~/Content/Board/img/up.png" /></a>
+                    <a>3%</a>
+                    <a><img src="~/Content/Board/img/arrow-up.png" /></a>
+                    <span>同比上升</span>*@
+            </div>
+        </li>
+        <li>
+            <p>进场机械（台）</p>
+            <div>
+                <a>174</a>
+                @*<a><img src="~/Content/Board/img/down.png" /></a>
+                    <a>3%</a>
+                    <a><img src="~/Content/Board/img/arrow-down.png" /></a>
+                    <span>同比下降</span>*@
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        SummaryQuery();
+
+        function SummaryQuery() {
+            var param = {};
+            // param.PointID = $("#select_Point").val();
+
+            $(".cumulative").addClass("mainmask");
+
+            $.post('/Main/Board/GetSummary', param)
+                .success(function (data, statusText, jqXRH) {
+                    if (data) {
+                        if (data.Success) {
+                            var str = "";
+                            $(".cumulative ul").each(function (index, dom) {
+                                var obj = data.Data;
+                                obj.Item.forEach(function (elem, ind) {
+                                    str += "<li><p>" + elem.Name + "(" + elem.Unit + ")</p><div><a>" + elem.Value + "</a></div></li>";
+                                })
+                                $(dom).html(str);
+                            });
+                        }
+                    }
+                })
+                .fail(function (jqXHR, statusText, errorMessage) {
+                })
+                .always(function (data) {
+                    // 关闭等待遮罩
+                    //CloseMaskPopUp();
+                    $(".cumulative").removeClass("mainmask");
+                });
+        }
+    });
+</script>

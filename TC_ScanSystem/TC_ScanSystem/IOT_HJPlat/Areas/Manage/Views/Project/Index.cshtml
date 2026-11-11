@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "项目管理";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<div class="content">
+    <div class="content-min col-lg-12">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#project" data-toggle="tab">项目管理</a>
+            </li>
+        </ul>
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--车辆进出实时数据-->
+            <div class="tab-pane fade in active" id="project">
+                <!--筛选条件-->
+                <ul class="mine-screen row-fluid">
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">项目名称：</a>
+                        <input type="text" name="txt_ProjectName" value="" />
+                    </li>
+                    <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                        <input class="btn btn-primary" type="button" value="查询" onclick="ProjectJS.DoQuery()" />
+                    </li>
+                    @*<li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                        <input type="button" value="新增项目" onclick="ProjectJS.Add()" />
+                    </li>*@
+                </ul>
+                <!--表-->
+                <div id="ProjectHtml">
+                </div>
+
+                <!--翻页-->
+                <div class="change-page" style="height:34px;">
+                    <div id="Pagination">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+<link href="~/Content/fancytree/skin-bootstrap/ui.fancytree.css" rel="stylesheet" class="skinswitcher" />
+<script type="text/javascript" src="~/Content/fancytree/jquery-ui-dependencies/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.js"></script>
+<script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.dnd5.js"></script>
+<script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.edit.js"></script>
+<script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.glyph.js"></script>
+<script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.table.js"></script>
+<script type="text/javascript" src="~/Content/fancytree/jquery.fancytree.wide.js"></script>
+
+@Html.Partial("Template")
+@Html.Partial("ProjectPop")
+<script type="text/javascript" src="~/Scripts/Manage/ProjectJS.js"></script>

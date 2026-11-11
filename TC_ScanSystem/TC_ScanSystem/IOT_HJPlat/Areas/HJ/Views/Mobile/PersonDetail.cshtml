@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    var info = Model as Model.Training.SafetyKitsResponse;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Mobile/css/style.css" />
+    <title>培训信息统计</title>
+</head>
+<body>
+    <div>
+        <div class="person-detail">
+            <div class="content_zero">
+                <div class="con_zero_right">
+                    <ul id="ul-change">
+                        <li>
+                            <img src="/Mobile/Data/PersonPortrait?id=@info.PersonId" alt="#" />
+                        </li>
+                        <li>
+                            <a>姓名：</a>
+                            <a>@info.PersonName</a>
+                        </li>
+                        <li>
+                            <a>证件号：</a>
+                            <a>@info.IdentifyID</a>
+                        </li>
+                        <li>
+                            <a>性别：</a>
+                            <a>@info.Sex</a>
+                        </li>
+                        <li>
+                            <a>年龄：</a>
+                            <a>@info.Age</a>
+                        </li>
+                        <li>
+                            <a>籍贯：</a>
+                            <a>@info.Native</a>
+                        </li>
+                        <li>
+                            <a>住址：</a>
+                            <a>@info.Address</a>
+                        </li>
+                        <li>
+                            <a>岗位：</a>
+                            <a>@info.Station</a>
+                        </li>
+                        <li>
+                            <a>工种：</a>
+                            <a>@info.Category</a>
+                        </li>
+                        <li>
+                            <a>工区：</a>
+                            <a>@info.UnitName</a>
+                        </li>
+                        <li>
+                            <img src="/Mobile/Data/PersonQRCode?id=@info.PersonId" alt="#" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

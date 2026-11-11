@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "横沙码头监测平台";
+    Layout = "~/Views/Shared/BoardLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Board/css/style-change.css" />
+
+<div class="rowfive">
+    <div class="rowone-colone">
+        @Html.Action("Target")
+    </div>
+    <div class="rowone-coltwo" style="vertical-align:top;">
+        @Html.Action("Head")
+        @Html.Action("Cumulative2")
+        <div>
+            <video id="BimVideoSrc" src="~/File/Video/HJ_Video.mp4" loop="loop" controls="controls" style="width:100%; height:43.7vh; background-color:#000;">
+                您的浏览器不支持 video 标签。
+            </video>
+            @*<video style="width:100%; height:43.7vh; background-color:#000;" controls autobuffer>
+                <source src="~/File/Video/HJ-AdvertisingVideo.mp4" type="video/mp4" />
+            </video>*@
+        </div>
+    </div>
+    <div class="rowone-colthree">
+        @Html.Action("Prewarning2")
+        @Html.Action("Alarm")
+    </div>
+    <div class="rowone-colfour">
+        @Html.Action("Speed")
+        @Html.Action("Monitor")
+    </div>
+</div>
+<div class="rowsix">
+    <div class="rowtwo-colone">
+        @Html.Action("Equipment2")
+    </div>
+    <div class="rowtwo-coltwo">
+        @Html.Action("PersonPosition")
+    </div>
+    <div class="rowtwo-colthree">
+        @Html.Action("EnvironmentGauge")
+    </div>
+</div>
+

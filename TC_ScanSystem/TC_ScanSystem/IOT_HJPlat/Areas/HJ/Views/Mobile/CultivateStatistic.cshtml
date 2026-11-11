@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    var info = Model as Model.HJPlat.Response.CultivateStatisticResponse;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Mobile/css/style.css" />
+    <title>培训信息统计</title>
+</head>
+<body>
+    <div>
+        <div class="content">
+            <div class="content_zero">
+                <div class="con_zero_right">
+                    <ul id="ul-change">
+                        <li>
+                            <a>现有总人数：</a>
+                            <a>@info.PersonCount</a>
+                        </li>
+                        <li>
+                            <a>历史总人数：</a>
+                            <a>@info.HisCount</a>
+                        </li>
+                        <li>
+                            <a>培训人数：</a>
+                            <a>@info.TrainCount</a>
+                        </li>
+                        <li>
+                            <a>培训率：</a>
+                            <a>@info.PrcentOfTrain</a>
+                        </li>
+                        <li>
+                            <a>培训人次：</a>
+                            <a>@info.PersonTime</a>
+                        </li>
+                        <li>
+                            <a>累计学时：</a>
+                            <a>@info.Period</a>
+                        </li>
+                        <li>
+                            <a>人均学时：</a>
+                            <a>@info.AverageOfPeriod</a>
+                        </li>
+                        <li>
+                            <a>考试人次：</a>
+                            <a>@info.ExamCount</a>
+                        </li>
+                        <li>
+                            <a>考试合格率：</a>
+                            <a>@info.PassedCount</a>
+                        </li>
+                        <li>
+                            <a>合格人次：</a>
+                            <a>@info.PrcentOfPassed</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

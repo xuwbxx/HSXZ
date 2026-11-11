@@ -1,0 +1,64 @@
+﻿<div class="list position">
+    <div class="list-head">
+        <div class="list-point">
+            <img src="~/Content/Board/img/list-o.png" />
+        </div>
+        <p class="list-title">项目简介</p>
+        @*<div class="list-more">
+            <select>
+                <option>切换区域</option>
+                <option>工点1</option>
+                <option>工点2</option>
+            </select>
+        </div>*@
+    </div>
+    <div class="position-chart">
+        <div style="border:1px solid gray; height:100%;" id="MapContainer"></div>
+    </div>
+</div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+
+    <script>
+        var map = new BMap.Map("MapContainer", { mapType: BMAP_HYBRID_MAP });
+        //var map = new BMap.Map("container");
+        var point = new BMap.Point(118.668563, 32.056282);
+        var top_left_control = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT });// 左上角，添加比例尺
+        var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+        map.addControl(top_left_control);
+        map.addControl(top_left_navigation);
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+        var mapType = new BMap.MapTypeControl(
+            {
+                mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
+                anchor: BMAP_ANCHOR_TOP_RIGHT
+            }
+        );
+        map.addControl(mapType);          //2D图，混合图
+
+        map.centerAndZoom(point, 15);
+        //map.addControl(new BMap.NavigationControl());
+        //map.addControl(new BMap.MapTypeControl());
+        //var marker = new BMap.Marker(point);
+        //map.addOverlay(marker);
+        var marker = new BMap.Marker(point);  // 创建标注
+        map.addOverlay(marker);               // 将标注添加到地图中
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+        var sContent =
+            //"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>天安门</h4>" +
+            "<img style='float:right;margin:10px 15px 0 10px;' id='imgDemo' src='/Content/IOT/img/henjiangdadao.jpeg' width='80' height='80' title='横江大道'/>" +
+            "<p style='margin:0;line-height:1.5;font-size:14px;font-weight:bold; color:#000;'>南京横江大道</p>" +
+            "<p style='margin:0;line-height:1.5;font-size:12px;width:180px;color:#555;margin:6px 0;'>南京市浦口区</p>" +
+            "<a style='margin:0;line-height:1.5;font-size:12px;' href='/Main/HomePage/Index'>进入物联监测平台</a>";
+        //"</div>";
+
+        var infoWindow = new BMap.InfoWindow(sContent, { width: "0" });  // 创建信息窗口对象
+        var InfoPoint = new BMap.Point(118.668563, 32.058582);
+        map.openInfoWindow(infoWindow, InfoPoint); //开启信息窗口
+
+        marker.addEventListener("click", function () {
+            map.openInfoWindow(infoWindow, InfoPoint); //开启信息窗口
+        });
+
+    </script>

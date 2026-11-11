@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "首页";
+    Layout = "~/Views/Shared/IOTLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/IOT/css/bootstrap-select.min.css" />
+<script type="text/javascript" src="~/Content/IOT/js/bootstrap-select.min.js"></script>
+
+<script>
+    $('.content-max').width(document.body.scrollWidth - 201);
+    // content限制高度
+    $('.content-min').css({ 'min-height': window.innerHeight - 140 + 'px' });
+    $('.tab-content').css({ 'min-height': window.innerHeight - 182 + 'px' });
+    $('.choice').css({ 'min-height': window.innerHeight - 120 + 'px' });
+</script>
+@{
+var LayerList = ViewData["LayerList"] as List<Model.HJPlat.Response.ConstructCfgLayerResponse>;
+//var ScanTypeList = ViewData["ScanTypeList"] as List<DataEntity.MK_ScanType>;
+}
+
+<div class="content">
+    <div class="col-lg-12">
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#shuju" data-toggle="tab">首页</a>
+            </li>
+            @*<li>
+                <a href="#qushi" data-toggle="tab">趋势图</a>
+            </li>*@
+        </ul>
+
+        <!--tab内容-->
+        <div class="tab-content" id="myTabContent">
+            <!--车辆进出数据-->
+            <div class="tab-pane fade in active" id="shuju">
+                <!--筛选条件-->
+                @*<ul class="mine-screen row-fluid">
+
+                    <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <a class="screen-a">监测区域：</a>
+                        <select id="select_AutoLayer" onchange="ConstructAutoJS.SelectChange('layer');">
+                            <option value="0">请选择</option>
+                            @{
+                                if (LayerList != null && LayerList.Count > 0)
+                                {
+                                    foreach (var item in LayerList)
+                                    {
+                                        <option value="@item.ID">@item.LayerName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </li>
+                    <li class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                        <input type="button" value="查询" onclick="ConstructAutoJS.DoAutoQuery()" />
+
+                    </li>
+                </ul>*@
+                <!--表-->
+                <div class="mapp col-lg-12 col-md-4 col-sm-6 col-xs-12">
+                    <img src="~/Content/IOT/img/map-bg.jpg" />
+                    <ul class="mapp-icon">
+                        @{
+                            if (LayerList != null && LayerList.Count > 0)
+                            {
+                                foreach (var item in LayerList)
+                                {
+                                    <li><a style="top: @item.MapYs; left: @item.MapXs;" title="@item.LayerName" href="/Scan/HomePage/Layer?ID=@item.ID">@item.LayerName</a></li>
+                                }
+                            }
+                        }
+                    </ul>
+                </div>
+                <div style="clear:both;"></div>
+
+            </div>
+
+
+            <!--趋势图-->
+            @*<div class="tab-pane fade" id="qushi">
+             
+            </div>*@
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+
+</div>

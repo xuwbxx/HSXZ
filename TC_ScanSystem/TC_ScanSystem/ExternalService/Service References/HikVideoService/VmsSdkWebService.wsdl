@@ -1,0 +1,2984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ax23="http://vo.ws.vms.ivms.hikvision.com/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://ws.vms.ivms6.hikvision.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" targetNamespace="http://ws.vms.ivms6.hikvision.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>VmsSdkWebService</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ax24="http://vo.ws.vms.ivms.hikvision.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.vms.ivms6.hikvision.com">
+      <xs:import namespace="http://vo.ws.vms.ivms.hikvision.com/xsd" />
+      <xs:element name="getServiceByType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="serviceType" type="xs:int" />
+            <xs:element minOccurs="0" name="netzoneId" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getServiceByTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByCodes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="resCodes" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByCodesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="checkResourcePrivilege">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" name="operCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="checkResourcePrivilegeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="applyToken">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tgc" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="applyTokenResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPreviewOcxOptions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="clientIp" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPreviewOcxOptionsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="queryResourcesByPage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="queryName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="queryOper" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="queryValue" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="start" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="orderBy" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="isAsc" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="queryResourcesByPageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPlaybackOcxOptions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="clientIp" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="beginTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="endTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="storeDeviceType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPlaybackOcxOptionsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzQueryFrontEndMonitoringEquipment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzQueryFrontEndMonitoringEquipmentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:DeviceInfoListForILobSys" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getStreamInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="netZoneId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getStreamInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPresetInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPresetInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAlarmHistory">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="alarmName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="confirmStatus" type="xs:int" />
+            <xs:element minOccurs="0" name="sourceName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="alarmTypes" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="alarmLevels" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="startTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="endTime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orderFields" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sort" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+            <xs:element minOccurs="0" name="sourceIndexCodes" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sourceType" type="xs:int" />
+            <xs:element minOccurs="0" name="orgIndexCodes" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="srcIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAlarmHistoryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="snapPicture">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="snapPictureResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByOrgCode">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="operCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByOrgCodeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByCondition">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="queryName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="queryOper" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="queryValue" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orderBy" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sort" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByConditionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addPresetToCruisePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cruiseRoute" type="xs:int" />
+            <xs:element minOccurs="0" name="presetIndex" type="xs:int" />
+            <xs:element minOccurs="0" name="dwellTime" type="xs:int" />
+            <xs:element minOccurs="0" name="speed" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addPresetToCruisePathResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="delPresetToCruisePathByNumber">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cruiseRoute" type="xs:int" />
+            <xs:element minOccurs="0" name="index" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="delPresetToCruisePathByNumberResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setPresetListToCruisePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cruiseRoute" type="xs:int" />
+            <xs:element minOccurs="0" name="list" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="dwellTime" type="xs:int" />
+            <xs:element minOccurs="0" name="speed" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setPresetListToCruisePathResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="newSetPresetListToCruisePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cruiseRoute" type="xs:int" />
+            <xs:element minOccurs="0" name="presetJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="newSetPresetListToCruisePathResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAlarmTriggerPicInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="alarmNo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="triggerType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAlarmTriggerPicInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getShowPictureUrl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getShowPictureUrlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCruisePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cruiseRoute" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCruisePathResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPtzPosition">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPtzPositionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="gotoCruisePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cruiseRoute" type="xs:int" />
+            <xs:element minOccurs="0" name="command" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="gotoCruisePathResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getGisInfoB">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getGisInfoBResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setPtzPosition">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="panPos" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="tiltPos" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="zoomPos" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setPtzPositionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sdkLogin">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="loginAccount" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="serviceIp" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="clientIp" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="clientMac" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sdkLoginResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sdkLogout">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tgc" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sdkLogoutResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPlayBackInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="netZoneId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPlayBackInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPictureUrl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="protocol" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPictureUrlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setOsdConfig">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="osdObj" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setOsdConfigResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resourceListener">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="event" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resourceListenerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPtzPositionEx">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getPtzPositionExResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lockPtz">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lockTime" type="xs:int" />
+            <xs:element minOccurs="0" name="controlValue" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="lockPtzResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzQueryStatusB">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzQueryStatusBResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peagPtzSet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fPanPos" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fTilePos" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fZoomPos" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="wFocalLen" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="wFocus" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fHorizontalSpeed" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fVerticalSpeed" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peagPtzSetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzControlSL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="command" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzControlSLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:ILobResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzQueryDateB">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzQueryDateBResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="faceUploadImg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="extendInfo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="faceUploadImgResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="faceSearchQuery">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="extendInfo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="faceSearchQueryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzControl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="command" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="proprity" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="speed" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzControlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="changePresetInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="deviceIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="presetNo" type="xs:int" />
+            <xs:element minOccurs="0" name="presetName" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="changePresetInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="alarmIoControl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" name="alarmIoIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="controlValue" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="alarmIoControlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAlarmIoStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" name="alarmIoIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAlarmIoStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="doorControl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="doorIndexCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="controlValue" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="doorControlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="snapPictureToShow">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="snapPictureToShowResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setOsdConfigMultiple">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="osdObj" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCodes" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setOsdConfigMultipleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resourceListener2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="resourceListener2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="registResourceChangeListener">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="httpstyle" type="xs:int" />
+            <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="targetNamespace" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="registResourceChangeListenerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="registResourceChangeListener2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="port" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="httpstyle" type="xs:int" />
+            <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="targetNamespace" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="registResourceChangeListener2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzGetLockStatusB">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cameraIndexCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ptzGetLockStatusBResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMonitoringTower">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMonitoringTowerResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:MonitoringTowerListForLobSystem" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="encodePwdBySHA256">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="encodePwdBySHA256Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByPage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="resType" type="xs:int" />
+            <xs:element minOccurs="0" name="pageNo" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="operCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orderBy" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sort" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getResourceByPageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="heartBeat">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="heartBeatResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://vo.ws.vms.ivms.hikvision.com/xsd">
+      <xs:complexType name="DeviceInfoListForILobSys">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="devSize" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="deviceInfoForILobSys" nillable="true" type="ax23:DeviceInfoForILobSys" />
+          <xs:element minOccurs="0" name="result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DeviceInfoForILobSys">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cameraId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cruiseMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="devId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="elevation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="infraredThermographyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="latitudeDegree" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="latitudeMinute" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="latitudeSec" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="latitudeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="longitudeDegree" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="longitudeMinute" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="longitudeSec" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="longitudeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maxHorizontalSpeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maxHorizontalValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maxVerticalSpeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maxVerticalValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="minHorizontalSpeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="minHorizontalValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="minVerticalSpeed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="minVerticalValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="visibleRadius" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ILobResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="message" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="status" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MonitoringTowerListForLobSystem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="monitoringTowerArray" nillable="true" type="ax23:MonitoringTower" />
+          <xs:element minOccurs="0" name="monitoringTowerSize" type="xs:int" />
+          <xs:element minOccurs="0" name="result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MonitoringTower">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="monitoringTowerId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="monitoringTowerName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="checkResourcePrivilegeRequest">
+    <wsdl:part name="parameters" element="ns:checkResourcePrivilege" />
+  </wsdl:message>
+  <wsdl:message name="checkResourcePrivilegeResponse">
+    <wsdl:part name="parameters" element="ns:checkResourcePrivilegeResponse" />
+  </wsdl:message>
+  <wsdl:message name="setOsdConfigRequest">
+    <wsdl:part name="parameters" element="ns:setOsdConfig" />
+  </wsdl:message>
+  <wsdl:message name="setOsdConfigResponse">
+    <wsdl:part name="parameters" element="ns:setOsdConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByOrgCodeRequest">
+    <wsdl:part name="parameters" element="ns:getResourceByOrgCode" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByOrgCodeResponse">
+    <wsdl:part name="parameters" element="ns:getResourceByOrgCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ptzQueryStatusBRequest">
+    <wsdl:part name="parameters" element="ns:ptzQueryStatusB" />
+  </wsdl:message>
+  <wsdl:message name="ptzQueryStatusBResponse">
+    <wsdl:part name="parameters" element="ns:ptzQueryStatusBResponse" />
+  </wsdl:message>
+  <wsdl:message name="sdkLogoutRequest">
+    <wsdl:part name="parameters" element="ns:sdkLogout" />
+  </wsdl:message>
+  <wsdl:message name="sdkLogoutResponse">
+    <wsdl:part name="parameters" element="ns:sdkLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ptzQueryDateBRequest">
+    <wsdl:part name="parameters" element="ns:ptzQueryDateB" />
+  </wsdl:message>
+  <wsdl:message name="ptzQueryDateBResponse">
+    <wsdl:part name="parameters" element="ns:ptzQueryDateBResponse" />
+  </wsdl:message>
+  <wsdl:message name="delPresetToCruisePathByNumberRequest">
+    <wsdl:part name="parameters" element="ns:delPresetToCruisePathByNumber" />
+  </wsdl:message>
+  <wsdl:message name="delPresetToCruisePathByNumberResponse">
+    <wsdl:part name="parameters" element="ns:delPresetToCruisePathByNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="addPresetToCruisePathRequest">
+    <wsdl:part name="parameters" element="ns:addPresetToCruisePath" />
+  </wsdl:message>
+  <wsdl:message name="addPresetToCruisePathResponse">
+    <wsdl:part name="parameters" element="ns:addPresetToCruisePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmHistoryRequest">
+    <wsdl:part name="parameters" element="ns:getAlarmHistory" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmHistoryResponse">
+    <wsdl:part name="parameters" element="ns:getAlarmHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="applyTokenRequest">
+    <wsdl:part name="parameters" element="ns:applyToken" />
+  </wsdl:message>
+  <wsdl:message name="applyTokenResponse">
+    <wsdl:part name="parameters" element="ns:applyTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="resourceListenerRequest">
+    <wsdl:part name="parameters" element="ns:resourceListener" />
+  </wsdl:message>
+  <wsdl:message name="resourceListenerResponse">
+    <wsdl:part name="parameters" element="ns:resourceListenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ptzControlSLRequest">
+    <wsdl:part name="parameters" element="ns:ptzControlSL" />
+  </wsdl:message>
+  <wsdl:message name="ptzControlSLResponse">
+    <wsdl:part name="parameters" element="ns:ptzControlSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="faceUploadImgRequest">
+    <wsdl:part name="parameters" element="ns:faceUploadImg" />
+  </wsdl:message>
+  <wsdl:message name="faceUploadImgResponse">
+    <wsdl:part name="parameters" element="ns:faceUploadImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMonitoringTowerRequest">
+    <wsdl:part name="parameters" element="ns:getMonitoringTower" />
+  </wsdl:message>
+  <wsdl:message name="getMonitoringTowerResponse">
+    <wsdl:part name="parameters" element="ns:getMonitoringTowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByConditionRequest">
+    <wsdl:part name="parameters" element="ns:getResourceByCondition" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByConditionResponse">
+    <wsdl:part name="parameters" element="ns:getResourceByConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryResourcesByPageRequest">
+    <wsdl:part name="parameters" element="ns:queryResourcesByPage" />
+  </wsdl:message>
+  <wsdl:message name="queryResourcesByPageResponse">
+    <wsdl:part name="parameters" element="ns:queryResourcesByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="snapPictureToShowRequest">
+    <wsdl:part name="parameters" element="ns:snapPictureToShow" />
+  </wsdl:message>
+  <wsdl:message name="snapPictureToShowResponse">
+    <wsdl:part name="parameters" element="ns:snapPictureToShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="setOsdConfigMultipleRequest">
+    <wsdl:part name="parameters" element="ns:setOsdConfigMultiple" />
+  </wsdl:message>
+  <wsdl:message name="setOsdConfigMultipleResponse">
+    <wsdl:part name="parameters" element="ns:setOsdConfigMultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="encodePwdBySHA256Request">
+    <wsdl:part name="parameters" element="ns:encodePwdBySHA256" />
+  </wsdl:message>
+  <wsdl:message name="encodePwdBySHA256Response">
+    <wsdl:part name="parameters" element="ns:encodePwdBySHA256Response" />
+  </wsdl:message>
+  <wsdl:message name="getGisInfoBRequest">
+    <wsdl:part name="parameters" element="ns:getGisInfoB" />
+  </wsdl:message>
+  <wsdl:message name="getGisInfoBResponse">
+    <wsdl:part name="parameters" element="ns:getGisInfoBResponse" />
+  </wsdl:message>
+  <wsdl:message name="resourceListener2Request">
+    <wsdl:part name="parameters" element="ns:resourceListener2" />
+  </wsdl:message>
+  <wsdl:message name="resourceListener2Response">
+    <wsdl:part name="parameters" element="ns:resourceListener2Response" />
+  </wsdl:message>
+  <wsdl:message name="getShowPictureUrlRequest">
+    <wsdl:part name="parameters" element="ns:getShowPictureUrl" />
+  </wsdl:message>
+  <wsdl:message name="getShowPictureUrlResponse">
+    <wsdl:part name="parameters" element="ns:getShowPictureUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPtzPositionRequest">
+    <wsdl:part name="parameters" element="ns:getPtzPosition" />
+  </wsdl:message>
+  <wsdl:message name="getPtzPositionResponse">
+    <wsdl:part name="parameters" element="ns:getPtzPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ptzQueryFrontEndMonitoringEquipmentRequest">
+    <wsdl:part name="parameters" element="ns:ptzQueryFrontEndMonitoringEquipment" />
+  </wsdl:message>
+  <wsdl:message name="ptzQueryFrontEndMonitoringEquipmentResponse">
+    <wsdl:part name="parameters" element="ns:ptzQueryFrontEndMonitoringEquipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="sdkLoginRequest">
+    <wsdl:part name="parameters" element="ns:sdkLogin" />
+  </wsdl:message>
+  <wsdl:message name="sdkLoginResponse">
+    <wsdl:part name="parameters" element="ns:sdkLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="doorControlRequest">
+    <wsdl:part name="parameters" element="ns:doorControl" />
+  </wsdl:message>
+  <wsdl:message name="doorControlResponse">
+    <wsdl:part name="parameters" element="ns:doorControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStreamInfoRequest">
+    <wsdl:part name="parameters" element="ns:getStreamInfo" />
+  </wsdl:message>
+  <wsdl:message name="getStreamInfoResponse">
+    <wsdl:part name="parameters" element="ns:getStreamInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmIoStatusRequest">
+    <wsdl:part name="parameters" element="ns:getAlarmIoStatus" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmIoStatusResponse">
+    <wsdl:part name="parameters" element="ns:getAlarmIoStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="registResourceChangeListenerRequest">
+    <wsdl:part name="parameters" element="ns:registResourceChangeListener" />
+  </wsdl:message>
+  <wsdl:message name="registResourceChangeListenerResponse">
+    <wsdl:part name="parameters" element="ns:registResourceChangeListenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByPageRequest">
+    <wsdl:part name="parameters" element="ns:getResourceByPage" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByPageResponse">
+    <wsdl:part name="parameters" element="ns:getResourceByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPtzPositionExRequest">
+    <wsdl:part name="parameters" element="ns:getPtzPositionEx" />
+  </wsdl:message>
+  <wsdl:message name="getPtzPositionExResponse">
+    <wsdl:part name="parameters" element="ns:getPtzPositionExResponse" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByCodesRequest">
+    <wsdl:part name="parameters" element="ns:getResourceByCodes" />
+  </wsdl:message>
+  <wsdl:message name="getResourceByCodesResponse">
+    <wsdl:part name="parameters" element="ns:getResourceByCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="snapPictureRequest">
+    <wsdl:part name="parameters" element="ns:snapPicture" />
+  </wsdl:message>
+  <wsdl:message name="snapPictureResponse">
+    <wsdl:part name="parameters" element="ns:snapPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="alarmIoControlRequest">
+    <wsdl:part name="parameters" element="ns:alarmIoControl" />
+  </wsdl:message>
+  <wsdl:message name="alarmIoControlResponse">
+    <wsdl:part name="parameters" element="ns:alarmIoControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="newSetPresetListToCruisePathRequest">
+    <wsdl:part name="parameters" element="ns:newSetPresetListToCruisePath" />
+  </wsdl:message>
+  <wsdl:message name="newSetPresetListToCruisePathResponse">
+    <wsdl:part name="parameters" element="ns:newSetPresetListToCruisePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePresetInfoRequest">
+    <wsdl:part name="parameters" element="ns:changePresetInfo" />
+  </wsdl:message>
+  <wsdl:message name="changePresetInfoResponse">
+    <wsdl:part name="parameters" element="ns:changePresetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPreviewOcxOptionsRequest">
+    <wsdl:part name="parameters" element="ns:getPreviewOcxOptions" />
+  </wsdl:message>
+  <wsdl:message name="getPreviewOcxOptionsResponse">
+    <wsdl:part name="parameters" element="ns:getPreviewOcxOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="faceSearchQueryRequest">
+    <wsdl:part name="parameters" element="ns:faceSearchQuery" />
+  </wsdl:message>
+  <wsdl:message name="faceSearchQueryResponse">
+    <wsdl:part name="parameters" element="ns:faceSearchQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPlaybackOcxOptionsRequest">
+    <wsdl:part name="parameters" element="ns:getPlaybackOcxOptions" />
+  </wsdl:message>
+  <wsdl:message name="getPlaybackOcxOptionsResponse">
+    <wsdl:part name="parameters" element="ns:getPlaybackOcxOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPresetInfoRequest">
+    <wsdl:part name="parameters" element="ns:getPresetInfo" />
+  </wsdl:message>
+  <wsdl:message name="getPresetInfoResponse">
+    <wsdl:part name="parameters" element="ns:getPresetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ptzGetLockStatusBRequest">
+    <wsdl:part name="parameters" element="ns:ptzGetLockStatusB" />
+  </wsdl:message>
+  <wsdl:message name="ptzGetLockStatusBResponse">
+    <wsdl:part name="parameters" element="ns:ptzGetLockStatusBResponse" />
+  </wsdl:message>
+  <wsdl:message name="lockPtzRequest">
+    <wsdl:part name="parameters" element="ns:lockPtz" />
+  </wsdl:message>
+  <wsdl:message name="lockPtzResponse">
+    <wsdl:part name="parameters" element="ns:lockPtzResponse" />
+  </wsdl:message>
+  <wsdl:message name="ptzControlRequest">
+    <wsdl:part name="parameters" element="ns:ptzControl" />
+  </wsdl:message>
+  <wsdl:message name="ptzControlResponse">
+    <wsdl:part name="parameters" element="ns:ptzControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="setPtzPositionRequest">
+    <wsdl:part name="parameters" element="ns:setPtzPosition" />
+  </wsdl:message>
+  <wsdl:message name="setPtzPositionResponse">
+    <wsdl:part name="parameters" element="ns:setPtzPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="setPresetListToCruisePathRequest">
+    <wsdl:part name="parameters" element="ns:setPresetListToCruisePath" />
+  </wsdl:message>
+  <wsdl:message name="setPresetListToCruisePathResponse">
+    <wsdl:part name="parameters" element="ns:setPresetListToCruisePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPlayBackInfoRequest">
+    <wsdl:part name="parameters" element="ns:getPlayBackInfo" />
+  </wsdl:message>
+  <wsdl:message name="getPlayBackInfoResponse">
+    <wsdl:part name="parameters" element="ns:getPlayBackInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="gotoCruisePathRequest">
+    <wsdl:part name="parameters" element="ns:gotoCruisePath" />
+  </wsdl:message>
+  <wsdl:message name="gotoCruisePathResponse">
+    <wsdl:part name="parameters" element="ns:gotoCruisePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPictureUrlRequest">
+    <wsdl:part name="parameters" element="ns:getPictureUrl" />
+  </wsdl:message>
+  <wsdl:message name="getPictureUrlResponse">
+    <wsdl:part name="parameters" element="ns:getPictureUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="registResourceChangeListener2Request">
+    <wsdl:part name="parameters" element="ns:registResourceChangeListener2" />
+  </wsdl:message>
+  <wsdl:message name="registResourceChangeListener2Response">
+    <wsdl:part name="parameters" element="ns:registResourceChangeListener2Response" />
+  </wsdl:message>
+  <wsdl:message name="peagPtzSetRequest">
+    <wsdl:part name="parameters" element="ns:peagPtzSet" />
+  </wsdl:message>
+  <wsdl:message name="peagPtzSetResponse">
+    <wsdl:part name="parameters" element="ns:peagPtzSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmTriggerPicInfoRequest">
+    <wsdl:part name="parameters" element="ns:getAlarmTriggerPicInfo" />
+  </wsdl:message>
+  <wsdl:message name="getAlarmTriggerPicInfoResponse">
+    <wsdl:part name="parameters" element="ns:getAlarmTriggerPicInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="heartBeatRequest">
+    <wsdl:part name="parameters" element="ns:heartBeat" />
+  </wsdl:message>
+  <wsdl:message name="heartBeatResponse">
+    <wsdl:part name="parameters" element="ns:heartBeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCruisePathRequest">
+    <wsdl:part name="parameters" element="ns:getCruisePath" />
+  </wsdl:message>
+  <wsdl:message name="getCruisePathResponse">
+    <wsdl:part name="parameters" element="ns:getCruisePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByTypeRequest">
+    <wsdl:part name="parameters" element="ns:getServiceByType" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByTypeResponse">
+    <wsdl:part name="parameters" element="ns:getServiceByTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VmsSdkWebServicePortType">
+    <wsdl:operation name="checkResourcePrivilege">
+      <wsdl:input wsaw:Action="urn:checkResourcePrivilege" message="ns:checkResourcePrivilegeRequest" />
+      <wsdl:output wsaw:Action="urn:checkResourcePrivilegeResponse" message="ns:checkResourcePrivilegeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfig">
+      <wsdl:input wsaw:Action="urn:setOsdConfig" message="ns:setOsdConfigRequest" />
+      <wsdl:output wsaw:Action="urn:setOsdConfigResponse" message="ns:setOsdConfigResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByOrgCode">
+      <wsdl:input wsaw:Action="urn:getResourceByOrgCode" message="ns:getResourceByOrgCodeRequest" />
+      <wsdl:output wsaw:Action="urn:getResourceByOrgCodeResponse" message="ns:getResourceByOrgCodeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryStatusB">
+      <wsdl:input wsaw:Action="urn:ptzQueryStatusB" message="ns:ptzQueryStatusBRequest" />
+      <wsdl:output wsaw:Action="urn:ptzQueryStatusBResponse" message="ns:ptzQueryStatusBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogout">
+      <wsdl:input wsaw:Action="urn:sdkLogout" message="ns:sdkLogoutRequest" />
+      <wsdl:output wsaw:Action="urn:sdkLogoutResponse" message="ns:sdkLogoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryDateB">
+      <wsdl:input wsaw:Action="urn:ptzQueryDateB" message="ns:ptzQueryDateBRequest" />
+      <wsdl:output wsaw:Action="urn:ptzQueryDateBResponse" message="ns:ptzQueryDateBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="delPresetToCruisePathByNumber">
+      <wsdl:input wsaw:Action="urn:delPresetToCruisePathByNumber" message="ns:delPresetToCruisePathByNumberRequest" />
+      <wsdl:output wsaw:Action="urn:delPresetToCruisePathByNumberResponse" message="ns:delPresetToCruisePathByNumberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addPresetToCruisePath">
+      <wsdl:input wsaw:Action="urn:addPresetToCruisePath" message="ns:addPresetToCruisePathRequest" />
+      <wsdl:output wsaw:Action="urn:addPresetToCruisePathResponse" message="ns:addPresetToCruisePathResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmHistory">
+      <wsdl:input wsaw:Action="urn:getAlarmHistory" message="ns:getAlarmHistoryRequest" />
+      <wsdl:output wsaw:Action="urn:getAlarmHistoryResponse" message="ns:getAlarmHistoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="applyToken">
+      <wsdl:input wsaw:Action="urn:applyToken" message="ns:applyTokenRequest" />
+      <wsdl:output wsaw:Action="urn:applyTokenResponse" message="ns:applyTokenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener">
+      <wsdl:input wsaw:Action="urn:resourceListener" message="ns:resourceListenerRequest" />
+      <wsdl:output wsaw:Action="urn:resourceListenerResponse" message="ns:resourceListenerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ptzControlSL">
+      <wsdl:input wsaw:Action="urn:ptzControlSL" message="ns:ptzControlSLRequest" />
+      <wsdl:output wsaw:Action="urn:ptzControlSLResponse" message="ns:ptzControlSLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="faceUploadImg">
+      <wsdl:input wsaw:Action="urn:faceUploadImg" message="ns:faceUploadImgRequest" />
+      <wsdl:output wsaw:Action="urn:faceUploadImgResponse" message="ns:faceUploadImgResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMonitoringTower">
+      <wsdl:input wsaw:Action="urn:getMonitoringTower" message="ns:getMonitoringTowerRequest" />
+      <wsdl:output wsaw:Action="urn:getMonitoringTowerResponse" message="ns:getMonitoringTowerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCondition">
+      <wsdl:input wsaw:Action="urn:getResourceByCondition" message="ns:getResourceByConditionRequest" />
+      <wsdl:output wsaw:Action="urn:getResourceByConditionResponse" message="ns:getResourceByConditionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryResourcesByPage">
+      <wsdl:input wsaw:Action="urn:queryResourcesByPage" message="ns:queryResourcesByPageRequest" />
+      <wsdl:output wsaw:Action="urn:queryResourcesByPageResponse" message="ns:queryResourcesByPageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="snapPictureToShow">
+      <wsdl:input wsaw:Action="urn:snapPictureToShow" message="ns:snapPictureToShowRequest" />
+      <wsdl:output wsaw:Action="urn:snapPictureToShowResponse" message="ns:snapPictureToShowResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfigMultiple">
+      <wsdl:input wsaw:Action="urn:setOsdConfigMultiple" message="ns:setOsdConfigMultipleRequest" />
+      <wsdl:output wsaw:Action="urn:setOsdConfigMultipleResponse" message="ns:setOsdConfigMultipleResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="encodePwdBySHA256">
+      <wsdl:input wsaw:Action="urn:encodePwdBySHA256" message="ns:encodePwdBySHA256Request" />
+      <wsdl:output wsaw:Action="urn:encodePwdBySHA256Response" message="ns:encodePwdBySHA256Response" />
+    </wsdl:operation>
+    <wsdl:operation name="getGisInfoB">
+      <wsdl:input wsaw:Action="urn:getGisInfoB" message="ns:getGisInfoBRequest" />
+      <wsdl:output wsaw:Action="urn:getGisInfoBResponse" message="ns:getGisInfoBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener2">
+      <wsdl:input wsaw:Action="urn:resourceListener2" message="ns:resourceListener2Request" />
+      <wsdl:output wsaw:Action="urn:resourceListener2Response" message="ns:resourceListener2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="getShowPictureUrl">
+      <wsdl:input wsaw:Action="urn:getShowPictureUrl" message="ns:getShowPictureUrlRequest" />
+      <wsdl:output wsaw:Action="urn:getShowPictureUrlResponse" message="ns:getShowPictureUrlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPosition">
+      <wsdl:input wsaw:Action="urn:getPtzPosition" message="ns:getPtzPositionRequest" />
+      <wsdl:output wsaw:Action="urn:getPtzPositionResponse" message="ns:getPtzPositionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryFrontEndMonitoringEquipment">
+      <wsdl:input wsaw:Action="urn:ptzQueryFrontEndMonitoringEquipment" message="ns:ptzQueryFrontEndMonitoringEquipmentRequest" />
+      <wsdl:output wsaw:Action="urn:ptzQueryFrontEndMonitoringEquipmentResponse" message="ns:ptzQueryFrontEndMonitoringEquipmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogin">
+      <wsdl:input wsaw:Action="urn:sdkLogin" message="ns:sdkLoginRequest" />
+      <wsdl:output wsaw:Action="urn:sdkLoginResponse" message="ns:sdkLoginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="doorControl">
+      <wsdl:input wsaw:Action="urn:doorControl" message="ns:doorControlRequest" />
+      <wsdl:output wsaw:Action="urn:doorControlResponse" message="ns:doorControlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStreamInfo">
+      <wsdl:input wsaw:Action="urn:getStreamInfo" message="ns:getStreamInfoRequest" />
+      <wsdl:output wsaw:Action="urn:getStreamInfoResponse" message="ns:getStreamInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmIoStatus">
+      <wsdl:input wsaw:Action="urn:getAlarmIoStatus" message="ns:getAlarmIoStatusRequest" />
+      <wsdl:output wsaw:Action="urn:getAlarmIoStatusResponse" message="ns:getAlarmIoStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener">
+      <wsdl:input wsaw:Action="urn:registResourceChangeListener" message="ns:registResourceChangeListenerRequest" />
+      <wsdl:output wsaw:Action="urn:registResourceChangeListenerResponse" message="ns:registResourceChangeListenerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByPage">
+      <wsdl:input wsaw:Action="urn:getResourceByPage" message="ns:getResourceByPageRequest" />
+      <wsdl:output wsaw:Action="urn:getResourceByPageResponse" message="ns:getResourceByPageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPositionEx">
+      <wsdl:input wsaw:Action="urn:getPtzPositionEx" message="ns:getPtzPositionExRequest" />
+      <wsdl:output wsaw:Action="urn:getPtzPositionExResponse" message="ns:getPtzPositionExResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCodes">
+      <wsdl:input wsaw:Action="urn:getResourceByCodes" message="ns:getResourceByCodesRequest" />
+      <wsdl:output wsaw:Action="urn:getResourceByCodesResponse" message="ns:getResourceByCodesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="snapPicture">
+      <wsdl:input wsaw:Action="urn:snapPicture" message="ns:snapPictureRequest" />
+      <wsdl:output wsaw:Action="urn:snapPictureResponse" message="ns:snapPictureResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="alarmIoControl">
+      <wsdl:input wsaw:Action="urn:alarmIoControl" message="ns:alarmIoControlRequest" />
+      <wsdl:output wsaw:Action="urn:alarmIoControlResponse" message="ns:alarmIoControlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="newSetPresetListToCruisePath">
+      <wsdl:input wsaw:Action="urn:newSetPresetListToCruisePath" message="ns:newSetPresetListToCruisePathRequest" />
+      <wsdl:output wsaw:Action="urn:newSetPresetListToCruisePathResponse" message="ns:newSetPresetListToCruisePathResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePresetInfo">
+      <wsdl:input wsaw:Action="urn:changePresetInfo" message="ns:changePresetInfoRequest" />
+      <wsdl:output wsaw:Action="urn:changePresetInfoResponse" message="ns:changePresetInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPreviewOcxOptions">
+      <wsdl:input wsaw:Action="urn:getPreviewOcxOptions" message="ns:getPreviewOcxOptionsRequest" />
+      <wsdl:output wsaw:Action="urn:getPreviewOcxOptionsResponse" message="ns:getPreviewOcxOptionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="faceSearchQuery">
+      <wsdl:input wsaw:Action="urn:faceSearchQuery" message="ns:faceSearchQueryRequest" />
+      <wsdl:output wsaw:Action="urn:faceSearchQueryResponse" message="ns:faceSearchQueryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlaybackOcxOptions">
+      <wsdl:input wsaw:Action="urn:getPlaybackOcxOptions" message="ns:getPlaybackOcxOptionsRequest" />
+      <wsdl:output wsaw:Action="urn:getPlaybackOcxOptionsResponse" message="ns:getPlaybackOcxOptionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPresetInfo">
+      <wsdl:input wsaw:Action="urn:getPresetInfo" message="ns:getPresetInfoRequest" />
+      <wsdl:output wsaw:Action="urn:getPresetInfoResponse" message="ns:getPresetInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ptzGetLockStatusB">
+      <wsdl:input wsaw:Action="urn:ptzGetLockStatusB" message="ns:ptzGetLockStatusBRequest" />
+      <wsdl:output wsaw:Action="urn:ptzGetLockStatusBResponse" message="ns:ptzGetLockStatusBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="lockPtz">
+      <wsdl:input wsaw:Action="urn:lockPtz" message="ns:lockPtzRequest" />
+      <wsdl:output wsaw:Action="urn:lockPtzResponse" message="ns:lockPtzResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ptzControl">
+      <wsdl:input wsaw:Action="urn:ptzControl" message="ns:ptzControlRequest" />
+      <wsdl:output wsaw:Action="urn:ptzControlResponse" message="ns:ptzControlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setPtzPosition">
+      <wsdl:input wsaw:Action="urn:setPtzPosition" message="ns:setPtzPositionRequest" />
+      <wsdl:output wsaw:Action="urn:setPtzPositionResponse" message="ns:setPtzPositionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setPresetListToCruisePath">
+      <wsdl:input wsaw:Action="urn:setPresetListToCruisePath" message="ns:setPresetListToCruisePathRequest" />
+      <wsdl:output wsaw:Action="urn:setPresetListToCruisePathResponse" message="ns:setPresetListToCruisePathResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlayBackInfo">
+      <wsdl:input wsaw:Action="urn:getPlayBackInfo" message="ns:getPlayBackInfoRequest" />
+      <wsdl:output wsaw:Action="urn:getPlayBackInfoResponse" message="ns:getPlayBackInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="gotoCruisePath">
+      <wsdl:input wsaw:Action="urn:gotoCruisePath" message="ns:gotoCruisePathRequest" />
+      <wsdl:output wsaw:Action="urn:gotoCruisePathResponse" message="ns:gotoCruisePathResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPictureUrl">
+      <wsdl:input wsaw:Action="urn:getPictureUrl" message="ns:getPictureUrlRequest" />
+      <wsdl:output wsaw:Action="urn:getPictureUrlResponse" message="ns:getPictureUrlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener2">
+      <wsdl:input wsaw:Action="urn:registResourceChangeListener2" message="ns:registResourceChangeListener2Request" />
+      <wsdl:output wsaw:Action="urn:registResourceChangeListener2Response" message="ns:registResourceChangeListener2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="peagPtzSet">
+      <wsdl:input wsaw:Action="urn:peagPtzSet" message="ns:peagPtzSetRequest" />
+      <wsdl:output wsaw:Action="urn:peagPtzSetResponse" message="ns:peagPtzSetResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTriggerPicInfo">
+      <wsdl:input wsaw:Action="urn:getAlarmTriggerPicInfo" message="ns:getAlarmTriggerPicInfoRequest" />
+      <wsdl:output wsaw:Action="urn:getAlarmTriggerPicInfoResponse" message="ns:getAlarmTriggerPicInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="heartBeat">
+      <wsdl:input wsaw:Action="urn:heartBeat" message="ns:heartBeatRequest" />
+      <wsdl:output wsaw:Action="urn:heartBeatResponse" message="ns:heartBeatResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCruisePath">
+      <wsdl:input wsaw:Action="urn:getCruisePath" message="ns:getCruisePathRequest" />
+      <wsdl:output wsaw:Action="urn:getCruisePathResponse" message="ns:getCruisePathResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceByType">
+      <wsdl:input wsaw:Action="urn:getServiceByType" message="ns:getServiceByTypeRequest" />
+      <wsdl:output wsaw:Action="urn:getServiceByTypeResponse" message="ns:getServiceByTypeResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VmsSdkWebServiceSoap11Binding" type="ns:VmsSdkWebServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkResourcePrivilege">
+      <soap:operation soapAction="urn:checkResourcePrivilege" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfig">
+      <soap:operation soapAction="urn:setOsdConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByOrgCode">
+      <soap:operation soapAction="urn:getResourceByOrgCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryStatusB">
+      <soap:operation soapAction="urn:ptzQueryStatusB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogout">
+      <soap:operation soapAction="urn:sdkLogout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryDateB">
+      <soap:operation soapAction="urn:ptzQueryDateB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delPresetToCruisePathByNumber">
+      <soap:operation soapAction="urn:delPresetToCruisePathByNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPresetToCruisePath">
+      <soap:operation soapAction="urn:addPresetToCruisePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmHistory">
+      <soap:operation soapAction="urn:getAlarmHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyToken">
+      <soap:operation soapAction="urn:applyToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faceUploadImg">
+      <soap:operation soapAction="urn:faceUploadImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzControlSL">
+      <soap:operation soapAction="urn:ptzControlSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener">
+      <soap:operation soapAction="urn:resourceListener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMonitoringTower">
+      <soap:operation soapAction="urn:getMonitoringTower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCondition">
+      <soap:operation soapAction="urn:getResourceByCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryResourcesByPage">
+      <soap:operation soapAction="urn:queryResourcesByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="snapPictureToShow">
+      <soap:operation soapAction="urn:snapPictureToShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfigMultiple">
+      <soap:operation soapAction="urn:setOsdConfigMultiple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encodePwdBySHA256">
+      <soap:operation soapAction="urn:encodePwdBySHA256" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGisInfoB">
+      <soap:operation soapAction="urn:getGisInfoB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener2">
+      <soap:operation soapAction="urn:resourceListener2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShowPictureUrl">
+      <soap:operation soapAction="urn:getShowPictureUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPosition">
+      <soap:operation soapAction="urn:getPtzPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryFrontEndMonitoringEquipment">
+      <soap:operation soapAction="urn:ptzQueryFrontEndMonitoringEquipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogin">
+      <soap:operation soapAction="urn:sdkLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doorControl">
+      <soap:operation soapAction="urn:doorControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStreamInfo">
+      <soap:operation soapAction="urn:getStreamInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmIoStatus">
+      <soap:operation soapAction="urn:getAlarmIoStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener">
+      <soap:operation soapAction="urn:registResourceChangeListener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByPage">
+      <soap:operation soapAction="urn:getResourceByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPositionEx">
+      <soap:operation soapAction="urn:getPtzPositionEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCodes">
+      <soap:operation soapAction="urn:getResourceByCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="snapPicture">
+      <soap:operation soapAction="urn:snapPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alarmIoControl">
+      <soap:operation soapAction="urn:alarmIoControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newSetPresetListToCruisePath">
+      <soap:operation soapAction="urn:newSetPresetListToCruisePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePresetInfo">
+      <soap:operation soapAction="urn:changePresetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPreviewOcxOptions">
+      <soap:operation soapAction="urn:getPreviewOcxOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faceSearchQuery">
+      <soap:operation soapAction="urn:faceSearchQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlaybackOcxOptions">
+      <soap:operation soapAction="urn:getPlaybackOcxOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPresetInfo">
+      <soap:operation soapAction="urn:getPresetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzGetLockStatusB">
+      <soap:operation soapAction="urn:ptzGetLockStatusB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lockPtz">
+      <soap:operation soapAction="urn:lockPtz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzControl">
+      <soap:operation soapAction="urn:ptzControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPtzPosition">
+      <soap:operation soapAction="urn:setPtzPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPresetListToCruisePath">
+      <soap:operation soapAction="urn:setPresetListToCruisePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlayBackInfo">
+      <soap:operation soapAction="urn:getPlayBackInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gotoCruisePath">
+      <soap:operation soapAction="urn:gotoCruisePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPictureUrl">
+      <soap:operation soapAction="urn:getPictureUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener2">
+      <soap:operation soapAction="urn:registResourceChangeListener2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peagPtzSet">
+      <soap:operation soapAction="urn:peagPtzSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTriggerPicInfo">
+      <soap:operation soapAction="urn:getAlarmTriggerPicInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="heartBeat">
+      <soap:operation soapAction="urn:heartBeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCruisePath">
+      <soap:operation soapAction="urn:getCruisePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceByType">
+      <soap:operation soapAction="urn:getServiceByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VmsSdkWebServiceSoap12Binding" type="ns:VmsSdkWebServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkResourcePrivilege">
+      <soap12:operation soapAction="urn:checkResourcePrivilege" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfig">
+      <soap12:operation soapAction="urn:setOsdConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByOrgCode">
+      <soap12:operation soapAction="urn:getResourceByOrgCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryStatusB">
+      <soap12:operation soapAction="urn:ptzQueryStatusB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogout">
+      <soap12:operation soapAction="urn:sdkLogout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryDateB">
+      <soap12:operation soapAction="urn:ptzQueryDateB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delPresetToCruisePathByNumber">
+      <soap12:operation soapAction="urn:delPresetToCruisePathByNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPresetToCruisePath">
+      <soap12:operation soapAction="urn:addPresetToCruisePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmHistory">
+      <soap12:operation soapAction="urn:getAlarmHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyToken">
+      <soap12:operation soapAction="urn:applyToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faceUploadImg">
+      <soap12:operation soapAction="urn:faceUploadImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzControlSL">
+      <soap12:operation soapAction="urn:ptzControlSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener">
+      <soap12:operation soapAction="urn:resourceListener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMonitoringTower">
+      <soap12:operation soapAction="urn:getMonitoringTower" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCondition">
+      <soap12:operation soapAction="urn:getResourceByCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryResourcesByPage">
+      <soap12:operation soapAction="urn:queryResourcesByPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="snapPictureToShow">
+      <soap12:operation soapAction="urn:snapPictureToShow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfigMultiple">
+      <soap12:operation soapAction="urn:setOsdConfigMultiple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encodePwdBySHA256">
+      <soap12:operation soapAction="urn:encodePwdBySHA256" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGisInfoB">
+      <soap12:operation soapAction="urn:getGisInfoB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener2">
+      <soap12:operation soapAction="urn:resourceListener2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShowPictureUrl">
+      <soap12:operation soapAction="urn:getShowPictureUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPosition">
+      <soap12:operation soapAction="urn:getPtzPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryFrontEndMonitoringEquipment">
+      <soap12:operation soapAction="urn:ptzQueryFrontEndMonitoringEquipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogin">
+      <soap12:operation soapAction="urn:sdkLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doorControl">
+      <soap12:operation soapAction="urn:doorControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStreamInfo">
+      <soap12:operation soapAction="urn:getStreamInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmIoStatus">
+      <soap12:operation soapAction="urn:getAlarmIoStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener">
+      <soap12:operation soapAction="urn:registResourceChangeListener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByPage">
+      <soap12:operation soapAction="urn:getResourceByPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPositionEx">
+      <soap12:operation soapAction="urn:getPtzPositionEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCodes">
+      <soap12:operation soapAction="urn:getResourceByCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="snapPicture">
+      <soap12:operation soapAction="urn:snapPicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alarmIoControl">
+      <soap12:operation soapAction="urn:alarmIoControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newSetPresetListToCruisePath">
+      <soap12:operation soapAction="urn:newSetPresetListToCruisePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePresetInfo">
+      <soap12:operation soapAction="urn:changePresetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPreviewOcxOptions">
+      <soap12:operation soapAction="urn:getPreviewOcxOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faceSearchQuery">
+      <soap12:operation soapAction="urn:faceSearchQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlaybackOcxOptions">
+      <soap12:operation soapAction="urn:getPlaybackOcxOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPresetInfo">
+      <soap12:operation soapAction="urn:getPresetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzGetLockStatusB">
+      <soap12:operation soapAction="urn:ptzGetLockStatusB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lockPtz">
+      <soap12:operation soapAction="urn:lockPtz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzControl">
+      <soap12:operation soapAction="urn:ptzControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPtzPosition">
+      <soap12:operation soapAction="urn:setPtzPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPresetListToCruisePath">
+      <soap12:operation soapAction="urn:setPresetListToCruisePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlayBackInfo">
+      <soap12:operation soapAction="urn:getPlayBackInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gotoCruisePath">
+      <soap12:operation soapAction="urn:gotoCruisePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPictureUrl">
+      <soap12:operation soapAction="urn:getPictureUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener2">
+      <soap12:operation soapAction="urn:registResourceChangeListener2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peagPtzSet">
+      <soap12:operation soapAction="urn:peagPtzSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTriggerPicInfo">
+      <soap12:operation soapAction="urn:getAlarmTriggerPicInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="heartBeat">
+      <soap12:operation soapAction="urn:heartBeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCruisePath">
+      <soap12:operation soapAction="urn:getCruisePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceByType">
+      <soap12:operation soapAction="urn:getServiceByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VmsSdkWebServiceHttpBinding" type="ns:VmsSdkWebServicePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="checkResourcePrivilege">
+      <http:operation location="checkResourcePrivilege" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfig">
+      <http:operation location="setOsdConfig" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByOrgCode">
+      <http:operation location="getResourceByOrgCode" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryStatusB">
+      <http:operation location="ptzQueryStatusB" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogout">
+      <http:operation location="sdkLogout" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryDateB">
+      <http:operation location="ptzQueryDateB" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delPresetToCruisePathByNumber">
+      <http:operation location="delPresetToCruisePathByNumber" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPresetToCruisePath">
+      <http:operation location="addPresetToCruisePath" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmHistory">
+      <http:operation location="getAlarmHistory" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyToken">
+      <http:operation location="applyToken" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faceUploadImg">
+      <http:operation location="faceUploadImg" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzControlSL">
+      <http:operation location="ptzControlSL" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener">
+      <http:operation location="resourceListener" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMonitoringTower">
+      <http:operation location="getMonitoringTower" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCondition">
+      <http:operation location="getResourceByCondition" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryResourcesByPage">
+      <http:operation location="queryResourcesByPage" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="snapPictureToShow">
+      <http:operation location="snapPictureToShow" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOsdConfigMultiple">
+      <http:operation location="setOsdConfigMultiple" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="encodePwdBySHA256">
+      <http:operation location="encodePwdBySHA256" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGisInfoB">
+      <http:operation location="getGisInfoB" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resourceListener2">
+      <http:operation location="resourceListener2" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShowPictureUrl">
+      <http:operation location="getShowPictureUrl" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPosition">
+      <http:operation location="getPtzPosition" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzQueryFrontEndMonitoringEquipment">
+      <http:operation location="ptzQueryFrontEndMonitoringEquipment" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sdkLogin">
+      <http:operation location="sdkLogin" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doorControl">
+      <http:operation location="doorControl" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStreamInfo">
+      <http:operation location="getStreamInfo" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmIoStatus">
+      <http:operation location="getAlarmIoStatus" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener">
+      <http:operation location="registResourceChangeListener" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByPage">
+      <http:operation location="getResourceByPage" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPtzPositionEx">
+      <http:operation location="getPtzPositionEx" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResourceByCodes">
+      <http:operation location="getResourceByCodes" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="snapPicture">
+      <http:operation location="snapPicture" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="alarmIoControl">
+      <http:operation location="alarmIoControl" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newSetPresetListToCruisePath">
+      <http:operation location="newSetPresetListToCruisePath" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePresetInfo">
+      <http:operation location="changePresetInfo" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPreviewOcxOptions">
+      <http:operation location="getPreviewOcxOptions" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="faceSearchQuery">
+      <http:operation location="faceSearchQuery" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlaybackOcxOptions">
+      <http:operation location="getPlaybackOcxOptions" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPresetInfo">
+      <http:operation location="getPresetInfo" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzGetLockStatusB">
+      <http:operation location="ptzGetLockStatusB" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lockPtz">
+      <http:operation location="lockPtz" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ptzControl">
+      <http:operation location="ptzControl" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPtzPosition">
+      <http:operation location="setPtzPosition" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setPresetListToCruisePath">
+      <http:operation location="setPresetListToCruisePath" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlayBackInfo">
+      <http:operation location="getPlayBackInfo" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gotoCruisePath">
+      <http:operation location="gotoCruisePath" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPictureUrl">
+      <http:operation location="getPictureUrl" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registResourceChangeListener2">
+      <http:operation location="registResourceChangeListener2" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peagPtzSet">
+      <http:operation location="peagPtzSet" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlarmTriggerPicInfo">
+      <http:operation location="getAlarmTriggerPicInfo" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="heartBeat">
+      <http:operation location="heartBeat" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCruisePath">
+      <http:operation location="getCruisePath" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceByType">
+      <http:operation location="getServiceByType" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VmsSdkWebService">
+    <wsdl:port name="VmsSdkWebServiceHttpSoap11Endpoint" binding="ns:VmsSdkWebServiceSoap11Binding">
+      <soap:address location="http://202.127.25.126/services/VmsSdkWebService.VmsSdkWebServiceHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="VmsSdkWebServiceHttpSoap12Endpoint" binding="ns:VmsSdkWebServiceSoap12Binding">
+      <soap12:address location="http://202.127.25.126/services/VmsSdkWebService.VmsSdkWebServiceHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="VmsSdkWebServiceHttpEndpoint" binding="ns:VmsSdkWebServiceHttpBinding">
+      <http:address location="http://202.127.25.126/services/VmsSdkWebService.VmsSdkWebServiceHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

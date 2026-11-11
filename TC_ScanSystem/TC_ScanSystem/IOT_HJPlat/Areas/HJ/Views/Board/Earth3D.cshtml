@@ -1,0 +1,271 @@
+﻿
+@{
+    ViewBag.Title = "项目全览图";
+    Layout = "~/Views/Shared/NoLayout.cshtml";
+}
+
+<style>
+    body{
+            background-size: cover;
+            height: 100%;
+        }
+</style>
+
+<script src="~/Content/IOT/js/jquery1.12.4.min.js"></script>
+<script type="text/javascript" src="~/Content/Board/EchartGL/echarts.js"></script>
+<script type="text/javascript" src="~/Content/Board/EchartGL/echarts-gl.js"></script>
+<script type="text/javascript" src="~/Content/Board/js/world.js"></script>
+
+<div id="container" style="height:100%;box-sizing: border-box;"></div>
+
+<script>
+    
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+
+
+    option = {
+        backgroundColor: '#000',
+        globe: {
+            environment: '/Content/Board/EarthImg/starfield.jpg',
+
+            baseTexture: '/Content/Board/EarthImg/world.topo.bathy.200401.jpg',
+            heightTexture: '/Content/Board/EarthImg/bathymetry_bw_composite_4k.jpg',
+
+            displacementScale: 0.03,
+            displacementQuality: 'high',
+
+            //baseColor: '#000',
+
+            realisticMaterial: {
+                roughness: 0.2,
+                metalness: 0
+            },
+            postEffect: {
+                enable: true,
+                depthOfField: {
+                    enable: false,
+                    focalDistance: 150
+                }
+            },
+
+            light: {
+                main: {
+                    intensity: 3,
+                    shadow: false
+                },
+                ambientCubemap: {
+                    texture: '/Content/Board/hdr/pisa.hdr',
+                    exposure: 1,
+                    diffuseIntensity: 0.5,
+                    specularIntensity: 2
+                }
+            },
+
+            viewControl: {
+                autoRotate: true,
+                autoRotateSpeed: 2,
+                distance: 80,
+                autoRotateAfterStill: 10,
+                targetCoord: [104.0647, 30.5702],
+                minDistance: 20
+            },
+            silent: true
+        },
+        series: [{
+
+            type: 'scatter3D',
+
+            coordinateSystem: 'globe',
+
+            symbol: 'pin',
+
+            symbolSize: 25,
+
+            label: {
+                show: false,
+                formatter: '{b}',
+                distance: 15,
+                position: "bottom",
+                textStyle: {
+                    color: "blue",
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+                //formatter: function (param) {
+                //    //debugger;
+                //    alert('12345');
+                //}
+            },
+
+            emphasis: {
+                itemStyle: {
+                    color: "Lime",
+                    opacity: 1,
+                    borderWidth: 1,
+                    borderColor: "Lime"
+                },
+                label: {
+                    show: true,
+                    position: "bottom"
+
+                }
+            },
+
+            data:
+                [
+                    
+                    {
+                        // 数据项名称
+                        name: '长沙轨道交通6号线',
+                        value: [113.013610, 28.191420, 0],
+                        //自定义特殊itemStyle，仅对该item有效
+                        itemStyle:
+                            {
+                                color: "yellow",
+                                opacity: 1
+                            }
+                    },
+                    {
+                        // 数据项名称
+                        name: '无锡太湖隧道二标',
+                        value: [120.137343, 31.469063, 0],
+                        //自定义特殊itemStyle，仅对该item有效
+                        itemStyle:
+                            {
+                                color: "yellow",
+                                opacity: 1
+                            }
+                    },
+                    {
+                        // 数据项名称
+                        name: '青岛轨道交通R3线',
+                        value: [121.010784, 36.450391, 0],
+                        //自定义特殊itemStyle，仅对该item有效
+                        itemStyle:
+                            {
+                                color: "yellow",
+                                opacity: 1
+                            }
+                    },
+                    {
+                        // 数据项名称
+                        name: '太仓港区四期',
+                        value: [121.138093, 31.634675, 0],
+                        //自定义特殊itemStyle，仅对该item有效
+                        itemStyle:
+                            {
+                                color: "yellow",
+                                opacity: 1
+                            }
+                    },
+                    {
+                        // 数据项名称
+                        name: '上海三航科学研究院有限公司',
+                        value: [121.450767, 31.198779, 0],
+                        //自定义特殊itemStyle，仅对该item有效
+                        itemStyle:
+                            {
+                                color: "red",
+                                opacity: 1
+                            }
+                    }
+                ]
+        },
+        {
+            type: 'lines3D',
+            coordinateSystem: "globe",
+            lineStyle: {
+                width: 3,
+                //color: 'white',
+                // color: 'rgb(118, 233, 241)',
+                opacity: 0.8
+            },
+            effect: {
+                show: true,
+                trailWidth: 5,
+                trailLength: 0.15,
+                trailOpacity: 1,
+                trailColor: 'green'
+            },
+            blendMode: 'lighter',
+            //data: [[[121.450767, 31.198779], [113.013610, 28.191420]], [[121.450767, 31.198779], [120.137343, 61.469063]]]
+            data: [
+                {
+                    coords: [[121.450767, 31.198779], [113.013610, 28.191420]],
+                    // 数据值
+                    value: 10,
+                    // 数据名
+                    name: '长沙',
+                    // 线条样式
+                    lineStyle: {}
+                },
+                {
+                    coords: [[121.450767, 31.198779], [120.137343, 31.469063]],
+                    // 数据值
+                    value: 10,
+                    // 数据名
+                    name: '太湖',
+                    // 线条样式
+                    lineStyle: {}
+                },
+                {
+                    coords: [[121.450767, 31.198779], [121.010784, 36.450391]],
+                    // 数据值
+                    value: 10,
+                    // 数据名
+                    name: '青岛',
+                    // 线条样式
+                    lineStyle: {}
+                },
+                {
+                    coords: [[121.450767, 31.198779], [121.138093, 31.634675]],
+                    // 数据值
+                    value: 10,
+                    // 数据名
+                    name: '太仓',
+                    // 线条样式
+                    lineStyle: {}
+                }
+            ]
+        }
+        ]
+
+    };
+
+    myChart.setOption(option);
+
+    myChart.on('click', function (params) {
+        //window.open('https://www.baidu.com');
+        var url = '';
+        
+        if (params.name == null)
+            return;
+
+        if (params.name == '长沙轨道交通6号线')
+        {
+            url = 'http://222.244.147.46:9050/Login.aspx';
+        }
+        else if (params.name == '无锡太湖隧道二标')
+        {
+            url = 'http://61.177.148.250:40010/';
+        }
+        else if (params.name == '青岛轨道交通R3线')
+        {
+            url = 'http://www.ccccqd-metro.com/';
+        }
+        else if (params.name == '太仓港区四期') {
+            url = 'http://58.210.24.130:40010/';
+        }
+        else if (params.name = '上海三航科学研究院有限公司')
+        {
+            url = 'http://gxt.ccshj.net';
+        }
+        window.open(url);
+    });
+
+
+</script>
+

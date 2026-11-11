@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "监测总览图";
+    Layout = "~/Views/Shared/NewMonitorLayout.cshtml";
+
+    //排架列表数据（服务端已按 GetMonitorAlarm 口径计算告警）
+    var Layers = Model as List<Model.Monitor.Response.NewIndexLayer>;
+    if (Layers == null)
+    {
+        Layers = new List<Model.Monitor.Response.NewIndexLayer>();
+    }
+
+    //硬编码分组：21/22/27 → 货运码头（7#排架 PHC/横梁/纵梁），11/14/26 → 应急码头（47#排架）
+    var CargoIds = new[] { 21, 22, 27 };
+    var EmergencyIds = new[] { 11, 14, 26 };
+    Func<int[], List<Model.Monitor.Response.NewIndexLayer>> pick = ids =>
+        ids.Select(id => Layers.FirstOrDefault(u => u.LayerID == id))
+           .Where(u => u != null)
+           .ToList();
+}
+
+@*背景*@
+<div class="bim-content"></div>
+
+@*头部*@
+<div class="head">
+    <div class="title_l"><img src="~/Content/NewMonitor/img/S_title.png"></div>
+    <div class="title_fc_name"><img src="~/Content/NewMonitor/img/title.png"></div>
+    <div class="icon">
+        <div><a href="/Scan/Construction/DynamicIndex"><img src="~/Content/NewMonitor/img/icon_htpz.png">后台配置</a></div>
+        <div><img src="~/Content/NewMonitor/img/line.png"></div>
+        <div><a href="/Home/LogOut"><img src="~/Content/NewMonitor/img/icon_tc.png">退出登录</a></div>
+    </div>
+    <div class="data">
+        <p class="xq_time" id="date"></p>
+        <p class="time" id="time">00:00:00</p>
+    </div>
+</div>
+
+@*排架列表*@
+<div class="CGQ_mod">
+    <div class="CGQ_modcon">
+        <div class="CGQ_modtitle"><div class="wz_jb"><img src="~/Content/NewMonitor/img/icon_mt.png">横沙新洲货运码头</div></div>
+        <ul class="pj_ul clearfix">
+            @foreach (var item in pick(CargoIds))
+            {
+                <li class="@(item.IsAlarm ? "active" : "")" onclick="GotoDetail(@item.LayerID, @item.ScanTypeID)" title="@(item.LayerName) @(item.ScanTypeName)">
+                    <div class="pj_tb"></div>
+                    <div>
+                        <p><span>@item.LayerName</span><span>@item.ScanTypeName</span></p>
+                        <p>当日累计报警次数<span>@item.Level</span>次</p>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div class="CGQ_modcon">
+        <div class="CGQ_modtitle"><div class="wz_jb"><img src="~/Content/NewMonitor/img/icon_mt.png">横沙新洲应急码头</div></div>
+        <ul class="pj_ul clearfix">
+            @foreach (var item in pick(EmergencyIds))
+            {
+                <li class="@(item.IsAlarm ? "active" : "")" onclick="GotoDetail(@item.LayerID, @item.ScanTypeID)">
+                    <div class="pj_tb"></div>
+                    <div>
+                        <p><span>@item.LayerName</span><span>@item.ScanTypeName</span></p>
+                        <p>当日累计报警次数<span>@item.Level</span>次</p>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        //排架点击 → 监测详情页（传图层 ID 与监测类型 ID）
+        function GotoDetail(layerId, scanTypeId) {
+            if (!layerId) return;
+            window.location.href = '/Monitor/Main/MonitorDetail?MonitorAreaID=' + layerId + '&MonitorTypeID=' + (scanTypeId || 0);
+        }
+    </script>
+}
